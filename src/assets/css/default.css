@@ -72,7 +72,7 @@ input[type=text]::-ms-clear {
 
 #mainPanel {
     background-color: #d8d8d8;
-    opacity: 0; 
+    opacity: 0;
     flex: 1;
     overflow: hidden;
 }
@@ -254,7 +254,7 @@ input[type=text]::-ms-clear {
     z-index: 100;
     width: 55px;
     background-color: #62666b;
-    text-align: center;  
+    text-align: center;
 }
 #interfaceControlFrameCloseContainer a {
     display: inline-block;
@@ -599,7 +599,7 @@ div.axClearMsgBubble_Player {
     opacity: 0;
     transform: rotate(270deg);
     background: url('../images/caret_down.svg') no-repeat center center, linear-gradient(transparent,transparent);
-} 
+}
 
 #maximizeButton {
     transform: rotate(-270deg);
@@ -632,7 +632,7 @@ div.axClearMsgBubble_Player {
 }
 
 #separatorContainer {
-    display: none; 
+    display: none;
     line-height: 24px;
     height: 36px;
 }
@@ -927,7 +927,6 @@ div.mobileText, span.mobileText {
 
 .circleBackground {
     border-radius: 50%;
-    behavior: url(PIE.htc);
     margin: auto;
     box-shadow: 3px 3px 3px 0 rgba(55, 55, 55, 0.5);
 }
