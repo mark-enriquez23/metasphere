@@ -16,4 +16,11 @@ export class ApiService {
     return this.http.get<any>('http://180.169.66.202:9098/customize/control/FetchCategoryList?chainCode='+ data.chainCode + '&hotelCode='+ data.hotelCode);
   }
 
+  getMenuList(data){
+    return this.http.get<any>('http://180.169.66.202:9098/customize/control/FetchMenuList?chainCode='+ data.chainCode + '&hotelCode=' + data.hotelCode);
+  }
+
+  getOrderList(data){
+    return this.http.get<any>('http://180.169.66.202:9098/customize/control/FetchOrderList?chainCode='+ data.chainCode + '&hotelCode=' + data.hotelCode);
+  }
 }
