@@ -7,6 +7,7 @@ import { PublicHeaderComponent } from './components/public-header/public-header.
 @NgModule({
   declarations: [ PublicHeaderComponent ],
   exports: [ PublicHeaderComponent ],
+  imports: [CommonModule],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class SharedModule { }
