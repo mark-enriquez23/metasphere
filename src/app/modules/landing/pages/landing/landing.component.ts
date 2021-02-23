@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as images from 'src/assets/json/images.json';
+
 
 @Component({
   selector: 'app-landing',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-
-  constructor() { }
+  companyImgs: any;
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.companyImgs = {
+      facilityImg: images['facilitiesImg'],
+      serviceImg: images['servicesImg'],
+      faqImg: images['faqImg']
+    }
+    console.log(this.companyImgs)
   }
 
 }
