@@ -10037,7 +10037,7 @@ hr.light {
   color: #008080;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #008080 !important;
+  color: #fff;
 }
 @media (min-width: 992px) {
   #mainNav {
@@ -10082,7 +10082,7 @@ hr.light {
   }
 }
 
-header.masthead {
+.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
   background-position: center;
@@ -10090,25 +10090,25 @@ header.masthead {
   background-attachment: scroll;
   background-size: cover;
 }
-header.masthead h1 {
+.masthead h1 {
   font-size: 2.25rem;
 }
 @media (min-width: 992px) {
-  header.masthead {
+  .masthead {
     height: 100vh;
     min-height: 40rem;
     padding-top: 4.5rem;
     padding-bottom: 0;
   }
-  header.masthead p {
+  .masthead p {
     font-size: 1.15rem;
   }
-  header.masthead h1 {
+  .masthead h1 {
     font-size: 3rem;
   }
 }
 @media (min-width: 1200px) {
-  header.masthead h1 {
+  .masthead h1 {
     font-size: 3.5rem;
   }
 }
