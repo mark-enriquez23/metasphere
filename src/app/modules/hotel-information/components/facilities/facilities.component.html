@@ -1,1 +1,50 @@
-<p>facilities works!</p>
+
+<div class="container mt-2">
+  <div class="accordion" id="accordionExample">
+    <div class="card" *ngFor="let facility of facilities; let i = index">
+      <div class="card-header" [id]="'label' + getHeadId(facility.id)" type="button" data-toggle="collapse" [attr.data-target]="'#'+getHeadId(facility.id)">
+        <h2 class="mb-0 row no-gutters">
+          <button class="btn btn-link">
+            {{ facility.name }}
+          </button>
+          <div class="ml-auto btn btn-link" >
+            <div class="collapse " [ngClass]="{'show': i > 0}" [id]="getHeadId(facility.id)">
+              <i class="fas fa-angle-down" ></i>
+            </div>
+            <div class="collapse" [ngClass]="{'show': i === 0}" [id]="getHeadId(facility.id)">
+              <i class="fas fa-angle-up" ></i>
+            </div>
+          </div>
+        </h2>
+      </div>
+
+      <div [id]="getHeadId(facility.id)" class="collapse" [ngClass]="{'show': i === 0}" [attr.aria-labelledby]="'label' + getHeadId(facility.id)" data-parent="#accordionExample">
+        <div class="card-body">
+          <h5 class="card-title d-lg-none">{{ facility.subTitle  }}</h5>
+          <div class="row no-gutters">
+            <div class="col-12 col-lg-4 pr-lg-2">
+              <img class="img-fluid" [src]="facility.image" [alt]="facility.name + '-' + facility.subTitle ">
+            </div>
+            <div class="pl-lg-2 col-lg-8 col-12">
+              <h5 class="card-title d-none d-lg-block">{{ facility.subTitle  }}</h5>
+              <div class="mt-2 mt-lg-0">
+                {{ facility.description }}
+              </div>
+              <div class="row no-gutters mt-4">
+                <div class="col-6">
+                  <label class="font-weight-bold">Opening hours:</label>
+                  <div *ngFor="let hours of facility.opening_hours">
+                    {{ hours.from }} - {{ hours.to }} {{ hours.time_from }} - {{ hours.time_to }}
+                  </div>
+                </div>
+                <div>
+                  <label class="font-weight-bold">Floor: {{ facility.floor }}</label>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

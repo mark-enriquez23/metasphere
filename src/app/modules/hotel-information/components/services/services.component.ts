@@ -233,6 +233,13 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   *
+   * @param i Get the id of the object being passed
+   *
+   * @description Return the header setting the Id as a string with header concattenated to it
+   *
+   */
   getHeadId(i) {
     return 'header' + i.toString();
   }

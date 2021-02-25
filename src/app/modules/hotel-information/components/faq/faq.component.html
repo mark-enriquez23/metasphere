@@ -1,1 +1,44 @@
-<p>faq works!</p>
+
+<div class="container mt-2">
+  <div *ngFor="let faq of faqs; let index = index" [ngClass]="{'mt-3': index > 0}">
+    <div class="faq-header p-3 bg-tertiary">
+      <h5 class="mb-0">
+        {{ faq.type }}
+      </h5>
+    </div>
+    <div class="accordion" [id]="'accordion-' + faq.id" >
+      <div class="card" *ngFor="let item of faq.items; let i = index">
+        <div class="card-header" [id]="'label' + getHeadId(item.id)" type="button" data-toggle="collapse" [attr.data-target]="'#'+getHeadId(item.id)">
+          <h2 class="mb-0 row no-gutters">
+            <button class="btn btn-link">
+              {{ item.name }}
+            </button>
+            <div class="ml-auto btn btn-link" >
+              <div class="collapse " [ngClass]="{'show': i > 0}" [id]="getHeadId(item.id)">
+                <i class="fas fa-angle-down" ></i>
+              </div>
+              <div class="collapse" [ngClass]="{'show': i === 0}" [id]="getHeadId(item.id)">
+                <i class="fas fa-angle-up" ></i>
+              </div>
+            </div>
+          </h2>
+        </div>
+
+        <div [id]="getHeadId(item.id)" class="collapse" [ngClass]="{'show': i === 0}" [attr.aria-labelledby]="'label' + getHeadId(item.id)" [attr.data-parent]="'#accordion-' + faq.id">
+          <div class="card-body">
+            <div>
+              {{ item.description }}
+            </div>
+            <div class="mt-4" *ngIf="item.additional">
+              <div  *ngFor="let addtnl of item.additional; let i = index">
+                <div [ngClass]="{'mt-2': i > 0}" class="">
+                  <label class="font-weight-bold">{{ addtnl.type }}: {{ addtnl.value }}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
