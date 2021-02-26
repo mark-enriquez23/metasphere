@@ -1,3 +1,4 @@
+import { Input } from '@angular/core';
 import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./public-header.component.scss']
 })
 export class PublicHeaderComponent implements OnInit {
+  @Input() type: null;
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
       if (window.pageYOffset > 1) {
         this.scrolled = true;

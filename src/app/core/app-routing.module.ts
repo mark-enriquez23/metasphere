@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'hotel-information',
     loadChildren: () => import('src/app/modules/hotel-information/hotel-information.module').then( m => m.HotelInformationModule)
   },
+  {
+    path: 'order',
+    loadChildren: () => import('src/app/modules/order/order.module').then( m => m.OrderModule)
+  },
 ];
 
 @NgModule({
