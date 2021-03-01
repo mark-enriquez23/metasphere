@@ -1,5 +1,19 @@
 <div class="container mt-5 pb-5">
   <h2>My Orders</h2>
   <ul class="responsive-table text-center px-0">
-    </ul>
-    </div>
+    <li class="table-header">
+      <div class="col col-3">SO Number</div>
+      <div class="col col-2">Status</div>
+      <div class="col col-3">Created Time</div>
+      <div class="col col-2">Total Items</div>
+      <div class="col col-2">Total Amount</div>
+    </li>
+    <li class="table-row " *ngFor="let order of orders; let i=index">
+      <div class="col col-lg-3" data-label="SO Number">{{ order.so_number }}</div>
+      <div class="col col-lg-2 status" [attr.status]="order.status" data-label="Status"> <span>{{ order.status }}</span></div>
+      <div class="col col-lg-3" data-label="Created Time">{{ order.created_time }}</div>
+      <div class="col col-lg-2" data-label="Total Items">{{ order.items }}</div>
+      <div class="col col-lg-2" data-label="Total Amount">$ {{ order.total_amount }}</div>
+    </li>
+  </ul>
+</div>
