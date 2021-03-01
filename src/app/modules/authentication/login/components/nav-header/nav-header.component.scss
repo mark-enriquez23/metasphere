@@ -1,0 +1,14 @@
+.navbar {
+  background: #008080 !important;
+  .container .nav-items ul li a {
+    color: #fff !important;
+  }
+}
+.active {
+  border-bottom: 5px solid hsl(180, 100%, 42%);
+  color: #fff !important;
+}
+
+#mainNav .navbar-nav .nav-item:last-child .nav-link {
+  padding: 0 1rem !important;
+}

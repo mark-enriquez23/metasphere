@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('src/app/modules/landing/landing.module').then( m => m.LandingModule)
   },
   {
+    path: 'authenticate/login',
+    loadChildren: () => import('src/app/modules/authentication/login/login.module').then( m => m.LoginModule)
+  },
+  {
     path: 'hotel-information',
     loadChildren: () => import('src/app/modules/hotel-information/hotel-information.module').then( m => m.HotelInformationModule)
   },
@@ -19,6 +23,11 @@ const routes: Routes = [
     path: 'order',
     loadChildren: () => import('src/app/modules/order/order.module').then( m => m.OrderModule)
   },
+  {
+    path: 'pre-check',
+    loadChildren: () => import('src/app/modules/pre-check/pre-check.module').then( m => m.PreCheckModule)
+  },
+
 ];
 
 @NgModule({

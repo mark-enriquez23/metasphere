@@ -1,0 +1,30 @@
+.cover-bg {
+    padding-top: calc(28rem + 74px);
+    padding-bottom: 6rem;
+  }
+  
+  .masthead {
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    text-align: left;
+    background-image: linear-gradient(
+      rgba(235, 229, 229, 0.3),
+      rgba(235, 229, 229, 0.3)
+    ), url('../../../../../assets/images/self-service_-_home/u642.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  .img-fluid {
+    height: 400px !important;
+    width: 100% !important;
+  }
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .img-fluid {
+      height: 300px !important;
+    }
+  }
