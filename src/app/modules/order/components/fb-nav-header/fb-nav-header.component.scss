@@ -1,0 +1,40 @@
+.navbar {
+  background: #008080 !important;
+  .container .nav-items ul li a {
+    color: #fff !important;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+  }
+}
+.active {
+  background: hsl(180, 100%, 42%);
+  border-radius: 3px;
+  color: #fff !important;
+}
+
+#mainNav .navbar-nav .nav-item:last-child .nav-link {
+  padding: 0 1rem !important;
+  box-sizing:border-box;
+}
+
+#mainNav .navbar-brand {
+  color: #fff !important;
+}
+
+.img-fluid {
+  height: 30px;
+}
+
+.custom-select {
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px;
+  color: #fff;
+  border-radius: 0px;
+  option {
+    color: #2F3338;
+  }
+  &:active, &:hover, &:focus {
+    box-shadow: none;
+  }
+}

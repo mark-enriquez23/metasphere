@@ -5,9 +5,10 @@ import { RouterModule } from '@angular/router';
 // Components
 import { PublicHeaderComponent } from './components/public-header/public-header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
-  declarations: [ PublicHeaderComponent, FooterComponent ],
+  declarations: [ PublicHeaderComponent, FooterComponent, ConfirmationDialogComponent ],
   exports: [ PublicHeaderComponent, FooterComponent ],
   imports: [CommonModule, RouterModule],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

@@ -1,0 +1,11 @@
+<div class="p-5 h-100">
+  <div class="text-center">
+    <h1>
+      <i [class]="'fas ' + setIcon()"></i>
+    </h1>
+    <h6>
+      {{ content.message }}
+    </h6>
+    <button (click)="ref.close()" [class]="'btn col-lg-8 mx-auto text-center mt-3 ' + setBtn()">{{ buttonMessage }}</button>
+  </div>
+</div>

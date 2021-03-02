@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as images from 'src/assets/json/images.json';
+import { DialogService } from '@ngneat/dialog';
+import { MenuDialogComponent } from '../../components/menu-dialog/menu-dialog.component';
 
 @Component({
   selector: 'app-main',
@@ -9,7 +11,7 @@ import * as images from 'src/assets/json/images.json';
 export class MainComponent implements OnInit {
 
   companyImgs: any;
-  constructor() { }
+  constructor(private dialog: DialogService) { }
 
   ngOnInit(): void {
     this.companyImgs = {
@@ -20,6 +22,7 @@ export class MainComponent implements OnInit {
     console.log(this.companyImgs)
   }
 
-  
-
+  openMenu(): void {
+    this.dialog.open(MenuDialogComponent)
+  }
 }

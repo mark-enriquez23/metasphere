@@ -6,6 +6,12 @@ import { ReviewOrdersComponent } from './pages/review-orders/review-orders.compo
 import { HkComponent } from './layouts/hk/hk.component';
 import { HkHomeComponent } from './pages/hk-home/hk-home.component';
 import { HkServicesComponent } from './pages/hk-services/hk-services.component';
+import { HkAmenitiesComponent } from './pages/hk-amenities/hk-amenities.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { FbHomeComponent } from './pages/fb-home/fb-home.component';
+import { FbFoodComponent } from './pages/fb-food/fb-food.component';
+import { FbDrinksComponent } from './pages/fb-drinks/fb-drinks.component';
+import { FbComponent } from './layouts/fb/fb.component';
 
 const routes: Routes = [
   {
@@ -37,11 +43,38 @@ const routes: Routes = [
         },
         {
           path: 'amenities',
-          component: HkHomeComponent
+          component: HkAmenitiesComponent
         },
         {
           path: 'cart',
-          component: HkHomeComponent
+          component: CartComponent
+        }
+    ]
+  },
+  {
+    path: 'fb',
+    component: FbComponent,
+    children: [
+        {
+         path: '',
+         redirectTo: 'home',
+         pathMatch: 'full'
+        },
+        {
+          path: 'home',
+          component: FbHomeComponent
+        },
+        {
+          path: 'foods',
+          component: FbFoodComponent
+        },
+        {
+          path: 'drinks',
+          component: FbDrinksComponent
+        },
+        {
+          path: 'cart',
+          component: CartComponent
         }
     ]
   },

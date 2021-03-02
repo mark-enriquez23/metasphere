@@ -8,10 +8,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
 // Components
 import { MainComponent } from './pages/main/main.component';
 import { NavHeaderComponent } from './components/nav-header/nav-header.component';
+import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.component';
 @NgModule({
   declarations: [
     MainComponent,
-    NavHeaderComponent
+    NavHeaderComponent,
+    MenuDialogComponent
   ],
   imports: [
     CommonModule,
