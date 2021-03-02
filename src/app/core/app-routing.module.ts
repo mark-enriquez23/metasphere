@@ -27,7 +27,10 @@ const routes: Routes = [
     path: 'pre-check',
     loadChildren: () => import('src/app/modules/pre-check/pre-check.module').then( m => m.PreCheckModule)
   },
-
+  {
+    path: 'main',
+    loadChildren: () => import('src/app/modules/main/main.module').then( m => m.MainModule)
+  }
 ];
 
 @NgModule({
