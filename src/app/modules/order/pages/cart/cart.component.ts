@@ -37,8 +37,18 @@ export class CartComponent implements OnInit {
   ]
   isValidated: boolean = false;
   dialogRef: any;
+  currentRoute: string;
 
-  constructor(private dialog: DialogService, private router: Router) { }
+
+  constructor(private dialog: DialogService, private router: Router) {
+    this.router.events.subscribe((res: any) => {
+      if (res.url) {
+        let tempUrl = res.url;
+        tempUrl = tempUrl.split('/')
+        this.currentRoute = tempUrl[tempUrl.length - 2]
+      }
+    });
+  }
 
   ngOnInit(): void {
   }
@@ -70,7 +80,7 @@ export class CartComponent implements OnInit {
       await this.openSuccessDialog();
       this.dialogRef.afterClosed$.subscribe(res => {
         this.isValidated = false;
-        this.router.navigate(['/main']);
+        this.router.navigate(['order/review-orders']);
       });
     } else {
       await this.openInformationDialog()
@@ -78,6 +88,5 @@ export class CartComponent implements OnInit {
         this.isValidated = true;
       });
     }
-
   }
 }

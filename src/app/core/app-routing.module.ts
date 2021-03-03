@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('src/app/modules/hotel-information/hotel-information.module').then( m => m.HotelInformationModule)
   },
   {
+    path: 'main',
+    loadChildren: () => import('src/app/modules/main/main.module').then( m => m.MainModule)
+  },
+  {
     path: 'order',
     loadChildren: () => import('src/app/modules/order/order.module').then( m => m.OrderModule)
   },
@@ -28,8 +32,8 @@ const routes: Routes = [
     loadChildren: () => import('src/app/modules/pre-check/pre-check.module').then( m => m.PreCheckModule)
   },
   {
-    path: 'main',
-    loadChildren: () => import('src/app/modules/main/main.module').then( m => m.MainModule)
+    path: 'self-service',
+    loadChildren: () => import('src/app/modules/self-service/self-service.module').then( m => m.SelfServiceModule)
   }
 ];
 
