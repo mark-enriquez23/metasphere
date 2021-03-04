@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 export class FbNavHeaderComponent implements OnInit {
   @Input() type: any;
   currentRoute: string;
-  foodTypes = ['Cocktails', 'Wine', 'Beer', 'Non-Alcoholic'];
-  drinkTypes =  ['Breakfast Menu', 'Lunch Menu', 'A La Carte'];
+  drinkTypes = ['Cocktails', 'Wine', 'Beer', 'Non-Alcoholic'];
+  foodTypes =  ['Breakfast Menu', 'Lunch Menu', 'A La Carte'];
   options = [];
 
   constructor(private router:Router) {
