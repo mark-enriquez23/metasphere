@@ -1,0 +1,73 @@
+::ng-deep {
+  .stepper .stepper-header .steps {
+    padding-inline-start: 0px !important;
+  }
+  .stepper .stepper-header .steps .step.active .step-bullet {
+    background: #008080 !important;
+  }
+
+  .stepper .stepper-header .steps .step.completed .step-bullet{
+    background: #008080 !important;
+  }
+
+  .stepper .stepper-header .steps .step:after{
+    background-color: #b3babe !important;
+  }
+}
+
+.masthead {
+  padding: 0;
+}
+
+.sub-text {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.half {
+	&, & .container > .row {
+		height: 100vh;
+	}
+
+	.bg {
+    height: 100vh;
+	}
+	.contents, .bg {
+		width: 50%;
+    width: 100%;
+	}
+	.bg {
+		background-size: cover;
+		background-position: center;
+	}
+	a {
+		color: #888;
+		text-decoration: underline;
+	}
+
+	.forgot-pass {
+		position: relative;
+		top: 2px;
+		font-size: 14px;
+	}
+}
+
+.sub-text {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+
+@media all and (max-width: 767px) {
+  .bg {
+    height: 200px !important;
+  }
+  .container > .row {
+		height: 100% !important;
+    padding: 20px 30px;
+	}
+  .masthead {
+    padding-top: 4rem;
+    padding-bottom: 0px !important;
+  }
+}
