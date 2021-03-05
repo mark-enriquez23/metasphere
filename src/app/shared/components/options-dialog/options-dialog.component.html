@@ -1,0 +1,18 @@
+<div class="p-5 h-100">
+  <div class="text-center">
+    <h1>
+      <i class="fas fa-question-circle"></i>
+    </h1>
+    <h6>
+      {{ content.message }}
+    </h6>
+    <div class="row no-gutters w-100  mt-3 ">
+      <div class="ml-auto pr-1 col-3">
+        <button class="btn w-100 text-center btn-secondary" (click)="ref.close()">Exit</button>
+      </div>
+      <div class="pl-1 col-3">
+        <button class="btn text-center btn-primary w-100" (click)="confirm()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

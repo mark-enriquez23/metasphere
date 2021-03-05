@@ -15,7 +15,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'information',
+    path: 'pre-checkin',
     component: StepperComponent
   },
 ]

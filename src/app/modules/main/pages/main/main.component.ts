@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as images from 'src/assets/json/images.json';
 import { DialogService } from '@ngneat/dialog';
 import { MenuDialogComponent } from '../../components/menu-dialog/menu-dialog.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -11,7 +12,12 @@ import { MenuDialogComponent } from '../../components/menu-dialog/menu-dialog.co
 export class MainComponent implements OnInit {
 
   companyImgs: any;
-  constructor(private dialog: DialogService) { }
+  constructor(private dialog: DialogService, private activatedRoute: ActivatedRoute) {
+    const optionalParam = this.activatedRoute.snapshot.paramMap.get('menu')
+    console.log(optionalParam)
+    if (optionalParam)
+      this.openMenu();
+  }
 
   ngOnInit(): void {
     this.companyImgs = {

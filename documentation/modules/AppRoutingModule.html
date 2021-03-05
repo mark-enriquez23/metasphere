@@ -84,9 +84,29 @@ const routes: Routes &#x3D; [
     loadChildren: () &#x3D;&gt; &quot;import(&#x27;src/app/modules/landing/landing.module&#x27;).then( m &#x3D;&gt; m.LandingModule)&quot;
   },
   {
+    path: &#x27;authenticate/login&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;src/app/modules/authentication/login/login.module&#x27;).then( m &#x3D;&gt; m.LoginModule)&quot;
+  },
+  {
     path: &#x27;hotel-information&#x27;,
     loadChildren: () &#x3D;&gt; &quot;import(&#x27;src/app/modules/hotel-information/hotel-information.module&#x27;).then( m &#x3D;&gt; m.HotelInformationModule)&quot;
   },
+  {
+    path: &#x27;main&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;src/app/modules/main/main.module&#x27;).then( m &#x3D;&gt; m.MainModule)&quot;
+  },
+  {
+    path: &#x27;order&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;src/app/modules/order/order.module&#x27;).then( m &#x3D;&gt; m.OrderModule)&quot;
+  },
+  {
+    path: &#x27;pre-check&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;src/app/modules/pre-check/pre-check.module&#x27;).then( m &#x3D;&gt; m.PreCheckModule)&quot;
+  },
+  {
+    path: &#x27;self-service&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;src/app/modules/self-service/self-service.module&#x27;).then( m &#x3D;&gt; m.SelfServiceModule)&quot;
+  }
 ];
 
 @NgModule({

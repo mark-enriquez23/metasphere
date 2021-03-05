@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: () => import('src/app/modules/main/main.module').then( m => m.MainModule)
   },
   {
+    path: 'main/:menu',
+    loadChildren: () => import('src/app/modules/main/main.module').then( m => m.MainModule)
+  },
+  {
     path: 'order',
     loadChildren: () => import('src/app/modules/order/order.module').then( m => m.OrderModule)
   },

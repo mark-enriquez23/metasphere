@@ -23,7 +23,6 @@ export class StepOneComponent implements OnInit {
       room_type: ['', [Validators.required]],
       room_rate: ['', [Validators.required]]
     });
-
     this.currentDate = new Date().toISOString().split('T')[0];
   }
 
