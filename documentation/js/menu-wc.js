@@ -324,13 +324,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/SharedModule.html" data-type="entity-link">SharedModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-SharedModule-e7f56fb4cfab541970f62fd8198eff02"' : 'data-target="#xs-components-links-module-SharedModule-e7f56fb4cfab541970f62fd8198eff02"' }>
+                                            'data-target="#components-links-module-SharedModule-ef4e3a80604ac7d94bc63fe10a5d04b3"' : 'data-target="#xs-components-links-module-SharedModule-ef4e3a80604ac7d94bc63fe10a5d04b3"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedModule-e7f56fb4cfab541970f62fd8198eff02"' :
-                                            'id="xs-components-links-module-SharedModule-e7f56fb4cfab541970f62fd8198eff02"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedModule-ef4e3a80604ac7d94bc63fe10a5d04b3"' :
+                                            'id="xs-components-links-module-SharedModule-ef4e3a80604ac7d94bc63fe10a5d04b3"' }>
                                             <li class="link">
                                                 <a href="components/ConfirmationDialogComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ConfirmationDialogComponent</a>
@@ -338,6 +338,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/FooterComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">FooterComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/OptionsDialogComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">OptionsDialogComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/PublicHeaderComponent.html"

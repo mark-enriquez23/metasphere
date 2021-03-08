@@ -96,6 +96,10 @@ const routes: Routes &#x3D; [
     loadChildren: () &#x3D;&gt; &quot;import(&#x27;src/app/modules/main/main.module&#x27;).then( m &#x3D;&gt; m.MainModule)&quot;
   },
   {
+    path: &#x27;main/:menu&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;src/app/modules/main/main.module&#x27;).then( m &#x3D;&gt; m.MainModule)&quot;
+  },
+  {
     path: &#x27;order&#x27;,
     loadChildren: () &#x3D;&gt; &quot;import(&#x27;src/app/modules/order/order.module&#x27;).then( m &#x3D;&gt; m.OrderModule)&quot;
   },

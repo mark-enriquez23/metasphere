@@ -14,9 +14,10 @@ import { StepThreeComponent } from './pages/step-three/step-three.component';
 import { StepFourComponent } from './pages/step-four/step-four.component';
 import { StepFiveComponent } from './pages/step-five/step-five.component';
 import { StepSixComponent } from './pages/step-six/step-six.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
-  declarations: [LoginComponent, StepperComponent, StepOneComponent, StepTwoComponent, StepThreeComponent, StepFourComponent, StepFiveComponent, StepSixComponent],
+  declarations: [LoginComponent, StepperComponent, StepOneComponent, StepTwoComponent, StepThreeComponent, StepFourComponent, StepFiveComponent, StepSixComponent, ConfirmDialogComponent],
   imports: [
     CommonModule,
     SelfServiceRoutingModule,

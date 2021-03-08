@@ -4,38 +4,40 @@
    <header class="masthead">
       <div class="container">
         <div class="row">
-          <div class="col-8 col-sm-5 col-md-6 col-lg-6 align-self-end mt-5">
+          <div class="col-8 col-sm-5 col-md-6 col-lg-6 align-self-end mt-5 py-4">
               <h1 class="font-weight-bold mt-5">Dear Andersson,</h1>
-              <p class="col-12 px-0 font-weight-light mt-4">We will do our utmost to deliver you an unparalled service. Please enjoy these specially curated services for you.</p>
-              <p class="col-6 px-0 font-weight-bolder mt-4">Warmest regards from our General Manager,</p>
+              <p class="col-12 px-0 font-weight-light mt-lg-4 mt-1">We will do our utmost to deliver you an unparalled service. Please enjoy these specially curated services for you.</p>
+              <p class="col-8 px-0 font-weight-bolder mt-lg-4 mt-1">Warmest regards from our General Manager,</p>
               <p><i>Jean Bouverville</i></p>
+
+              <div class="col-lg-8 col-12 px-0 text-lg-left mt-lg-0 mt-2">
+                <a (click)="openMenu()" class="btn btn-primary px-2 py-3 py-lg-4 px-lg-3 font-weight-bold text-uppercase w-100">Order Services</a>
+              </div>
           </div>
         </div>
       </div>
     </header>
-     <div class="container mt-5">
+      <div class="container mt-5 pb-5">
         <div class="row">
-          <div class="col-12 mb-1">
-            <h4 class="font-weight-bold"><u>Availab</u>le Services</h4>
+          <div class="col-lg-6 discount order-lg-1 order-2">
+
           </div>
-          <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-2 mt-lg-4">
-              <a class="btn btn-primary btn-xl w-100 p-3 mx-0 neon-green" (click)="openMenu()">Order</a>
-          </div>
-          <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-2 mt-lg-4">
-              <a class="btn btn-primary btn-xl w-100 p-3 mx-0 blue">(Other Product)</a>
-          </div>
-        </div>
-      </div>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-12 mb-1">
-            <h4 class="font-weight-bold"><u>Promot</u>ions</h4>
-          </div>
-          <div class="col-12 mb-4">
-              <a class="btn btn-primary btn-xl w-100 p-5 mx-0 white-text discount">
-                <h3>10% DISCOUNTS</h3>
-                <h6>Enjoy a 10% Discount on food and beverage</h6>
-              </a>
+          <div class="col-lg-6 py-5 order-lg-2 order-1">
+            <h2 class="text-center mt-0">Promotions</h2>
+            <hr class="divider my-4" />
+            <div class="">
+              <div class="mx-auto col-lg-12 col-md-12 text-center">
+                    <div class="mt-2">
+                        <p class="text-muted mb-0 text-uppercase">
+                          Enjoy <span>10%</span> discount.
+                        </p>
+                        <p class="text-muted">* Food and Beverages</p>
+                        <div class="col-8 mx-auto mt-4">
+                          <a [routerLink]="'/order/fb/home'" class="btn btn-primary px-2 py-3 py-lg-4 px-lg-3 font-weight-bold text-uppercase w-100">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
         </div>
       </div>
