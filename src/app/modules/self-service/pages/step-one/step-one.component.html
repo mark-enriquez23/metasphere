@@ -2,50 +2,50 @@
   <form [formGroup]="stepOneForm"
         #formRef="ngForm">
       <div class="form-group">
-        <label for="reservationNumber">Reservation Number</label>
+        <label class="w-100 text-center text-lg-left" for="reservationNumber">Reservation Number</label>
         <input formControlName="reservation_number" class="form-control text-center text-lg-left" id="reservationNumber" placeholder="Reservation Number">
       </div>
       <div class="row no-gutters">
         <div class="form-group col-6 pr-1">
-          <label for="lastName">First Name</label>
+          <label class="w-100 text-center text-lg-left" for="lastName">First Name</label>
           <input formControlName="first_name" class="form-control text-center text-lg-left" id="lastName" placeholder="First name">
         </div>
         <div class="form-group col-6 pl-1">
-          <label for="lastName">Last Name</label>
+          <label class="w-100 text-center text-lg-left" for="lastName">Last Name</label>
           <input formControlName="last_name" class="form-control text-center text-lg-left" id="lastName" placeholder="Last name">
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="form-group col-6 pr-1">
-          <label for="lastName">Check-In Date</label>
+        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">
+          <label class="w-100 text-center text-lg-left" for="lastName">Check-In Date</label>
           <input type="date" name="check-in/out-dates" [min]="currentDate" formControlName="check_in_date" class="form-control text-center text-lg-left" id="lastName" placeholder="Check in">
         </div>
-        <div class="form-group col-6 pl-1">
-          <label for="lastName">Check-Out Date</label>
+        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">
+          <label class="w-100 text-center text-lg-left" for="lastName">Check-Out Date</label>
           <input type="date" name="check-in/out-dates" [min]="currentDate"  formControlName="check_out_date" class="form-control text-center text-lg-left" id="lastName" placeholder="Check out">
         </div>
       </div>
       <div class="row no-gutters">
         <div class="form-group col-4 pr-1">
-          <label for="lastName">Rooms</label>
+          <label class="w-100 text-center text-lg-left" for="lastName">Rooms</label>
           <input formControlName="room_nights" class="form-control text-center text-lg-left" id="lastName" placeholder="1">
         </div>
         <div class="form-group col-4 pl-1">
-          <label for="lastName">Adults</label>
+          <label class="w-100 text-center text-lg-left" for="lastName">Adults</label>
           <input formControlName="num_adults" class="form-control text-center text-lg-left" id="lastName" placeholder="1">
         </div>
         <div class="form-group col-4 pl-2">
-          <label for="lastName">Childs</label>
+          <label class="w-100 text-center text-lg-left" for="lastName">Childs</label>
           <input formControlName="num_child" class="form-control text-center text-lg-left" id="lastName" placeholder="0">
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="form-group col-6 pr-1">
-          <label for="lastName">Room Type</label>
+        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">
+          <label class="w-100 text-center text-lg-left" for="lastName">Room Type</label>
           <input formControlName="room_type" class="form-control text-center text-lg-left" id="lastName" placeholder="Standard Room">
         </div>
-        <div class="form-group col-6 pl-1">
-          <label for="lastName">Room Rate</label>
+        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">
+          <label class="w-100 text-center text-lg-left" for="lastName">Room Rate</label>
           <input formControlName="room_rate" class="form-control text-center text-lg-left" id="lastName" placeholder="$0">
         </div>
       </div>

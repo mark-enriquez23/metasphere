@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Review Orders Page Component
+ */
 @Component({
   selector: 'app-review-orders',
   templateUrl: './review-orders.component.html',
@@ -7,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewOrdersComponent implements OnInit {
   /**
+   * Orders
    *
-   * @description: Orders Data Template
-   *
+   * @type {Array[Object]}
    */
   orders = [
     {
@@ -90,19 +93,25 @@ export class ReviewOrdersComponent implements OnInit {
       total_amount: 585.26
     }
   ]
-  constructor() { }
+
   /**
-   * @description: Lifecycle hook - on initialize
+   * @ignore
+   */
+  constructor() { }
+
+  /**
+   * @ignore
    */
   ngOnInit(): void {
   }
 
+
   /**
-   * @description: Method for date retrieval
+   * Gets the Current Date
    *
-   * @returns: Current Date with predefined format
+   * @returns string - Current Date with the format given
    */
-  getDate() {
+  getDate(): string {
     var date = new Date("Sun May 11,2014");
     var dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
                         .toISOString()

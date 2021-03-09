@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+/**
+ * Facilities Page Component
+ */
 @Component({
   selector: 'app-facilities',
   templateUrl: './facilities.component.html',
@@ -7,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FacilitiesComponent implements OnInit {
   /**
-   *
-   * @description Facilities coded data
-   *
+   * Facilities Object Array
+   * @type {Array[Object]}
    */
   facilities = [
     {
@@ -101,19 +102,23 @@ export class FacilitiesComponent implements OnInit {
       floor: 2
     }
   ]
+  /**
+   * @ignore
+   */
   constructor() { }
-
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 
   /**
+   * Return the header setting the Id as a string with header concattenated to it
    *
-   * @param i Get the id of the object being passed
-   *
-   * @description Return the header setting the Id as a string with header concattenated to it
-   *
+   * @param  {number} i
+   * @returns string
    */
-  getHeadId(i) {
+  getHeadId(i: number): string {
     return 'header' + i.toString();
   }
 }

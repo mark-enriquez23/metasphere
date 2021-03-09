@@ -4,15 +4,16 @@
       <div  formArrayName="orders" *ngFor="let item of f.controls; let i = index">
         <div class="form-group" >
           <div class="row no-gutters" [formGroupName]="i">
-            <div class="col-8 pr-2">
+            <div class="col-lg-8 col-12 pr-lg-2 pr-0">
               <p class="mb-0">{{ orderItems[i].name }}</p>
-              <p class="mb-1 sub-text">{{ orderItems[i].description }}</p>
+              <p class="mb-lg-1 mb-0 sub-text">{{ orderItems[i].description }}</p>
+              <p class="mb-1 sub-text d-lg-none">${{orderItems[i].price}} {{orderItems[i].type}}</p>
               <img [src]="orderItems[i].image" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
             </div>
-            <div class="col-4 pl-2 my-auto text-center">
-              <p class="mb-0 mt-5">${{orderItems[i].price}}</p>
-              <p class="mb-2">{{orderItems[i].type}}</p>
-              <button class="btn w-100" (click)="setItem(item)" [ngClass]="item.value.quantity === 0 ? 'btn-primary': 'btn-danger'">{{ item.value.quantity !== 0 ? 'Remove' : 'Add'}}</button>
+            <div class="col-lg-4 col-12 pl-lg-2 my-auto text-center">
+              <p class="mb-0 mt-lg-5 d-none d-lg-block">${{orderItems[i].price}}</p>
+              <p class="mb-2 d-none d-lg-block">{{orderItems[i].type}}</p>
+              <button class="btn w-100 btn-set-item" (click)="setItem(item)" [ngClass]="item.value.quantity === 0 ? 'btn-primary': 'btn-danger'">{{ item.value.quantity !== 0 ? 'Remove' : 'Add'}}</button>
             </div>
           </div>
         </div>

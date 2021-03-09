@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 /**
- * Component Initialization
+ * Faq Component
  */
 @Component({
   selector: 'app-faq',
@@ -11,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class FaqComponent implements OnInit {
 
   /**
-   * Faq coded data
+   * Faqs
+   * @type {Array[Object]}
    */
   faqs = [
     {
@@ -93,24 +94,24 @@ export class FaqComponent implements OnInit {
   ]
 
   /**
-   * Component Main Constructor
+   * @ignore
    */
   constructor() { }
 
   /**
-   * Initialize Component
+   * @ignore
    */
   ngOnInit(): void {
   }
 
+
   /**
-   * @param i
+   * Returns the header string id
    *
-   * Header function
-   *
-   * @returns header setting the Id as a string with header concattenated to it
+   * @param  {number} i
+   * @returns string
    */
-  getHeadId(i) {
+  getHeadId(i: number): string {
     return 'header' + i.toString();
   }
 }

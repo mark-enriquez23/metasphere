@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * HK Amenities Page Component
+ */
 @Component({
   selector: 'app-hk-amenities',
   templateUrl: './hk-amenities.component.html',
   styleUrls: ['./hk-amenities.component.scss']
 })
 export class HkAmenitiesComponent implements OnInit {
-
+  /**
+   * Items
+   *
+   * @type {Array[Object]}
+   */
   items = [
     {
       name: 'Fresh Set of Towels',
@@ -65,8 +72,14 @@ export class HkAmenitiesComponent implements OnInit {
       quantity: 0
     },
   ]
+  /**
+   * @ignore
+   */
   constructor() { }
 
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 

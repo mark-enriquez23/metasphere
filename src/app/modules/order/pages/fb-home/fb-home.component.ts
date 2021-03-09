@@ -1,27 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * FB Home Page Component
+ */
 @Component({
   selector: 'app-fb-home',
   templateUrl: './fb-home.component.html',
   styleUrls: ['./fb-home.component.scss']
 })
 export class FbHomeComponent implements OnInit {
-
+  /**
+   * Items
+   *
+   * @type {Array[Object]}
+   */
   items = [
-    // {
-    //   name: 'English Breakfast',
-    //   description: 'Organic Bacon, Scrambled Eggs, Tomatoes, and Toast',
-    //   image: 'assets/images/order_-_hk_-_home/u324.png',
-    //   price: 12,
-    //   quantity: 0
-    // },
-    // {
-    //   name: 'Organic Musli',
-    //   description: 'Musli with Strawberries, Raisins, and Crunchy flakes',
-    //   image: 'assets/images/order_-_hk_-_home/u324.png',
-    //   price: 8,
-    //   quantity: 0
-    // },
     {
       name: 'Cheeze Cheezeburger',
       description: 'With original dressing, smoked baco, salad, and crispy fries',
@@ -107,8 +100,14 @@ export class FbHomeComponent implements OnInit {
       quantity: 0
     },
   ]
+  /**
+   * @ignore
+   */
   constructor() { }
 
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 

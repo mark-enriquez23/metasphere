@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-/**
- * @description Fetch the images on the json file
- */
 import * as images from 'src/assets/json/images.json';
 
-
+/**
+ * Landing Page Component
+ */
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -12,16 +11,21 @@ import * as images from 'src/assets/json/images.json';
 })
 export class LandingComponent implements OnInit {
   /**
-   * @description Company Images for Hotel Information
+   * Company Images
+   * @type {any}
    */
   companyImgs: any;
+
+  /**
+   * @ignore
+   */
   constructor() {
   }
 
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
-    /**
-     * @description Bind the data from the json to the properties of the Company Images
-     */
     this.companyImgs = {
       facilityImg: images['facilitiesImg'],
       serviceImg: images['servicesImg'],

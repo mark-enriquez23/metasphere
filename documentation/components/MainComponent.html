@@ -64,6 +64,13 @@
     <code>src/app/modules/main/pages/main/main.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Main Experience Page Component</p>
+
+    </p>
 
 
     <p class="comment">
@@ -145,9 +152,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
                                 <a href="#openMenu">openMenu</a>
                             </li>
                         </ul>
@@ -173,12 +177,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/modules/main/pages/main/main.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/modules/main/pages/main/main.component.ts:20</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Component Constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -236,45 +242,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/modules/main/pages/main/main.component.ts:22</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="openMenu"></a>
                     <span class="name">
                         <b>
@@ -293,17 +260,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/modules/main/pages/main/main.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/modules/main/pages/main/main.component.ts:52</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Opens Menu Dialog Component</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>void</p>
 
                     </div>
                 </td>
@@ -336,10 +311,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/modules/main/pages/main/main.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/modules/main/pages/main/main.component.ts:20</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Company Images</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -355,14 +336,27 @@ import { DialogService } from &#x27;@ngneat/dialog&#x27;;
 import { MenuDialogComponent } from &#x27;../../components/menu-dialog/menu-dialog.component&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 
+/**
+ * Main Experience Page Component
+ */
 @Component({
   selector: &#x27;app-main&#x27;,
   templateUrl: &#x27;./main.component.html&#x27;,
   styleUrls: [&#x27;./main.component.scss&#x27;]
 })
 export class MainComponent implements OnInit {
-
+  /**
+   * Company Images
+   * @type {any}
+   */
   companyImgs: any;
+
+  /**
+   * Component Constructor
+   *
+   * @param  {DialogService} privatedialog
+   * @param  {ActivatedRoute} privateactivatedRoute
+   */
   constructor(private dialog: DialogService, private activatedRoute: ActivatedRoute) {
     const optionalParam &#x3D; this.activatedRoute.snapshot.paramMap.get(&#x27;menu&#x27;)
     console.log(optionalParam)
@@ -370,6 +364,9 @@ export class MainComponent implements OnInit {
       this.openMenu();
   }
 
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
     this.companyImgs &#x3D; {
       facilityImg: images[&#x27;facilitiesImg&#x27;],
@@ -379,6 +376,11 @@ export class MainComponent implements OnInit {
     console.log(this.companyImgs)
   }
 
+  /**
+   * Opens Menu Dialog Component
+   *
+   * @returns void
+   */
   openMenu(): void {
     this.dialog.open(MenuDialogComponent)
   }
@@ -393,38 +395,40 @@ export class MainComponent implements OnInit {
    &lt;header class&#x3D;&quot;masthead&quot;&gt;
       &lt;div class&#x3D;&quot;container&quot;&gt;
         &lt;div class&#x3D;&quot;row&quot;&gt;
-          &lt;div class&#x3D;&quot;col-8 col-sm-5 col-md-6 col-lg-6 align-self-end mt-5&quot;&gt;
+          &lt;div class&#x3D;&quot;col-8 col-sm-5 col-md-6 col-lg-6 align-self-end mt-5 py-4&quot;&gt;
               &lt;h1 class&#x3D;&quot;font-weight-bold mt-5&quot;&gt;Dear Andersson,&lt;/h1&gt;
-              &lt;p class&#x3D;&quot;col-12 px-0 font-weight-light mt-4&quot;&gt;We will do our utmost to deliver you an unparalled service. Please enjoy these specially curated services for you.&lt;/p&gt;
-              &lt;p class&#x3D;&quot;col-6 px-0 font-weight-bolder mt-4&quot;&gt;Warmest regards from our General Manager,&lt;/p&gt;
+              &lt;p class&#x3D;&quot;col-12 px-0 font-weight-light mt-lg-4 mt-1&quot;&gt;We will do our utmost to deliver you an unparalled service. Please enjoy these specially curated services for you.&lt;/p&gt;
+              &lt;p class&#x3D;&quot;col-8 px-0 font-weight-bolder mt-lg-4 mt-1&quot;&gt;Warmest regards from our General Manager,&lt;/p&gt;
               &lt;p&gt;&lt;i&gt;Jean Bouverville&lt;/i&gt;&lt;/p&gt;
+
+              &lt;div class&#x3D;&quot;col-lg-8 col-12 px-0 text-lg-left mt-lg-0 mt-2&quot;&gt;
+                &lt;a (click)&#x3D;&quot;openMenu()&quot; class&#x3D;&quot;btn btn-primary px-2 py-3 py-lg-4 px-lg-3 font-weight-bold text-uppercase w-100&quot;&gt;Order Services&lt;/a&gt;
+              &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/header&gt;
-     &lt;div class&#x3D;&quot;container mt-5&quot;&gt;
+      &lt;div class&#x3D;&quot;container mt-5 pb-5&quot;&gt;
         &lt;div class&#x3D;&quot;row&quot;&gt;
-          &lt;div class&#x3D;&quot;col-12 mb-1&quot;&gt;
-            &lt;h4 class&#x3D;&quot;font-weight-bold&quot;&gt;&lt;u&gt;Availab&lt;/u&gt;le Services&lt;/h4&gt;
+          &lt;div class&#x3D;&quot;col-lg-6 discount order-lg-1 order-2&quot;&gt;
+
           &lt;/div&gt;
-          &lt;div class&#x3D;&quot;col-12 col-sm-6 col-md-6 col-lg-6 mb-2 mt-lg-4&quot;&gt;
-              &lt;a class&#x3D;&quot;btn btn-primary btn-xl w-100 p-3 mx-0 neon-green&quot; (click)&#x3D;&quot;openMenu()&quot;&gt;Order&lt;/a&gt;
-          &lt;/div&gt;
-          &lt;div class&#x3D;&quot;col-12 col-sm-6 col-md-6 col-lg-6 mb-2 mt-lg-4&quot;&gt;
-              &lt;a class&#x3D;&quot;btn btn-primary btn-xl w-100 p-3 mx-0 blue&quot;&gt;(Other Product)&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;container mt-5&quot;&gt;
-        &lt;div class&#x3D;&quot;row&quot;&gt;
-          &lt;div class&#x3D;&quot;col-12 mb-1&quot;&gt;
-            &lt;h4 class&#x3D;&quot;font-weight-bold&quot;&gt;&lt;u&gt;Promot&lt;/u&gt;ions&lt;/h4&gt;
-          &lt;/div&gt;
-          &lt;div class&#x3D;&quot;col-12 mb-4&quot;&gt;
-              &lt;a class&#x3D;&quot;btn btn-primary btn-xl w-100 p-5 mx-0 white-text discount&quot;&gt;
-                &lt;h3&gt;10% DISCOUNTS&lt;/h3&gt;
-                &lt;h6&gt;Enjoy a 10% Discount on food and beverage&lt;/h6&gt;
-              &lt;/a&gt;
+          &lt;div class&#x3D;&quot;col-lg-6 py-5 order-lg-2 order-1&quot;&gt;
+            &lt;h2 class&#x3D;&quot;text-center mt-0&quot;&gt;Promotions&lt;/h2&gt;
+            &lt;hr class&#x3D;&quot;divider my-4&quot; /&gt;
+            &lt;div class&#x3D;&quot;&quot;&gt;
+              &lt;div class&#x3D;&quot;mx-auto col-lg-12 col-md-12 text-center&quot;&gt;
+                    &lt;div class&#x3D;&quot;mt-2&quot;&gt;
+                        &lt;p class&#x3D;&quot;text-muted mb-0 text-uppercase&quot;&gt;
+                          Enjoy &lt;span&gt;10%&lt;/span&gt; discount.
+                        &lt;/p&gt;
+                        &lt;p class&#x3D;&quot;text-muted&quot;&gt;* Food and Beverages&lt;/p&gt;
+                        &lt;div class&#x3D;&quot;col-8 mx-auto mt-4&quot;&gt;
+                          &lt;a [routerLink]&#x3D;&quot;&#x27;/order/fb/home&#x27;&quot; class&#x3D;&quot;btn btn-primary px-2 py-3 py-lg-4 px-lg-3 font-weight-bold text-uppercase w-100&quot;&gt;Order Now&lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -444,7 +448,7 @@ export class MainComponent implements OnInit {
   .content{
     background-color: #FCFCFC !important;
   }
-  
+
   .masthead {
     //margin-top:2.5rem;
     padding-top: 5.5rem;
@@ -460,7 +464,7 @@ export class MainComponent implements OnInit {
     background-size: contain;
     border-bottom:2px solid black;
   }
-  
+
   .img-fluid {
     height: 400px !important;
     width: 100% !important;
@@ -477,13 +481,23 @@ export class MainComponent implements OnInit {
   .white-text{
     color: white;
   }
-  
+
+  .text-muted {
+    span {
+      font-size: 30px;
+      color: #008080;
+      font-weight: bold;
+    }
+  }
+
   .discount{
     background-image: url(&#x27;../../../../../assets/images/self-service_-_page_1/u696.jpg&#x27;);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
+    border-radius: 3px;
+    min-height: 300px;
   }
 
   /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
@@ -491,7 +505,20 @@ export class MainComponent implements OnInit {
     .img-fluid {
       height: 300px !important;
     }
-  }</code></pre>
+    .masthead {
+      padding-top: 0px;
+      padding-bottom: 25px;
+      height: fit-content;
+      h1 {
+        font-size: 1.25rem;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+
+  }
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -519,8 +546,8 @@ export class MainComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-public-header state="my-experience"></app-public-header><div class="h-100">   <!-- Head-->   <header class="masthead">      <div class="container">        <div class="row">          <div class="col-8 col-sm-5 col-md-6 col-lg-6 align-self-end mt-5">              <h1 class="font-weight-bold mt-5">Dear Andersson,</h1>              <p class="col-12 px-0 font-weight-light mt-4">We will do our utmost to deliver you an unparalled service. Please enjoy these specially curated services for you.</p>              <p class="col-6 px-0 font-weight-bolder mt-4">Warmest regards from our General Manager,</p>              <p><i>Jean Bouverville</i></p>          </div>        </div>      </div>    </header>     <div class="container mt-5">        <div class="row">          <div class="col-12 mb-1">            <h4 class="font-weight-bold"><u>Availab</u>le Services</h4>          </div>          <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-2 mt-lg-4">              <a class="btn btn-primary btn-xl w-100 p-3 mx-0 neon-green" (click)="openMenu()">Order</a>          </div>          <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-2 mt-lg-4">              <a class="btn btn-primary btn-xl w-100 p-3 mx-0 blue">(Other Product)</a>          </div>        </div>      </div>      <div class="container mt-5">        <div class="row">          <div class="col-12 mb-1">            <h4 class="font-weight-bold"><u>Promot</u>ions</h4>          </div>          <div class="col-12 mb-4">              <a class="btn btn-primary btn-xl w-100 p-5 mx-0 white-text discount">                <h3>10% DISCOUNTS</h3>                <h6>Enjoy a 10% Discount on food and beverage</h6>              </a>          </div>        </div>      </div>      <app-footer></app-footer></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'HotelInformationComponent', 'selector': 'app-hotel-information'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
+        var COMPONENT_TEMPLATE = '<div><app-public-header state="my-experience"></app-public-header><div class="h-100">   <!-- Head-->   <header class="masthead">      <div class="container">        <div class="row">          <div class="col-8 col-sm-5 col-md-6 col-lg-6 align-self-end mt-5 py-4">              <h1 class="font-weight-bold mt-5">Dear Andersson,</h1>              <p class="col-12 px-0 font-weight-light mt-lg-4 mt-1">We will do our utmost to deliver you an unparalled service. Please enjoy these specially curated services for you.</p>              <p class="col-8 px-0 font-weight-bolder mt-lg-4 mt-1">Warmest regards from our General Manager,</p>              <p><i>Jean Bouverville</i></p>              <div class="col-lg-8 col-12 px-0 text-lg-left mt-lg-0 mt-2">                <a (click)="openMenu()" class="btn btn-primary px-2 py-3 py-lg-4 px-lg-3 font-weight-bold text-uppercase w-100">Order Services</a>              </div>          </div>        </div>      </div>    </header>      <div class="container mt-5 pb-5">        <div class="row">          <div class="col-lg-6 discount order-lg-1 order-2">          </div>          <div class="col-lg-6 py-5 order-lg-2 order-1">            <h2 class="text-center mt-0">Promotions</h2>            <hr class="divider my-4" />            <div class="">              <div class="mx-auto col-lg-12 col-md-12 text-center">                    <div class="mt-2">                        <p class="text-muted mb-0 text-uppercase">                          Enjoy <span>10%</span> discount.                        </p>                        <p class="text-muted">* Food and Beverages</p>                        <div class="col-8 mx-auto mt-4">                          <a [routerLink]="\'/order/fb/home\'" class="btn btn-primary px-2 py-3 py-lg-4 px-lg-3 font-weight-bold text-uppercase w-100">Order Now</a>                        </div>                    </div>                </div>            </div>          </div>        </div>      </div>      <app-footer></app-footer></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MainComponent'};
 </script>
@@ -557,7 +584,7 @@ export class MainComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'MainComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'landing-page.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

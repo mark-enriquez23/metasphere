@@ -28,13 +28,13 @@
 <title>cluster_PreCheckModule_imports</title>
 <polygon fill="none" stroke="black" points="182,-78 182,-130 474,-130 474,-78 182,-78"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_PreCheckModule_declarations</title>
-<polygon fill="none" stroke="black" points="22,-78 22,-130 174,-130 174,-78 22,-78"/>
-</g>
 <g id="clust5" class="cluster">
 <title>cluster_PreCheckModule_exports</title>
 <polygon fill="none" stroke="black" points="150,-208 150,-260 328,-260 328,-208 150,-208"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_PreCheckModule_declarations</title>
+<polygon fill="none" stroke="black" points="22,-78 22,-130 174,-130 174,-78 22,-78"/>
 </g>
 <!-- PreCheckComponent -->
 <g id="node1" class="node">

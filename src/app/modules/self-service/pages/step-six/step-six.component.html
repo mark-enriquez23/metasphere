@@ -1,1 +1,27 @@
-<p>step-six works!</p>
+<div class="container">
+  <form [formGroup]="stepSixForm"
+        #formRef="ngForm">
+      <div class="row no-gutters">
+        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">
+          <label class="w-100 text-center text-lg-left"  for="tel">Telephone Number</label>
+          <input formControlName="tel" class="form-control text-center text-lg-left" id="tel" placeholder="Telephone Number">
+        </div>
+        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">
+          <label class="w-100 text-center text-lg-left "for="email">E-mail Address</label>
+          <input type="email" name="email" [max]="currentDate" formControlName="email" class="form-control text-center text-lg-left" id="email" placeholder="E-mail">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="w-100 text-center text-lg-left" for="special_request">Special Request</label>
+        <textarea formControlName="special_request" class="text-area form-control text-left" id="special_request" rows="3"></textarea>
+      </div>
+      <div class="mt-4 row px-0">
+        <div class="col-6 pr-0 pr-1 ">
+          <button class="w-100 btn btn-secondary" cdkStepperPrevious>Back</button>
+        </div>
+        <div class="col-6 pl-0 pl-1 ">
+          <button (click)="completeCheckIn()" class="w-100 btn btn-primary" [disabled]="formErrorHandler" cdkStepperNext>Complete</button>
+        </div>
+      </div>
+  </form>
+</div>

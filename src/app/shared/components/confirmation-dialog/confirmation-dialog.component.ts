@@ -10,7 +10,8 @@ import { DialogService, DialogRef } from '@ngneat/dialog';
 export class ConfirmationDialogComponent implements OnInit {
   content = {
     message: '',
-    type: ''
+    type: '',
+    timeout: false
   }
   buttonMessage: string = '';
 
@@ -18,7 +19,7 @@ export class ConfirmationDialogComponent implements OnInit {
     this.content.message = this.ref.data.message || 'We have some information for you.';
     this.content.type = this.ref.data.type || 'information'
     this.buttonMessage = this.setBtnMessage();
-    if (this.content.type === 'information') {
+    if (this.ref.data.timeout) {
       setTimeout(() => {
         this.ref.close()
       }, 5000)
@@ -76,7 +77,7 @@ export class ConfirmationDialogComponent implements OnInit {
         break;
 
       default:
-        return 'Ok'
+        return 'Confirm'
         break;
     }
   }

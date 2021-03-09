@@ -1,18 +1,53 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+/**
+ * Fb Navigation Header
+ */
 @Component({
   selector: 'app-fb-nav-header',
   templateUrl: './fb-nav-header.component.html',
   styleUrls: ['./fb-nav-header.component.scss']
 })
 export class FbNavHeaderComponent implements OnInit {
+  /**
+   * Type Injectible
+   *
+   * @param  {any} type
+   * @returns any
+   */
   @Input() type: any;
+
+  /**
+   * Current Route
+   *
+   * @type {string}
+   */
   currentRoute: string;
+  /**
+   * Drink Types Array
+   *
+   * @type {Array}
+   */
   drinkTypes = ['Cocktails', 'Wine', 'Beer', 'Non-Alcoholic'];
+
+  /**
+   * Food Types Array
+   *
+   * @type {Array}
+   */
   foodTypes =  ['Breakfast Menu', 'Lunch Menu', 'A La Carte'];
+
+  /**
+   * Options Array
+   *
+   * @type {Array}
+   */
   options = [];
 
+  /**
+   * @ignore
+   */
   constructor(private router:Router) {
     this.router.events.subscribe((res: any) => {
       if (res.url) {
@@ -26,6 +61,10 @@ export class FbNavHeaderComponent implements OnInit {
       }
     });
   }
+
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 

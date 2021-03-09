@@ -64,6 +64,13 @@
     <code>src/app/modules/self-service/layouts/stepper/stepper.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Stepper Component</p>
+
+    </p>
 
 
     <p class="comment">
@@ -148,9 +155,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
                                 <a href="#onStepChange">onStepChange</a>
                             </li>
                             <li>
@@ -168,54 +172,6 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:11</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>formBuilder</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
 
 
@@ -226,45 +182,6 @@
     <h3 id="methods">
         Methods
     </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:15</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -280,21 +197,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onStepChange(e)</code>
+<code>onStepChange(e: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:45</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>On Step Change - sets the stepper Message</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -302,18 +221,29 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>e</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>The event to check</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -325,7 +255,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>void</p>
+
                     </div>
                 </td>
             </tr>
@@ -346,21 +277,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>setStepperMessage(index)</code>
+<code>setStepperMessage(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:57</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Set&#39;s the Stepper Label Message</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -368,18 +301,29 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>The index to check</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -391,7 +335,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>void</p>
+
                     </div>
                 </td>
             </tr>
@@ -423,10 +368,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:17</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Check In Form</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -455,10 +406,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:24</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Stepper Label Message</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -471,26 +428,60 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
 
+/**
+  * Stepper Component
+  */
 @Component({
   selector: &#x27;app-stepper&#x27;,
   templateUrl: &#x27;./stepper.component.html&#x27;,
   styleUrls: [&#x27;./stepper.component.scss&#x27;]
 })
 export class StepperComponent implements OnInit {
+  /**
+   * Check In Form
+  * @type {FormGroup}
+  */
   checkInForm: FormGroup;
+
+
+  /**
+   * Stepper Label Message
+  * @type {String}
+  */
   stepperMessage: String &#x3D; &#x27;&#x27;;
 
+  /**
+  * @ignore
+  */
   constructor(private formBuilder: FormBuilder, ) { }
 
+  /**
+  * @ignore
+  */
   ngOnInit(): void {
     this.setStepperMessage(0);
   }
 
-  onStepChange(e): void {
+
+  /**
+   * On Step Change - sets the stepper Message
+   *
+   * @param  {any} e - The event to check
+   * @returns void
+   */
+  onStepChange(e: any): void {
     this.setStepperMessage(e.selectedIndex);
   }
 
-  setStepperMessage(index): void {
+
+  /**
+   * Set&#x27;s the Stepper Label Message
+   *
+   * @param  {number} index - The index to check
+   * @returns void
+   *
+   */
+  setStepperMessage(index: number): void {
     let message &#x3D; &#x27;&#x27;
     switch (index) {
       case 0:
@@ -530,59 +521,52 @@ export class StepperComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">
  &lt;app-public-header state&#x3D;&quot;pre-checkin&quot;&gt;&lt;/app-public-header&gt;
- &lt;!--&lt;div class&#x3D;&quot;h-100&quot;&gt;
-   &lt;div class&#x3D;&quot;masthead&quot;&gt;
-     &lt;div class&#x3D;&quot;container mt-2&quot;&gt;
-       &lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot;&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
- &lt;/div&gt; --&gt;
  &lt;div class&#x3D;&quot;d-lg-flex half masthead&quot;&gt;
    &lt;div class&#x3D;&quot;bg order-1&quot; style&#x3D;&quot;background-image: url(&#x27;assets/images/self-service_-_page_1/u696.jpg&#x27;);&quot;&gt;&lt;/div&gt;
    &lt;div class&#x3D;&quot;contents order-2&quot;&gt;
 
      &lt;div class&#x3D;&quot;container&quot;&gt;
-       &lt;div class&#x3D;&quot;row align-items-center justify-content-center&quot;&gt;
+       &lt;div class&#x3D;&quot;row align-items-center justify-content-center px-0 &quot;&gt;
          &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
           &lt;h5 class&#x3D;&quot;px-4&quot;&gt;Pre-checkin&lt;/h5&gt;
           &lt;p class&#x3D;&quot;sub-text px-4&quot;&gt;{{ stepperMessage }}&lt;/p&gt;
           &lt;ng-stepper #cdkStepper [linear]&#x3D;&quot;true&quot; (selectionChange)&#x3D;&quot;onStepChange($event)&quot;&gt;
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepOne.stepOneForm&quot; [optional]&#x3D;&quot;false&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepOne.stepOneForm&quot; [optional]&#x3D;&quot;true&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
               &lt;app-step-one #stepOne&gt;&lt;/app-step-one&gt;
             &lt;/cdk-step&gt;
 
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepTwo.stepTwoForm&quot; [optional]&#x3D;&quot;false&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepTwo.stepTwoForm&quot; [optional]&#x3D;&quot;true&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
               &lt;app-step-two #stepTwo&gt;&lt;/app-step-two&gt;
             &lt;/cdk-step&gt;
 
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepThree.stepThreeForm&quot; [optional]&#x3D;&quot;false&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepThree.stepThreeForm&quot; [optional]&#x3D;&quot;true&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
               &lt;app-step-three #stepThree&gt;&lt;/app-step-three&gt;
             &lt;/cdk-step&gt;
 
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepFour.stepFourForm&quot; [optional]&#x3D;&quot;false&quot; [state]&#x3D;&quot;stepFour.state&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepFour.stepFourForm&quot; [optional]&#x3D;&quot;true&quot; [state]&#x3D;&quot;stepFour.state&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
               &lt;app-step-four #stepFour&gt;&lt;/app-step-four&gt;
             &lt;/cdk-step&gt;
 
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepFive.stepFiveForm&quot; [optional]&#x3D;&quot;false&quot; [state]&#x3D;&quot;stepFive.state&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepFive.stepFiveForm&quot; [optional]&#x3D;&quot;true&quot; [state]&#x3D;&quot;stepFive.state&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
               &lt;app-step-five #stepFive&gt;&lt;/app-step-five&gt;
             &lt;/cdk-step&gt;
 
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepSix.stepSixForm&quot; [optional]&#x3D;&quot;false&quot; [state]&#x3D;&quot;stepSix.state&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepSix.stepSixForm&quot; [optional]&#x3D;&quot;true&quot; [state]&#x3D;&quot;stepSix.state&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
@@ -615,25 +599,6 @@ export class StepperComponent implements OnInit {
 
   .stepper .stepper-header .steps .step:after{
     background-color: #b3babe !important;
-  }
-  .stepper .stepper-body {
-    max-height: 530px;
-    overflow-y: auto;
-  }
-  .stepper-body::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: #F5F5F5;
-  }
-
-  .stepper-body::-webkit-scrollbar {
-    width: 12px;
-    background-color: transparent;
-  }
-
-  .stepper-body::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-    background-color: #555;
   }
 }
 
@@ -679,7 +644,6 @@ export class StepperComponent implements OnInit {
   font-weight: lighter;
 }
 
-
 @media all and (max-width: 767px) {
   .bg {
     height: 200px !important;
@@ -721,8 +685,8 @@ export class StepperComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div> <app-public-header state="pre-checkin"></app-public-header> <!--<div class="h-100">   <div class="masthead">     <div class="container mt-2">       <img src="" alt="">     </div>   </div> </div> --> <div class="d-lg-flex half masthead">   <div class="bg order-1" style="background-image: url(\'assets/images/self-service_-_page_1/u696.jpg\');"></div>   <div class="contents order-2">     <div class="container">       <div class="row align-items-center justify-content-center">         <div class="col-md-8">          <h5 class="px-4">Pre-checkin</h5>          <p class="sub-text px-4">{{ stepperMessage }}</p>          <ng-stepper #cdkStepper [linear]="true" (selectionChange)="onStepChange($event)">            <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-one #stepOne></app-step-one>            </cdk-step>            <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-two #stepTwo></app-step-two>            </cdk-step>            <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-three #stepThree></app-step-three>            </cdk-step>            <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="false" [state]="stepFour.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-four #stepFour></app-step-four>            </cdk-step>            <cdk-step [stepControl]="stepFive.stepFiveForm" [optional]="false" [state]="stepFive.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-five #stepFive></app-step-five>            </cdk-step>            <cdk-step [stepControl]="stepSix.stepSixForm" [optional]="false" [state]="stepSix.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-six #stepSix></app-step-six>            </cdk-step>          </ng-stepper>         </div>       </div>     </div>   </div> </div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'HotelInformationComponent', 'selector': 'app-hotel-information'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
+        var COMPONENT_TEMPLATE = '<div> <app-public-header state="pre-checkin"></app-public-header> <div class="d-lg-flex half masthead">   <div class="bg order-1" style="background-image: url(\'assets/images/self-service_-_page_1/u696.jpg\');"></div>   <div class="contents order-2">     <div class="container">       <div class="row align-items-center justify-content-center px-0 ">         <div class="col-md-8">          <h5 class="px-4">Pre-checkin</h5>          <p class="sub-text px-4">{{ stepperMessage }}</p>          <ng-stepper #cdkStepper [linear]="true" (selectionChange)="onStepChange($event)">            <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="true">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-one #stepOne></app-step-one>            </cdk-step>            <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="true">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-two #stepTwo></app-step-two>            </cdk-step>            <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="true">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-three #stepThree></app-step-three>            </cdk-step>            <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="true" [state]="stepFour.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-four #stepFour></app-step-four>            </cdk-step>            <cdk-step [stepControl]="stepFive.stepFiveForm" [optional]="true" [state]="stepFive.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-five #stepFive></app-step-five>            </cdk-step>            <cdk-step [stepControl]="stepSix.stepSixForm" [optional]="true" [state]="stepSix.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-six #stepSix></app-step-six>            </cdk-step>          </ng-stepper>         </div>       </div>     </div>   </div> </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'StepperComponent'};
 </script>
@@ -759,7 +723,7 @@ export class StepperComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'StepperComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'landing-page.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

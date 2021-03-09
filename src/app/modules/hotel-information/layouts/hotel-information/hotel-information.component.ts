@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 
   /**
-   *
-   * Component configurations
-   *
+   * @ignore
    */
 @Component({
   selector: 'app-hotel-information',
   templateUrl: './hotel-information.component.html',
   styleUrls: ['./hotel-information.component.scss']
 })
-export class HotelInformationComponent implements OnInit {
-
-  constructor() { }
 
   /**
-   * Initializes the Component
-   *
-   * @returns void
+   * @ignore
+   */
+export class HotelInformationComponent implements OnInit {
+
+  /**
+   * @ignore
+   */
+  constructor() { }
+
+
+  /**
+   * @ignore
    */
   ngOnInit(): void {
   }

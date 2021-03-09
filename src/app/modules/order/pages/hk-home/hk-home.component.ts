@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * HK Home Component
+ */
 @Component({
   selector: 'app-hk-home',
   templateUrl: './hk-home.component.html',
   styleUrls: ['./hk-home.component.scss']
 })
 export class HkHomeComponent implements OnInit {
-
+  /**
+   * Items
+   *
+   * @type {Array[Object]}
+   */
   items = [
     {
       name: 'Organic Shampoo',
@@ -65,8 +72,14 @@ export class HkHomeComponent implements OnInit {
       quantity: 0
     }
   ]
+  /**
+   * @ignore
+   */
   constructor() { }
 
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 

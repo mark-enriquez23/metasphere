@@ -1,26 +1,60 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+/**
+  * Stepper Component
+  */
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss']
 })
 export class StepperComponent implements OnInit {
+  /**
+   * Check In Form
+  * @type {FormGroup}
+  */
   checkInForm: FormGroup;
+
+
+  /**
+   * Stepper Label Message
+  * @type {String}
+  */
   stepperMessage: String = '';
 
+  /**
+  * @ignore
+  */
   constructor(private formBuilder: FormBuilder, ) { }
 
+  /**
+  * @ignore
+  */
   ngOnInit(): void {
     this.setStepperMessage(0);
   }
 
-  onStepChange(e): void {
+
+  /**
+   * On Step Change - sets the stepper Message
+   *
+   * @param  {any} e - The event to check
+   * @returns void
+   */
+  onStepChange(e: any): void {
     this.setStepperMessage(e.selectedIndex);
   }
 
-  setStepperMessage(index): void {
+
+  /**
+   * Set's the Stepper Label Message
+   *
+   * @param  {number} index - The index to check
+   * @returns void
+   *
+   */
+  setStepperMessage(index: number): void {
     let message = ''
     switch (index) {
       case 0:

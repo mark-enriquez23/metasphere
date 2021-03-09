@@ -2,46 +2,46 @@
   <form [formGroup]="stepThreeForm"
         #formRef="ngForm">
       <div class="form-group">
-        <label for="full_name">Full Name</label>
+        <label class="w-100 text-center text-lg-left" for="full_name">Full Name</label>
         <input formControlName="full_name" class="form-control text-center text-lg-left" id="full_name" placeholder="Full Name">
       </div>
       <div class="row no-gutters">
-        <div class="form-group col-6 pr-1">
-          <label for="gender_code">Gender Code</label>
+        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">
+          <label class="w-100 text-center text-lg-left" for="gender_code">Gender Code</label>
           <input formControlName="gender_code" class="form-control text-center text-lg-left" id="gender_code" placeholder="Gender Code">
         </div>
-        <div class="form-group col-6 pl-1">
-          <label for="dob">Date of Birth</label>
+        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">
+          <label class="w-100 text-center text-lg-left" for="dob">Date of Birth</label>
           <input type="date" name="dob" [max]="currentDate" formControlName="dob" class="form-control text-center text-lg-left" id="dob" placeholder="Date of Birth">
         </div>
       </div>
       <div class="row no-gutters">
         <div class="form-group col-6 pr-1">
-          <label for="nationality">Nationality</label>
+          <label class="w-100 text-center text-lg-left" for="nationality">Nationality</label>
           <input formControlName="nationality" class="form-control text-center text-lg-left" id="nationality" placeholder="Nationality">
         </div>
         <div class="form-group col-6 pl-1">
-          <label for="birth_place">Birth Place</label>
+          <label class="w-100 text-center text-lg-left" for="birth_place">Birth Place</label>
           <input formControlName="birth_place" class="form-control text-center text-lg-left" id="birth_place" placeholder="Birth Place">
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="form-group col-6 pr-1">
-          <label for="document_type">Document Type</label>
+        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">
+          <label class="w-100 text-center text-lg-left" for="document_type">Document Type</label>
           <input formControlName="document_type" class="form-control text-center text-lg-left" id="document_type" placeholder="Document Type">
         </div>
-        <div class="form-group col-6 pl-1">
-          <label for="document_number">Document Number</label>
+        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">
+          <label class="w-100 text-center text-lg-left" for="document_number">Document Number</label>
           <input formControlName="document_number" class="form-control text-center text-lg-left" id="document_number" placeholder="Document Number">
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="form-group col-6 pr-1">
-          <label for="issued_date">Issued Date</label>
+        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">
+          <label class="w-100 text-center text-lg-left" for="issued_date">Issued Date</label>
           <input type="date" name="issued_date" formControlName="issued_date" class="form-control text-center text-lg-left" id="issued_date" placeholder="Issued Date">
         </div>
-        <div class="form-group col-6 pl-1">
-          <label for="exp_date">Expiry Date</label>
+        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">
+          <label class="w-100 text-center text-lg-left" for="exp_date">Expiry Date</label>
           <input type="date" name="exp_date" formControlName="exp_date" class="form-control text-center text-lg-left" id="exp_date" placeholder="Expiry Date">
         </div>
       </div>

@@ -3,12 +3,20 @@ import { Router } from '@angular/router';
 import { DialogService } from '@ngneat/dialog';
 import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 
+/**
+ * Cart Page Component
+ */
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  /**
+   * Cart Items Array
+   *
+   * @type {Array[Object]}
+   */
   cartItems = [
     {
       id: 501,
@@ -35,11 +43,29 @@ export class CartComponent implements OnInit {
       quantity: 0
     }
   ]
+  /**
+   * Is validated
+   *
+   * @type {boolean}
+   */
   isValidated: boolean = false;
+  /**
+   * Dialog Reference
+   *
+   * @type {any}
+   */
   dialogRef: any;
+  /**
+   * Current Route
+   *
+   * @type {string}
+   */
   currentRoute: string;
 
 
+  /**
+   * @ignore
+   */
   constructor(private dialog: DialogService, private router: Router) {
     this.router.events.subscribe((res: any) => {
       if (res.url) {
@@ -50,13 +76,26 @@ export class CartComponent implements OnInit {
     });
   }
 
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
-
-  removeItem(id): void {
+  /**
+   * Removes the item from the Cart
+   *
+   * @param  {number} id
+   * @returns void
+   */
+  removeItem(id: number): void {
     this.cartItems = this.cartItems.filter(x => id !== x.id)
   }
 
+  /**
+   * Opens the Success Dialog
+   *
+   * @returns void
+   */
   openSuccessDialog(): void {
     this.dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       data: {
@@ -65,17 +104,27 @@ export class CartComponent implements OnInit {
       }
     })
   }
-
+  /**
+   * Opens the information Dialog
+   *
+   * @returns void
+   */
   openInformationDialog(): void {
    this.dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       data: {
         message: 'Please be informed that the estimated time for oders is approximately 40 minutes.',
-        type: 'information'
+        type: 'information',
+        timeout: true
       }
     })
   }
 
-  async confirmOrder() {
+  /**
+   * Confirms the Order from the user
+   *
+   * @returns Promise
+   */
+  async confirmOrder(): Promise<void> {
     if (this.isValidated) {
       await this.openSuccessDialog();
       this.dialogRef.afterClosed$.subscribe(res => {

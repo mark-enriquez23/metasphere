@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Fb Drinks Page Component
+ */
 @Component({
   selector: 'app-fb-drinks',
   templateUrl: './fb-drinks.component.html',
   styleUrls: ['./fb-drinks.component.scss']
 })
 export class FbDrinksComponent implements OnInit {
-
+  /**
+   * Items
+   *
+   * @type {Array[Object]}
+   */
   items = [
     {
       name: 'Fruity Cocktail',
@@ -93,8 +100,14 @@ export class FbDrinksComponent implements OnInit {
       quantity: 0
     },
   ]
+  /**
+   * @ignore
+   */
   constructor() { }
 
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 

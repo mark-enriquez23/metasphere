@@ -482,50 +482,50 @@ export class StepOneComponent implements OnInit {
   &lt;form [formGroup]&#x3D;&quot;stepOneForm&quot;
         #formRef&#x3D;&quot;ngForm&quot;&gt;
       &lt;div class&#x3D;&quot;form-group&quot;&gt;
-        &lt;label for&#x3D;&quot;reservationNumber&quot;&gt;Reservation Number&lt;/label&gt;
+        &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;reservationNumber&quot;&gt;Reservation Number&lt;/label&gt;
         &lt;input formControlName&#x3D;&quot;reservation_number&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;reservationNumber&quot; placeholder&#x3D;&quot;Reservation Number&quot;&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;row no-gutters&quot;&gt;
         &lt;div class&#x3D;&quot;form-group col-6 pr-1&quot;&gt;
-          &lt;label for&#x3D;&quot;lastName&quot;&gt;First Name&lt;/label&gt;
+          &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;lastName&quot;&gt;First Name&lt;/label&gt;
           &lt;input formControlName&#x3D;&quot;first_name&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;lastName&quot; placeholder&#x3D;&quot;First name&quot;&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;form-group col-6 pl-1&quot;&gt;
-          &lt;label for&#x3D;&quot;lastName&quot;&gt;Last Name&lt;/label&gt;
+          &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;lastName&quot;&gt;Last Name&lt;/label&gt;
           &lt;input formControlName&#x3D;&quot;last_name&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;lastName&quot; placeholder&#x3D;&quot;Last name&quot;&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;row no-gutters&quot;&gt;
-        &lt;div class&#x3D;&quot;form-group col-6 pr-1&quot;&gt;
-          &lt;label for&#x3D;&quot;lastName&quot;&gt;Check-In Date&lt;/label&gt;
+        &lt;div class&#x3D;&quot;form-group col-lg-6 col-12 pr-lg-1 pr-0&quot;&gt;
+          &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;lastName&quot;&gt;Check-In Date&lt;/label&gt;
           &lt;input type&#x3D;&quot;date&quot; name&#x3D;&quot;check-in/out-dates&quot; [min]&#x3D;&quot;currentDate&quot; formControlName&#x3D;&quot;check_in_date&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;lastName&quot; placeholder&#x3D;&quot;Check in&quot;&gt;
         &lt;/div&gt;
-        &lt;div class&#x3D;&quot;form-group col-6 pl-1&quot;&gt;
-          &lt;label for&#x3D;&quot;lastName&quot;&gt;Check-Out Date&lt;/label&gt;
+        &lt;div class&#x3D;&quot;form-group col-lg-6 col-12 pl-lg-1 pl-0&quot;&gt;
+          &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;lastName&quot;&gt;Check-Out Date&lt;/label&gt;
           &lt;input type&#x3D;&quot;date&quot; name&#x3D;&quot;check-in/out-dates&quot; [min]&#x3D;&quot;currentDate&quot;  formControlName&#x3D;&quot;check_out_date&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;lastName&quot; placeholder&#x3D;&quot;Check out&quot;&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;row no-gutters&quot;&gt;
         &lt;div class&#x3D;&quot;form-group col-4 pr-1&quot;&gt;
-          &lt;label for&#x3D;&quot;lastName&quot;&gt;Rooms&lt;/label&gt;
+          &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;lastName&quot;&gt;Rooms&lt;/label&gt;
           &lt;input formControlName&#x3D;&quot;room_nights&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;lastName&quot; placeholder&#x3D;&quot;1&quot;&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;form-group col-4 pl-1&quot;&gt;
-          &lt;label for&#x3D;&quot;lastName&quot;&gt;Adults&lt;/label&gt;
+          &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;lastName&quot;&gt;Adults&lt;/label&gt;
           &lt;input formControlName&#x3D;&quot;num_adults&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;lastName&quot; placeholder&#x3D;&quot;1&quot;&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;form-group col-4 pl-2&quot;&gt;
-          &lt;label for&#x3D;&quot;lastName&quot;&gt;Childs&lt;/label&gt;
+          &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;lastName&quot;&gt;Childs&lt;/label&gt;
           &lt;input formControlName&#x3D;&quot;num_child&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;lastName&quot; placeholder&#x3D;&quot;0&quot;&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;row no-gutters&quot;&gt;
-        &lt;div class&#x3D;&quot;form-group col-6 pr-1&quot;&gt;
-          &lt;label for&#x3D;&quot;lastName&quot;&gt;Room Type&lt;/label&gt;
+        &lt;div class&#x3D;&quot;form-group col-lg-6 col-12 pr-lg-1 pr-0&quot;&gt;
+          &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;lastName&quot;&gt;Room Type&lt;/label&gt;
           &lt;input formControlName&#x3D;&quot;room_type&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;lastName&quot; placeholder&#x3D;&quot;Standard Room&quot;&gt;
         &lt;/div&gt;
-        &lt;div class&#x3D;&quot;form-group col-6 pl-1&quot;&gt;
-          &lt;label for&#x3D;&quot;lastName&quot;&gt;Room Rate&lt;/label&gt;
+        &lt;div class&#x3D;&quot;form-group col-lg-6 col-12 pl-lg-1 pl-0&quot;&gt;
+          &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;lastName&quot;&gt;Room Rate&lt;/label&gt;
           &lt;input formControlName&#x3D;&quot;room_rate&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;lastName&quot; placeholder&#x3D;&quot;$0&quot;&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -546,7 +546,34 @@ export class StepOneComponent implements OnInit {
                 <p class="comment">
                     <code>./step-one.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">
+.container {
+  max-height: 530px;
+  overflow-y: auto;
+}
+.container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.container::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
+
+@media all and (max-width: 767px) {
+  .container {
+    overflow-y: hidden;
+    max-height: 100%;
+  }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -574,8 +601,8 @@ export class StepOneComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <form [formGroup]="stepOneForm"        #formRef="ngForm">      <div class="form-group">        <label for="reservationNumber">Reservation Number</label>        <input formControlName="reservation_number" class="form-control text-center text-lg-left" id="reservationNumber" placeholder="Reservation Number">      </div>      <div class="row no-gutters">        <div class="form-group col-6 pr-1">          <label for="lastName">First Name</label>          <input formControlName="first_name" class="form-control text-center text-lg-left" id="lastName" placeholder="First name">        </div>        <div class="form-group col-6 pl-1">          <label for="lastName">Last Name</label>          <input formControlName="last_name" class="form-control text-center text-lg-left" id="lastName" placeholder="Last name">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-6 pr-1">          <label for="lastName">Check-In Date</label>          <input type="date" name="check-in/out-dates" [min]="currentDate" formControlName="check_in_date" class="form-control text-center text-lg-left" id="lastName" placeholder="Check in">        </div>        <div class="form-group col-6 pl-1">          <label for="lastName">Check-Out Date</label>          <input type="date" name="check-in/out-dates" [min]="currentDate"  formControlName="check_out_date" class="form-control text-center text-lg-left" id="lastName" placeholder="Check out">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-4 pr-1">          <label for="lastName">Rooms</label>          <input formControlName="room_nights" class="form-control text-center text-lg-left" id="lastName" placeholder="1">        </div>        <div class="form-group col-4 pl-1">          <label for="lastName">Adults</label>          <input formControlName="num_adults" class="form-control text-center text-lg-left" id="lastName" placeholder="1">        </div>        <div class="form-group col-4 pl-2">          <label for="lastName">Childs</label>          <input formControlName="num_child" class="form-control text-center text-lg-left" id="lastName" placeholder="0">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-6 pr-1">          <label for="lastName">Room Type</label>          <input formControlName="room_type" class="form-control text-center text-lg-left" id="lastName" placeholder="Standard Room">        </div>        <div class="form-group col-6 pl-1">          <label for="lastName">Room Rate</label>          <input formControlName="room_rate" class="form-control text-center text-lg-left" id="lastName" placeholder="$0">        </div>      </div>      <div class="mt-4 row px-0">        <div class="col-6 pr-0 pr-1 ">          <button class="w-100 btn btn-secondary" [routerLink]="\'/landing\'">Exit</button>        </div>        <div class="col-6 pl-0 pl-1 ">          <button class="w-100 btn btn-primary" [disabled]="formErrorHandler" cdkStepperNext>Next</button>        </div>      </div>  </form></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'HotelInformationComponent', 'selector': 'app-hotel-information'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <form [formGroup]="stepOneForm"        #formRef="ngForm">      <div class="form-group">        <label class="w-100 text-center text-lg-left" for="reservationNumber">Reservation Number</label>        <input formControlName="reservation_number" class="form-control text-center text-lg-left" id="reservationNumber" placeholder="Reservation Number">      </div>      <div class="row no-gutters">        <div class="form-group col-6 pr-1">          <label class="w-100 text-center text-lg-left" for="lastName">First Name</label>          <input formControlName="first_name" class="form-control text-center text-lg-left" id="lastName" placeholder="First name">        </div>        <div class="form-group col-6 pl-1">          <label class="w-100 text-center text-lg-left" for="lastName">Last Name</label>          <input formControlName="last_name" class="form-control text-center text-lg-left" id="lastName" placeholder="Last name">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">          <label class="w-100 text-center text-lg-left" for="lastName">Check-In Date</label>          <input type="date" name="check-in/out-dates" [min]="currentDate" formControlName="check_in_date" class="form-control text-center text-lg-left" id="lastName" placeholder="Check in">        </div>        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">          <label class="w-100 text-center text-lg-left" for="lastName">Check-Out Date</label>          <input type="date" name="check-in/out-dates" [min]="currentDate"  formControlName="check_out_date" class="form-control text-center text-lg-left" id="lastName" placeholder="Check out">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-4 pr-1">          <label class="w-100 text-center text-lg-left" for="lastName">Rooms</label>          <input formControlName="room_nights" class="form-control text-center text-lg-left" id="lastName" placeholder="1">        </div>        <div class="form-group col-4 pl-1">          <label class="w-100 text-center text-lg-left" for="lastName">Adults</label>          <input formControlName="num_adults" class="form-control text-center text-lg-left" id="lastName" placeholder="1">        </div>        <div class="form-group col-4 pl-2">          <label class="w-100 text-center text-lg-left" for="lastName">Childs</label>          <input formControlName="num_child" class="form-control text-center text-lg-left" id="lastName" placeholder="0">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">          <label class="w-100 text-center text-lg-left" for="lastName">Room Type</label>          <input formControlName="room_type" class="form-control text-center text-lg-left" id="lastName" placeholder="Standard Room">        </div>        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">          <label class="w-100 text-center text-lg-left" for="lastName">Room Rate</label>          <input formControlName="room_rate" class="form-control text-center text-lg-left" id="lastName" placeholder="$0">        </div>      </div>      <div class="mt-4 row px-0">        <div class="col-6 pr-0 pr-1 ">          <button class="w-100 btn btn-secondary" [routerLink]="\'/landing\'">Exit</button>        </div>        <div class="col-6 pl-0 pl-1 ">          <button class="w-100 btn btn-primary" [disabled]="formErrorHandler" cdkStepperNext>Next</button>        </div>      </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'StepOneComponent'};
 </script>
@@ -612,7 +639,7 @@ export class StepOneComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'StepOneComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'landing-page.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

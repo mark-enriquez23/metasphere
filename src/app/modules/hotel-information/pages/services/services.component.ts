@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Services Page Component
+ */
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent implements OnInit {
+  /**
+   * Services Object Array
+   * @type {Array[Object]}
+   */
   services = [
     {
       id: 501,
@@ -228,19 +235,23 @@ export class ServicesComponent implements OnInit {
       floor: 2
     }
   ]
+  /**
+   * @ignore
+   */
   constructor() { }
-
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
   }
 
   /**
+   * Return the header setting the Id as a string with header concattenated to it
    *
-   * @param i Get the id of the object being passed
-   *
-   * @description Return the header setting the Id as a string with header concattenated to it
-   *
+   * @param  {number} i
+   * @returns string
    */
-  getHeadId(i) {
+   getHeadId(i: number): string {
     return 'header' + i.toString();
   }
 
