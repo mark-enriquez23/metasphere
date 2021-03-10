@@ -38,3 +38,20 @@
     box-shadow: none;
   }
 }
+
+
+@media all and (max-width: 767px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    li {
+      a {
+        font-size: 12px !important;
+      }
+    }
+  }
+  .nav-link {
+    padding: 0.5rem 1rem !important;
+  }
+}

@@ -531,42 +531,42 @@ export class StepperComponent implements OnInit {
           &lt;h5 class&#x3D;&quot;px-4&quot;&gt;Pre-checkin&lt;/h5&gt;
           &lt;p class&#x3D;&quot;sub-text px-4&quot;&gt;{{ stepperMessage }}&lt;/p&gt;
           &lt;ng-stepper #cdkStepper [linear]&#x3D;&quot;true&quot; (selectionChange)&#x3D;&quot;onStepChange($event)&quot;&gt;
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepOne.stepOneForm&quot; [optional]&#x3D;&quot;true&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepOne.stepOneForm&quot; [optional]&#x3D;&quot;false&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
               &lt;app-step-one #stepOne&gt;&lt;/app-step-one&gt;
             &lt;/cdk-step&gt;
 
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepTwo.stepTwoForm&quot; [optional]&#x3D;&quot;true&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepTwo.stepTwoForm&quot; [optional]&#x3D;&quot;false&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
               &lt;app-step-two #stepTwo&gt;&lt;/app-step-two&gt;
             &lt;/cdk-step&gt;
 
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepThree.stepThreeForm&quot; [optional]&#x3D;&quot;true&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepThree.stepThreeForm&quot; [optional]&#x3D;&quot;false&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
               &lt;app-step-three #stepThree&gt;&lt;/app-step-three&gt;
             &lt;/cdk-step&gt;
 
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepFour.stepFourForm&quot; [optional]&#x3D;&quot;true&quot; [state]&#x3D;&quot;stepFour.state&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepFour.stepFourForm&quot; [optional]&#x3D;&quot;false&quot; [state]&#x3D;&quot;stepFour.state&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
               &lt;app-step-four #stepFour&gt;&lt;/app-step-four&gt;
             &lt;/cdk-step&gt;
 
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepFive.stepFiveForm&quot; [optional]&#x3D;&quot;true&quot; [state]&#x3D;&quot;stepFive.state&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepFive.stepFiveForm&quot; [optional]&#x3D;&quot;false&quot; [state]&#x3D;&quot;stepFive.state&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
               &lt;app-step-five #stepFive&gt;&lt;/app-step-five&gt;
             &lt;/cdk-step&gt;
 
-            &lt;cdk-step [stepControl]&#x3D;&quot;stepSix.stepSixForm&quot; [optional]&#x3D;&quot;true&quot; [state]&#x3D;&quot;stepSix.state&quot;&gt;
+            &lt;cdk-step [stepControl]&#x3D;&quot;stepSix.stepSixForm&quot; [optional]&#x3D;&quot;false&quot; [state]&#x3D;&quot;stepSix.state&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
@@ -685,7 +685,7 @@ export class StepperComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div> <app-public-header state="pre-checkin"></app-public-header> <div class="d-lg-flex half masthead">   <div class="bg order-1" style="background-image: url(\'assets/images/self-service_-_page_1/u696.jpg\');"></div>   <div class="contents order-2">     <div class="container">       <div class="row align-items-center justify-content-center px-0 ">         <div class="col-md-8">          <h5 class="px-4">Pre-checkin</h5>          <p class="sub-text px-4">{{ stepperMessage }}</p>          <ng-stepper #cdkStepper [linear]="true" (selectionChange)="onStepChange($event)">            <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="true">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-one #stepOne></app-step-one>            </cdk-step>            <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="true">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-two #stepTwo></app-step-two>            </cdk-step>            <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="true">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-three #stepThree></app-step-three>            </cdk-step>            <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="true" [state]="stepFour.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-four #stepFour></app-step-four>            </cdk-step>            <cdk-step [stepControl]="stepFive.stepFiveForm" [optional]="true" [state]="stepFive.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-five #stepFive></app-step-five>            </cdk-step>            <cdk-step [stepControl]="stepSix.stepSixForm" [optional]="true" [state]="stepSix.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-six #stepSix></app-step-six>            </cdk-step>          </ng-stepper>         </div>       </div>     </div>   </div> </div></div>'
+        var COMPONENT_TEMPLATE = '<div> <app-public-header state="pre-checkin"></app-public-header> <div class="d-lg-flex half masthead">   <div class="bg order-1" style="background-image: url(\'assets/images/self-service_-_page_1/u696.jpg\');"></div>   <div class="contents order-2">     <div class="container">       <div class="row align-items-center justify-content-center px-0 ">         <div class="col-md-8">          <h5 class="px-4">Pre-checkin</h5>          <p class="sub-text px-4">{{ stepperMessage }}</p>          <ng-stepper #cdkStepper [linear]="true" (selectionChange)="onStepChange($event)">            <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-one #stepOne></app-step-one>            </cdk-step>            <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-two #stepTwo></app-step-two>            </cdk-step>            <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-three #stepThree></app-step-three>            </cdk-step>            <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="false" [state]="stepFour.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-four #stepFour></app-step-four>            </cdk-step>            <cdk-step [stepControl]="stepFive.stepFiveForm" [optional]="false" [state]="stepFive.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-five #stepFive></app-step-five>            </cdk-step>            <cdk-step [stepControl]="stepSix.stepSixForm" [optional]="false" [state]="stepSix.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-six #stepSix></app-step-six>            </cdk-step>          </ng-stepper>         </div>       </div>     </div>   </div> </div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'StepperComponent'};
@@ -723,7 +723,7 @@ export class StepperComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'landing-page.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'StepperComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

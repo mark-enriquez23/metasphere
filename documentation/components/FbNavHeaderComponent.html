@@ -447,7 +447,7 @@ export class FbNavHeaderComponent implements OnInit {
   &lt;div class&#x3D;&quot;container&quot;&gt;
 
     &lt;!-- &lt;a class&#x3D;&quot;navbar-brand js-scroll-trigger&quot; [routerLink]&#x3D;&quot;&#x27;/landing&#x27;&quot;&gt;Hotel Information&lt;/a&gt; --&gt;
-    &lt;div class&#x3D;&quot;input-group col-lg-5 px-0 &quot; *ngIf&#x3D;&quot;currentRoute !&#x3D;&#x3D; &#x27;home&#x27; &amp;&amp; currentRoute !&#x3D;&#x3D; &#x27;cart&#x27;&quot;&gt;
+    &lt;div class&#x3D;&quot;input-group col-lg-5 px-0 order-lg-2 order-1 mt-lg-0 mt-2&quot; *ngIf&#x3D;&quot;currentRoute !&#x3D;&#x3D; &#x27;home&#x27; &amp;&amp; currentRoute !&#x3D;&#x3D; &#x27;cart&#x27;&quot;&gt;
       &lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;gender3&quot;&gt;
         &lt;option [value]&#x3D;&quot;type&quot; *ngFor&#x3D;&quot;let type of options&quot;&gt;{{ type }}&lt;/option&gt;
       &lt;/select&gt;
@@ -509,6 +509,23 @@ export class FbNavHeaderComponent implements OnInit {
     box-shadow: none;
   }
 }
+
+
+@media all and (max-width: 767px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    li {
+      a {
+        font-size: 12px !important;
+      }
+    }
+  }
+  .nav-link {
+    padding: 0.5rem 1rem !important;
+  }
+}
 </code></pre>
     </div>
 
@@ -537,7 +554,7 @@ export class FbNavHeaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-lg navbar-light py-3" id="mainNav">  <div class="container">    <!-- <a class="navbar-brand js-scroll-trigger" [routerLink]="\'/landing\'">Hotel Information</a> -->    <div class="input-group col-lg-5 px-0 " *ngIf="currentRoute !== \'home\' && currentRoute !== \'cart\'">      <select class="custom-select" id="gender3">        <option [value]="type" *ngFor="let type of options">{{ type }}</option>      </select>    </div>      <div class="nav-items ml-auto">          <ul class="navbar-nav ml-auto my-2 my-lg-0">              <li class="nav-item my-auto"><a class="nav-link js-scroll-trigger py-2" routerLinkActive="active" routerLink=\'home\'>HOME</a></li>              <li class="nav-item my-auto"><a class="nav-link js-scroll-trigger py-2" routerLinkActive="active" routerLink=\'foods\'>FOODS</a></li>              <li class="nav-item my-auto"><a class="nav-link js-scroll-trigger py-2" routerLinkActive="active" routerLink=\'drinks\'>DRINKS</a></li>              <li class="nav-item my-auto"><a class="nav-link js-scroll-trigger py-2" routerLinkActive="active" routerLink=\'cart\'><img class="img-fluid" src="assets/images/u148.png" alt=""></a></li>          </ul>      </div>  </div></nav></div>'
+        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-lg navbar-light py-3" id="mainNav">  <div class="container">    <!-- <a class="navbar-brand js-scroll-trigger" [routerLink]="\'/landing\'">Hotel Information</a> -->    <div class="input-group col-lg-5 px-0 order-lg-2 order-1 mt-lg-0 mt-2" *ngIf="currentRoute !== \'home\' && currentRoute !== \'cart\'">      <select class="custom-select" id="gender3">        <option [value]="type" *ngFor="let type of options">{{ type }}</option>      </select>    </div>      <div class="nav-items ml-auto">          <ul class="navbar-nav ml-auto my-2 my-lg-0">              <li class="nav-item my-auto"><a class="nav-link js-scroll-trigger py-2" routerLinkActive="active" routerLink=\'home\'>HOME</a></li>              <li class="nav-item my-auto"><a class="nav-link js-scroll-trigger py-2" routerLinkActive="active" routerLink=\'foods\'>FOODS</a></li>              <li class="nav-item my-auto"><a class="nav-link js-scroll-trigger py-2" routerLinkActive="active" routerLink=\'drinks\'>DRINKS</a></li>              <li class="nav-item my-auto"><a class="nav-link js-scroll-trigger py-2" routerLinkActive="active" routerLink=\'cart\'><img class="img-fluid" src="assets/images/u148.png" alt=""></a></li>          </ul>      </div>  </div></nav></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FbNavHeaderComponent'};
@@ -575,7 +592,7 @@ export class FbNavHeaderComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'landing-page.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'FbNavHeaderComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

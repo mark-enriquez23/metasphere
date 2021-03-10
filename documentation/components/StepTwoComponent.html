@@ -922,15 +922,16 @@ export class StepTwoComponent implements OnInit {
       &lt;div  formArrayName&#x3D;&quot;orders&quot; *ngFor&#x3D;&quot;let item of f.controls; let i &#x3D; index&quot;&gt;
         &lt;div class&#x3D;&quot;form-group&quot; &gt;
           &lt;div class&#x3D;&quot;row no-gutters&quot; [formGroupName]&#x3D;&quot;i&quot;&gt;
-            &lt;div class&#x3D;&quot;col-8 pr-2&quot;&gt;
+            &lt;div class&#x3D;&quot;col-lg-8 col-12 pr-lg-2 pr-0&quot;&gt;
               &lt;p class&#x3D;&quot;mb-0&quot;&gt;{{ orderItems[i].name }}&lt;/p&gt;
-              &lt;p class&#x3D;&quot;mb-1 sub-text&quot;&gt;{{ orderItems[i].description }}&lt;/p&gt;
+              &lt;p class&#x3D;&quot;mb-lg-1 mb-0 sub-text&quot;&gt;{{ orderItems[i].description }}&lt;/p&gt;
+              &lt;p class&#x3D;&quot;mb-1 sub-text d-lg-none&quot;&gt;${{orderItems[i].price}} {{orderItems[i].type}}&lt;/p&gt;
               &lt;img [src]&#x3D;&quot;orderItems[i].image&quot; class&#x3D;&quot;img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}&quot; alt&#x3D;&quot;&quot;&gt;
             &lt;/div&gt;
-            &lt;div class&#x3D;&quot;col-4 pl-2 my-auto text-center&quot;&gt;
-              &lt;p class&#x3D;&quot;mb-0 mt-5&quot;&gt;${{orderItems[i].price}}&lt;/p&gt;
-              &lt;p class&#x3D;&quot;mb-2&quot;&gt;{{orderItems[i].type}}&lt;/p&gt;
-              &lt;button class&#x3D;&quot;btn w-100&quot; (click)&#x3D;&quot;setItem(item)&quot; [ngClass]&#x3D;&quot;item.value.quantity &#x3D;&#x3D;&#x3D; 0 ? &#x27;btn-primary&#x27;: &#x27;btn-danger&#x27;&quot;&gt;{{ item.value.quantity !&#x3D;&#x3D; 0 ? &#x27;Remove&#x27; : &#x27;Add&#x27;}}&lt;/button&gt;
+            &lt;div class&#x3D;&quot;col-lg-4 col-12 pl-lg-2 my-auto text-center&quot;&gt;
+              &lt;p class&#x3D;&quot;mb-0 mt-lg-5 d-none d-lg-block&quot;&gt;${{orderItems[i].price}}&lt;/p&gt;
+              &lt;p class&#x3D;&quot;mb-2 d-none d-lg-block&quot;&gt;{{orderItems[i].type}}&lt;/p&gt;
+              &lt;button class&#x3D;&quot;btn w-100 btn-set-item&quot; (click)&#x3D;&quot;setItem(item)&quot; [ngClass]&#x3D;&quot;item.value.quantity &#x3D;&#x3D;&#x3D; 0 ? &#x27;btn-primary&#x27;: &#x27;btn-danger&#x27;&quot;&gt;{{ item.value.quantity !&#x3D;&#x3D; 0 ? &#x27;Remove&#x27; : &#x27;Add&#x27;}}&lt;/button&gt;
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -984,6 +985,9 @@ export class StepTwoComponent implements OnInit {
     overflow-y: hidden;
     max-height: 100%;
   }
+  .btn-set-item {
+    border-radius: 0rem 0rem .25rem .25rem !important;
+  }
 }
 </code></pre>
     </div>
@@ -1013,7 +1017,7 @@ export class StepTwoComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <form [formGroup]="stepTwoForm"        #formRef="ngForm">      <div  formArrayName="orders" *ngFor="let item of f.controls; let i = index">        <div class="form-group" >          <div class="row no-gutters" [formGroupName]="i">            <div class="col-8 pr-2">              <p class="mb-0">{{ orderItems[i].name }}</p>              <p class="mb-1 sub-text">{{ orderItems[i].description }}</p>              <img [src]="orderItems[i].image" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">            </div>            <div class="col-4 pl-2 my-auto text-center">              <p class="mb-0 mt-5">${{orderItems[i].price}}</p>              <p class="mb-2">{{orderItems[i].type}}</p>              <button class="btn w-100" (click)="setItem(item)" [ngClass]="item.value.quantity === 0 ? \'btn-primary\': \'btn-danger\'">{{ item.value.quantity !== 0 ? \'Remove\' : \'Add\'}}</button>            </div>          </div>        </div>      </div>  </form></div><div class="mt-4 row px-0">  <div class="col-6 pr-0 pr-1 ">    <button class="w-100 btn btn-secondary" cdkStepperPrevious>Back</button>  </div>  <div class="col-6 pl-0 pl-1 ">    <button class="w-100 btn btn-primary" [disabled]="formErrorHandler" cdkStepperNext>Next</button>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <form [formGroup]="stepTwoForm"        #formRef="ngForm">      <div  formArrayName="orders" *ngFor="let item of f.controls; let i = index">        <div class="form-group" >          <div class="row no-gutters" [formGroupName]="i">            <div class="col-lg-8 col-12 pr-lg-2 pr-0">              <p class="mb-0">{{ orderItems[i].name }}</p>              <p class="mb-lg-1 mb-0 sub-text">{{ orderItems[i].description }}</p>              <p class="mb-1 sub-text d-lg-none">${{orderItems[i].price}} {{orderItems[i].type}}</p>              <img [src]="orderItems[i].image" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">            </div>            <div class="col-lg-4 col-12 pl-lg-2 my-auto text-center">              <p class="mb-0 mt-lg-5 d-none d-lg-block">${{orderItems[i].price}}</p>              <p class="mb-2 d-none d-lg-block">{{orderItems[i].type}}</p>              <button class="btn w-100 btn-set-item" (click)="setItem(item)" [ngClass]="item.value.quantity === 0 ? \'btn-primary\': \'btn-danger\'">{{ item.value.quantity !== 0 ? \'Remove\' : \'Add\'}}</button>            </div>          </div>        </div>      </div>  </form></div><div class="mt-4 row px-0">  <div class="col-6 pr-0 pr-1 ">    <button class="w-100 btn btn-secondary" cdkStepperPrevious>Back</button>  </div>  <div class="col-6 pl-0 pl-1 ">    <button class="w-100 btn btn-primary" [disabled]="formErrorHandler" cdkStepperNext>Next</button>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'StepTwoComponent'};
@@ -1051,7 +1055,7 @@ export class StepTwoComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'landing-page.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'StepTwoComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

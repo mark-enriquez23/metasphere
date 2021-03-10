@@ -3,7 +3,7 @@
         #formRef="ngForm">
       <div class="form-group">
         <label class="w-100 text-center text-lg-left" for="paymentMethod">Payment Method</label>
-        <select [ngModelOptions]="{standalone: true}" [(ngModel)]="paymentType" id="paymentMethod" class="form-control" (ngModelChange)="setForm()">
+        <select [ngModelOptions]="{standalone: true}" [(ngModel)]="paymentType" id="paymentMethod" class="form-control text-center text-lg-left" (ngModelChange)="setForm()">
           <option value="Credit Card" selected>Credit Card</option>
           <option value="Debit Card">Debit Card</option>
           <option value="Cash">Cash</option>
@@ -15,7 +15,7 @@
             <label class="w-100 text-center text-lg-left" for="number">{{ paymentType }} Number</label>
             <input (keypress)="numericField($event)" formControlName="card_number" class="form-control text-center text-lg-left" id="number" placeholder="XXXX-XXXX-XXXX-XXXX">
           </div>
-          <div class="form-group col-lg-2 col-4 pl-lg-1 pl-0">
+          <div class="form-group col-lg-2 col-12 pl-lg-1 pl-0">
             <label class="w-100 text-center text-lg-left" for="ccv">CCV</label>
             <input (keypress)="numericField($event)" formControlName="ccv" class="form-control text-center text-lg-left" id="ccv" placeholder="XXX" maxLength="3">
           </div>

@@ -10,42 +10,42 @@
           <h5 class="px-4">Pre-checkin</h5>
           <p class="sub-text px-4">{{ stepperMessage }}</p>
           <ng-stepper #cdkStepper [linear]="true" (selectionChange)="onStepChange($event)">
-            <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="true">
+            <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="false">
               <ng-template cdkStepLabel>
                 <div class="step-bullet"></div>
               </ng-template>
               <app-step-one #stepOne></app-step-one>
             </cdk-step>
 
-            <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="true">
+            <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="false">
               <ng-template cdkStepLabel>
                 <div class="step-bullet"></div>
               </ng-template>
               <app-step-two #stepTwo></app-step-two>
             </cdk-step>
 
-            <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="true">
+            <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="false">
               <ng-template cdkStepLabel>
                 <div class="step-bullet"></div>
               </ng-template>
               <app-step-three #stepThree></app-step-three>
             </cdk-step>
 
-            <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="true" [state]="stepFour.state">
+            <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="false" [state]="stepFour.state">
               <ng-template cdkStepLabel>
                 <div class="step-bullet"></div>
               </ng-template>
               <app-step-four #stepFour></app-step-four>
             </cdk-step>
 
-            <cdk-step [stepControl]="stepFive.stepFiveForm" [optional]="true" [state]="stepFive.state">
+            <cdk-step [stepControl]="stepFive.stepFiveForm" [optional]="false" [state]="stepFive.state">
               <ng-template cdkStepLabel>
                 <div class="step-bullet"></div>
               </ng-template>
               <app-step-five #stepFive></app-step-five>
             </cdk-step>
 
-            <cdk-step [stepControl]="stepSix.stepSixForm" [optional]="true" [state]="stepSix.state">
+            <cdk-step [stepControl]="stepSix.stepSixForm" [optional]="false" [state]="stepSix.state">
               <ng-template cdkStepLabel>
                 <div class="step-bullet"></div>
               </ng-template>

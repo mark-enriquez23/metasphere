@@ -61,14 +61,14 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/modules/main/components/nav-header/nav-header.component.ts</code>
+    <code>src/app/modules/hotel-information/components/nav-header/nav-header.component.ts</code>
 </p>
 
     <p class="comment">
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>Main Experience Navigation Header</p>
+        <p>Hotel Information Navigation Header</p>
 
     </p>
 
@@ -139,7 +139,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 /**
- * Main Experience Navigation Header
+ * Hotel Information Navigation Header
  */
 @Component({
   selector: &#x27;app-nav-header&#x27;,
@@ -164,11 +164,13 @@ export class NavHeaderComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;nav class&#x3D;&quot;navbar navbar-expand-lg navbar-light py-3&quot; id&#x3D;&quot;mainNav&quot;&gt;
   &lt;div class&#x3D;&quot;container&quot;&gt;
+
+    &lt;a class&#x3D;&quot;navbar-brand js-scroll-trigger d-none d-lg-block&quot; [routerLink]&#x3D;&quot;&#x27;/landing&#x27;&quot;&gt;Hotel Information&lt;/a&gt;
       &lt;div class&#x3D;&quot;nav-items ml-auto&quot;&gt;
           &lt;ul class&#x3D;&quot;navbar-nav ml-auto my-2 my-lg-0&quot;&gt;
-              &lt;li class&#x3D;&quot;nav-item&quot;&gt;&lt;a class&#x3D;&quot;nav-link js-scroll-trigger&quot; routerLinkActive&#x3D;&quot;active&quot; routerLink&#x3D;&#x27;facilities&#x27;&gt;FACILITIES&lt;/a&gt;&lt;/li&gt;
-              &lt;li class&#x3D;&quot;nav-item&quot;&gt;&lt;a class&#x3D;&quot;nav-link js-scroll-trigger&quot; routerLinkActive&#x3D;&quot;active&quot; routerLink&#x3D;&#x27;services&#x27;&gt;SERVICES&lt;/a&gt;&lt;/li&gt;
-              &lt;li class&#x3D;&quot;nav-item&quot;&gt;&lt;a class&#x3D;&quot;nav-link js-scroll-trigger&quot; routerLinkActive&#x3D;&quot;active&quot; routerLink&#x3D;&#x27;faq&#x27;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+              &lt;li class&#x3D;&quot;nav-item&quot;&gt;&lt;a class&#x3D;&quot;nav-link js-scroll-trigger py-2&quot; routerLinkActive&#x3D;&quot;active&quot; routerLink&#x3D;&#x27;services&#x27;&gt;SERVICES&lt;/a&gt;&lt;/li&gt;
+              &lt;li class&#x3D;&quot;nav-item&quot;&gt;&lt;a class&#x3D;&quot;nav-link js-scroll-trigger py-2&quot; routerLinkActive&#x3D;&quot;active&quot; routerLink&#x3D;&#x27;facilities&#x27;&gt;FACILITIES&lt;/a&gt;&lt;/li&gt;
+              &lt;li class&#x3D;&quot;nav-item&quot;&gt;&lt;a class&#x3D;&quot;nav-link js-scroll-trigger py-2 pr-3&quot; routerLinkActive&#x3D;&quot;active&quot; routerLink&#x3D;&#x27;faq&#x27;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
           &lt;/ul&gt;
       &lt;/div&gt;
   &lt;/div&gt;
@@ -184,16 +186,35 @@ export class NavHeaderComponent implements OnInit {
   background: #008080 !important;
   .container .nav-items ul li a {
     color: #fff !important;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
   }
 }
 .active {
-  border-bottom: 5px solid hsl(180, 100%, 42%);
+  background: hsl(180, 100%, 42%);
+  border-radius: 3px;
   color: #fff !important;
 }
 
-#mainNav .navbar-nav .nav-item:last-child .nav-link {
-  padding: 0 1rem !important;
+#mainNav .navbar-brand {
+  color: #fff !important;
 }
+
+.img-fluid {
+  height: 30px;
+}
+
+
+@media all and (max-width: 767px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-link {
+    padding: 0.5rem 1rem !important;
+  }
+}
+
 </code></pre>
     </div>
 
@@ -222,7 +243,7 @@ export class NavHeaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-lg navbar-light py-3" id="mainNav">  <div class="container">      <div class="nav-items ml-auto">          <ul class="navbar-nav ml-auto my-2 my-lg-0">              <li class="nav-item"><a class="nav-link js-scroll-trigger" routerLinkActive="active" routerLink=\'facilities\'>FACILITIES</a></li>              <li class="nav-item"><a class="nav-link js-scroll-trigger" routerLinkActive="active" routerLink=\'services\'>SERVICES</a></li>              <li class="nav-item"><a class="nav-link js-scroll-trigger" routerLinkActive="active" routerLink=\'faq\'>FAQ</a></li>          </ul>      </div>  </div></nav></div>'
+        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-lg navbar-light py-3" id="mainNav">  <div class="container">    <a class="navbar-brand js-scroll-trigger d-none d-lg-block" [routerLink]="\'/landing\'">Hotel Information</a>      <div class="nav-items ml-auto">          <ul class="navbar-nav ml-auto my-2 my-lg-0">              <li class="nav-item"><a class="nav-link js-scroll-trigger py-2" routerLinkActive="active" routerLink=\'services\'>SERVICES</a></li>              <li class="nav-item"><a class="nav-link js-scroll-trigger py-2" routerLinkActive="active" routerLink=\'facilities\'>FACILITIES</a></li>              <li class="nav-item"><a class="nav-link js-scroll-trigger py-2 pr-3" routerLinkActive="active" routerLink=\'faq\'>FAQ</a></li>          </ul>      </div>  </div></nav></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavHeaderComponent-1'};
@@ -260,7 +281,7 @@ export class NavHeaderComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'landing-page.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'NavHeaderComponent-1.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

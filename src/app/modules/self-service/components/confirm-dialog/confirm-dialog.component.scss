@@ -31,3 +31,10 @@ h1 {
   }
 
 }
+
+
+@media all and (max-width: 767px) {
+  .passport_img {
+    height: 300px;
+  }
+}

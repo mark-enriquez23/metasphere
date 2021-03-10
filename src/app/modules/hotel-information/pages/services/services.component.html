@@ -4,10 +4,10 @@
       <div class="card" *ngFor="let service of services; let i = index">
         <div class="card-header" [id]="'label' + getHeadId(service.id)" type="button" data-toggle="collapse" [attr.data-target]="'#'+getHeadId(service.id)">
           <h2 class="mb-0 row no-gutters">
-            <button class="btn btn-link">
+            <button class="col-11 text-left btn btn-link">
               {{ service.name }}
             </button>
-            <div class="ml-auto btn btn-link" >
+            <div class="col-1 ml-auto btn btn-link" >
               <div class="collapse " [ngClass]="{'show': i > 0}" [id]="getHeadId(service.id)">
                 <i class="fas fa-angle-down" ></i>
               </div>
