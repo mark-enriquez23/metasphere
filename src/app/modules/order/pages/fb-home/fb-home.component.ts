@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 /**
  * FB Home Page Component
@@ -18,84 +19,84 @@ export class FbHomeComponent implements OnInit {
     {
       name: 'Cheeze Cheezeburger',
       description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 15,
       quantity: 0
     },
     {
       name: 'Veggo Burger',
       description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 12,
       quantity: 0
     },
     {
       name: 'Cheeze Cheezeburger',
       description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 15,
       quantity: 0
     },
     {
       name: 'Veggo Burger',
       description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 12,
       quantity: 0
     },
     {
       name: 'Cheeze Cheezeburger',
       description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 15,
       quantity: 0
     },
     {
       name: 'Veggo Burger',
       description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 12,
       quantity: 0
     },
     {
       name: 'Cheeze Cheezeburger',
       description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 15,
       quantity: 0
     },
     {
       name: 'Veggo Burger',
       description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 12,
       quantity: 0
     },
     {
       name: 'Cheeze Cheezeburger',
       description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 15,
       quantity: 0
     },
     {
       name: 'Veggo Burger',
       description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 12,
       quantity: 0
     },
     {
       name: 'Cheeze Cheezeburger',
       description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 15,
       quantity: 0
     },
     {
       name: 'Veggo Burger',
       description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: 'assets/images/order_-_f_b_-_home/u125.png',
+      image: './assets/images/order_-_f_b_-_home/u125.png',
       price: 12,
       quantity: 0
     },
@@ -103,7 +104,16 @@ export class FbHomeComponent implements OnInit {
   /**
    * @ignore
    */
-  constructor() { }
+  constructor(private apiService: ApiService) {
+    const data = {
+      chainCode: 'Cha',
+      hotelCode: 'SINSC'
+
+    }
+    this.apiService.getMainCategoryList(data).subscribe((res) => {
+      console.log(res)
+    })
+  }
 
   /**
    * @ignore

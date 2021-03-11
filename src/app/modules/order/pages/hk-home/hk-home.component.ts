@@ -18,56 +18,56 @@ export class HkHomeComponent implements OnInit {
     {
       name: 'Organic Shampoo',
       description: 'Maui Organic Moisture Shampoo',
-      image: 'assets/images/order_-_hk_-_home/u324.png',
+      image: './assets/images/order_-_hk_-_home/u324.png',
       price: 10,
       quantity: 0
     },
     {
       name: 'Bathroom Robe',
       description: 'Fluffy Bathroom Robe, Extra Soft',
-      image: 'assets/images/order_-_hk_-_home/u324.png',
+      image: './assets/images/order_-_hk_-_home/u324.png',
       price: 8,
       quantity: 0
     },
     {
       name: 'Organic Shampoo',
       description: 'Maui Organic Moisture Shampoo',
-      image: 'assets/images/order_-_hk_-_home/u324.png',
+      image: './assets/images/order_-_hk_-_home/u324.png',
       price: 10,
       quantity: 0
     },
     {
       name: 'Bathroom Robe',
       description: 'Fluffy Bathroom Robe, Extra Soft',
-      image: 'assets/images/order_-_hk_-_home/u324.png',
+      image: './assets/images/order_-_hk_-_home/u324.png',
       price: 8,
       quantity: 0
     },
     {
       name: 'Organic Shampoo',
       description: 'Maui Organic Moisture Shampoo',
-      image: 'assets/images/order_-_hk_-_home/u324.png',
+      image: './assets/images/order_-_hk_-_home/u324.png',
       price: 10,
       quantity: 0
     },
     {
       name: 'Bathroom Robe',
       description: 'Fluffy Bathroom Robe, Extra Soft',
-      image: 'assets/images/order_-_hk_-_home/u324.png',
+      image: './assets/images/order_-_hk_-_home/u324.png',
       price: 8,
       quantity: 0
     },
     {
       name: 'Organic Shampoo',
       description: 'Maui Organic Moisture Shampoo',
-      image: 'assets/images/order_-_hk_-_home/u324.png',
+      image: './assets/images/order_-_hk_-_home/u324.png',
       price: 10,
       quantity: 0
     },
     {
       name: 'Bathroom Robe',
       description: 'Fluffy Bathroom Robe, Extra Soft',
-      image: 'assets/images/order_-_hk_-_home/u324.png',
+      image: './assets/images/order_-_hk_-_home/u324.png',
       price: 8,
       quantity: 0
     }

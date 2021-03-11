@@ -17,7 +17,7 @@ export class FacilitiesComponent implements OnInit {
       id: 501,
       name: 'Restaurant and Bars',
       subTitle: 'Captains Bar',
-      image: 'assets/images/hotel_information_-_facilities/u515.png',
+      image: './assets/images/hotel_information_-_facilities/u515.png',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
       opening_hours: [
         {
@@ -39,7 +39,7 @@ export class FacilitiesComponent implements OnInit {
       id: 301,
       name: 'Spa and Health Center',
       subTitle: 'Captains Bar',
-      image: 'assets/images/hotel_information_-_facilities/u515.png',
+      image: './assets/images/hotel_information_-_facilities/u515.png',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
       opening_hours: [
         {
@@ -61,7 +61,7 @@ export class FacilitiesComponent implements OnInit {
       id: 5101,
       name: 'Front Office',
       subTitle: 'Captains Bar',
-      image: 'assets/images/hotel_information_-_facilities/u515.png',
+      image: './assets/images/hotel_information_-_facilities/u515.png',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
       opening_hours: [
         {
@@ -83,7 +83,7 @@ export class FacilitiesComponent implements OnInit {
       id: 5401,
       name: 'Business Center',
       subTitle: 'Captains Bar',
-      image: 'assets/images/hotel_information_-_facilities/u515.png',
+      image: './assets/images/hotel_information_-_facilities/u515.png',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
       opening_hours: [
         {

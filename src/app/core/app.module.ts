@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DialogModule } from '@ngneat/dialog';
 import { ConfirmationDialogComponent } from '../shared/components/confirmation-dialog/confirmation-dialog.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,9 +17,10 @@ import { ConfirmationDialogComponent } from '../shared/components/confirmation-d
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    DialogModule.forRoot()
+    DialogModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

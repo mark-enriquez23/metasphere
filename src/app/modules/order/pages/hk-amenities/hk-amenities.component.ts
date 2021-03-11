@@ -18,56 +18,56 @@ export class HkAmenitiesComponent implements OnInit {
     {
       name: 'Fresh Set of Towels',
       description: 'Need a new set of towels?',
-      image: 'assets/images/order_-_hk_-_items/u386.png',
+      image: './assets/images/order_-_hk_-_items/u386.png',
       price: 10,
       quantity: 0
     },
     {
       name: 'Extra Set Toiletries',
       description: 'Includes conditioner, shampoo, and Bathroom Gel',
-      image: 'assets/images/order_-_hk_-_items/u386.png',
+      image: './assets/images/order_-_hk_-_items/u386.png',
       price: 8,
       quantity: 0
     },
     {
       name: 'Fresh Set of Towels',
       description: 'Need a new set of towels?',
-      image: 'assets/images/order_-_hk_-_items/u386.png',
+      image: './assets/images/order_-_hk_-_items/u386.png',
       price: 10,
       quantity: 0
     },
     {
       name: 'Extra Set Toiletries',
       description: 'Includes conditioner, shampoo, and Bathroom Gel',
-      image: 'assets/images/order_-_hk_-_items/u386.png',
+      image: './assets/images/order_-_hk_-_items/u386.png',
       price: 8,
       quantity: 0
     },
     {
       name: 'Fresh Set of Towels',
       description: 'Need a new set of towels?',
-      image: 'assets/images/order_-_hk_-_items/u386.png',
+      image: './assets/images/order_-_hk_-_items/u386.png',
       price: 10,
       quantity: 0
     },
     {
       name: 'Extra Set Toiletries',
       description: 'Includes conditioner, shampoo, and Bathroom Gel',
-      image: 'assets/images/order_-_hk_-_items/u386.png',
+      image: './assets/images/order_-_hk_-_items/u386.png',
       price: 8,
       quantity: 0
     },
     {
       name: 'Fresh Set of Towels',
       description: 'Need a new set of towels?',
-      image: 'assets/images/order_-_hk_-_items/u386.png',
+      image: './assets/images/order_-_hk_-_items/u386.png',
       price: 10,
       quantity: 0
     },
     {
       name: 'Extra Set Toiletries',
       description: 'Includes conditioner, shampoo, and Bathroom Gel',
-      image: 'assets/images/order_-_hk_-_items/u386.png',
+      image: './assets/images/order_-_hk_-_items/u386.png',
       price: 8,
       quantity: 0
     },

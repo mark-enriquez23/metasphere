@@ -18,7 +18,7 @@ export class StepTwoComponent implements OnInit {
       description: '2 Champagne, Fruit Basket.',
       price: 30,
       type: 'per room',
-      image: 'assets/images/self-service_-_page_2/u719.png'
+      image: './assets/images/self-service_-_page_2/u719.png'
     },
     {
       id: 2551,
@@ -26,7 +26,7 @@ export class StepTwoComponent implements OnInit {
       description: '48 Sqm. Kingsized Bed, Balcony.',
       price: 15,
       type: 'per night',
-      image: 'assets/images/self-service_-_page_2/u720.png'
+      image: './assets/images/self-service_-_page_2/u720.png'
     },
     {
       id: 441,
@@ -34,7 +34,7 @@ export class StepTwoComponent implements OnInit {
       description: '2 Champagne, Fruit Basket.',
       price: 30,
       type: 'per room',
-      image: 'assets/images/self-service_-_page_2/u719.png'
+      image: './assets/images/self-service_-_page_2/u719.png'
     },
     {
       id: 2341,
@@ -42,7 +42,7 @@ export class StepTwoComponent implements OnInit {
       description: '48 Sqm. Kingsized Bed, Balcony.',
       price: 15,
       type: 'per night',
-      image: 'assets/images/self-service_-_page_2/u720.png'
+      image: './assets/images/self-service_-_page_2/u720.png'
     },
     {
       id: 131,
@@ -50,7 +50,7 @@ export class StepTwoComponent implements OnInit {
       description: '2 Champagne, Fruit Basket.',
       price: 30,
       type: 'per room',
-      image: 'assets/images/self-service_-_page_2/u719.png'
+      image: './assets/images/self-service_-_page_2/u719.png'
     },
     {
       id: 331,
@@ -58,7 +58,7 @@ export class StepTwoComponent implements OnInit {
       description: '48 Sqm. Kingsized Bed, Balcony.',
       price: 15,
       type: 'per night',
-      image: 'assets/images/self-service_-_page_2/u720.png'
+      image: './assets/images/self-service_-_page_2/u720.png'
     },
     {
       id: 2331,
@@ -66,7 +66,7 @@ export class StepTwoComponent implements OnInit {
       description: '2 Champagne, Fruit Basket.',
       price: 30,
       type: 'per room',
-      image: 'assets/images/self-service_-_page_2/u719.png'
+      image: './assets/images/self-service_-_page_2/u719.png'
     },
     {
       id: 231,
@@ -74,7 +74,7 @@ export class StepTwoComponent implements OnInit {
       description: '48 Sqm. Kingsized Bed, Balcony.',
       price: 15,
       type: 'per night',
-      image: 'assets/images/self-service_-_page_2/u720.png'
+      image: './assets/images/self-service_-_page_2/u720.png'
     }
   ]
   public dialogRef: any;
