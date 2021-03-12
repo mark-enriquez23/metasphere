@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/shared/services/api.service';
 
 /**
  * FB Home Page Component
@@ -104,15 +103,7 @@ export class FbHomeComponent implements OnInit {
   /**
    * @ignore
    */
-  constructor(private apiService: ApiService) {
-    const data = {
-      chainCode: 'Cha',
-      hotelCode: 'SINSC'
-
-    }
-    this.apiService.getMainCategoryList(data).subscribe((res) => {
-      console.log(res)
-    })
+  constructor() {
   }
 
   /**

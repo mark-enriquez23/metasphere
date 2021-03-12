@@ -7,11 +7,13 @@ import { PublicHeaderComponent } from './components/public-header/public-header.
 import { FooterComponent } from './components/footer/footer.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { OptionsDialogComponent } from './components/options-dialog/options-dialog.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { SpinnerComponent } from './utilities/spinner/spinner.component';
 
 @NgModule({
-  declarations: [ PublicHeaderComponent, FooterComponent, ConfirmationDialogComponent, OptionsDialogComponent ],
-  exports: [ PublicHeaderComponent, FooterComponent, OptionsDialogComponent ],
-  imports: [CommonModule, RouterModule],
+  declarations: [ PublicHeaderComponent, FooterComponent, ConfirmationDialogComponent, OptionsDialogComponent, SpinnerComponent ],
+  exports: [ PublicHeaderComponent, FooterComponent, OptionsDialogComponent, NgxSpinnerModule, SpinnerComponent ],
+  imports: [CommonModule, RouterModule, NgxSpinnerModule,],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class SharedModule { }

@@ -5,19 +5,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DialogModule } from '@ngneat/dialog';
-import { ConfirmationDialogComponent } from '../shared/components/confirmation-dialog/confirmation-dialog.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { PageLoaderComponent } from './layouts/page-loader/page-loader.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageLoaderComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     DialogModule.forRoot(),
+    SharedModule,
     HttpClientModule
   ],
   providers: [HttpClient],

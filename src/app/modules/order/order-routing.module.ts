@@ -13,6 +13,9 @@ import { FbFoodComponent } from './pages/fb-food/fb-food.component';
 import { FbDrinksComponent } from './pages/fb-drinks/fb-drinks.component';
 import { FbComponent } from './layouts/fb/fb.component';
 
+// Resolvers
+import { HkhomeResolver } from './pages/hk-home/resolvers/hkhome.resolver';
+
 const routes: Routes = [
   {
     path: 'review-orders',
@@ -35,7 +38,8 @@ const routes: Routes = [
         },
         {
           path: 'home',
-          component: HkHomeComponent
+          component: HkHomeComponent,
+          resolve: { mainCategoryData: HkhomeResolver}
         },
         {
           path: 'services',

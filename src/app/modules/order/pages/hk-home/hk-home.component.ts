@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
 
 /**
  * HK Home Component
@@ -14,68 +16,29 @@ export class HkHomeComponent implements OnInit {
    *
    * @type {Array[Object]}
    */
-  items = [
-    {
-      name: 'Organic Shampoo',
-      description: 'Maui Organic Moisture Shampoo',
-      image: './assets/images/order_-_hk_-_home/u324.png',
-      price: 10,
-      quantity: 0
-    },
-    {
-      name: 'Bathroom Robe',
-      description: 'Fluffy Bathroom Robe, Extra Soft',
-      image: './assets/images/order_-_hk_-_home/u324.png',
-      price: 8,
-      quantity: 0
-    },
-    {
-      name: 'Organic Shampoo',
-      description: 'Maui Organic Moisture Shampoo',
-      image: './assets/images/order_-_hk_-_home/u324.png',
-      price: 10,
-      quantity: 0
-    },
-    {
-      name: 'Bathroom Robe',
-      description: 'Fluffy Bathroom Robe, Extra Soft',
-      image: './assets/images/order_-_hk_-_home/u324.png',
-      price: 8,
-      quantity: 0
-    },
-    {
-      name: 'Organic Shampoo',
-      description: 'Maui Organic Moisture Shampoo',
-      image: './assets/images/order_-_hk_-_home/u324.png',
-      price: 10,
-      quantity: 0
-    },
-    {
-      name: 'Bathroom Robe',
-      description: 'Fluffy Bathroom Robe, Extra Soft',
-      image: './assets/images/order_-_hk_-_home/u324.png',
-      price: 8,
-      quantity: 0
-    },
-    {
-      name: 'Organic Shampoo',
-      description: 'Maui Organic Moisture Shampoo',
-      image: './assets/images/order_-_hk_-_home/u324.png',
-      price: 10,
-      quantity: 0
-    },
-    {
-      name: 'Bathroom Robe',
-      description: 'Fluffy Bathroom Robe, Extra Soft',
-      image: './assets/images/order_-_hk_-_home/u324.png',
-      price: 8,
-      quantity: 0
-    }
-  ]
+  items = []
+  /**
+   * Main Category Data
+   *
+   * @type {any}
+   */
+  mainCategoryData: any;
+
   /**
    * @ignore
    */
-  constructor() { }
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private router: Router,
+  ) {
+
+    if (this.activateRoute.snapshot.data.mainCategoryData) {
+      this.mainCategoryData = this.activateRoute.snapshot.data.mainCategoryData;
+      console.log(this.mainCategoryData)
+    } else{
+      console.log('err')
+    }
+  }
 
   /**
    * @ignore
