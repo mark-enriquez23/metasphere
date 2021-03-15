@@ -1,15 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SecondaryCategoryService } from 'src/app/shared/services/room-services-housekeeping/secondary-category/secondary-category.service';
 
-/**
- * Order Product Cards
- */
 @Component({
-  selector: 'app-item-cards',
-  templateUrl: './item-cards.component.html',
-  styleUrls: ['./item-cards.component.scss']
+  selector: 'app-category-cards',
+  templateUrl: './category-cards.component.html',
+  styleUrls: ['./category-cards.component.scss']
 })
-export class ItemCardsComponent implements OnInit {
+export class CategoryCardsComponent implements OnInit {
   /**
    * Input Data Injectible
    *
@@ -42,6 +39,8 @@ export class ItemCardsComponent implements OnInit {
     }
 
     const initialContent = {
+      chainCode: 'CHA',
+      hotelCode: 'SINSC',
       cid: this.data.cid
     }
     this.secondaryCategoryService.getSecondaryCategoryList(initialContent).then((res: any) => {

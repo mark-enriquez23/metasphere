@@ -1,6 +1,6 @@
 
 <div class="container mt-2">
   <div class="cards-section mt-4 pb-5 card-columns">
-    <app-item-cards class="" *ngFor="let item of items" [data]="item"></app-item-cards>
+    <app-item-cards class="" *ngFor="let item of this.itemListing.list" [data]="item"></app-item-cards>
   </div>
 </div>

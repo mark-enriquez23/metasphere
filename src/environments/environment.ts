@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  api_path: 'http://18.191.199.129:7779/'
+  api_path: 'http://18.191.199.129:7779/',
+  chainCode: 'CHA',
+  hotelCode: 'SINSC'
 };
 
 /*

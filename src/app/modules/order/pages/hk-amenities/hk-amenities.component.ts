@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 /**
  * HK Amenities Page Component
@@ -14,68 +15,29 @@ export class HkAmenitiesComponent implements OnInit {
    *
    * @type {Array[Object]}
    */
-  items = [
-    {
-      name: 'Fresh Set of Towels',
-      description: 'Need a new set of towels?',
-      image: './assets/images/order_-_hk_-_items/u386.png',
-      price: 10,
-      quantity: 0
-    },
-    {
-      name: 'Extra Set Toiletries',
-      description: 'Includes conditioner, shampoo, and Bathroom Gel',
-      image: './assets/images/order_-_hk_-_items/u386.png',
-      price: 8,
-      quantity: 0
-    },
-    {
-      name: 'Fresh Set of Towels',
-      description: 'Need a new set of towels?',
-      image: './assets/images/order_-_hk_-_items/u386.png',
-      price: 10,
-      quantity: 0
-    },
-    {
-      name: 'Extra Set Toiletries',
-      description: 'Includes conditioner, shampoo, and Bathroom Gel',
-      image: './assets/images/order_-_hk_-_items/u386.png',
-      price: 8,
-      quantity: 0
-    },
-    {
-      name: 'Fresh Set of Towels',
-      description: 'Need a new set of towels?',
-      image: './assets/images/order_-_hk_-_items/u386.png',
-      price: 10,
-      quantity: 0
-    },
-    {
-      name: 'Extra Set Toiletries',
-      description: 'Includes conditioner, shampoo, and Bathroom Gel',
-      image: './assets/images/order_-_hk_-_items/u386.png',
-      price: 8,
-      quantity: 0
-    },
-    {
-      name: 'Fresh Set of Towels',
-      description: 'Need a new set of towels?',
-      image: './assets/images/order_-_hk_-_items/u386.png',
-      price: 10,
-      quantity: 0
-    },
-    {
-      name: 'Extra Set Toiletries',
-      description: 'Includes conditioner, shampoo, and Bathroom Gel',
-      image: './assets/images/order_-_hk_-_items/u386.png',
-      price: 8,
-      quantity: 0
-    },
-  ]
+  items = []
+
+  /**
+   * Item Listing
+   *
+   * @type {any}
+   */
+  itemListing: any
+
   /**
    * @ignore
    */
-  constructor() { }
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private router: Router,
+  ) {
+    if (this.activateRoute.snapshot.data.itemListData) {
+      this.itemListing = this.activateRoute.snapshot.data.itemListData;
+      console.log(this.itemListing)
+    } else{
+      console.log('err')
+    }
+  }
 
   /**
    * @ignore

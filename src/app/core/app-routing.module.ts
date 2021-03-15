@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './guards/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -20,25 +21,38 @@ const routes: Routes = [
     loadChildren: () => import('src/app/modules/hotel-information/hotel-information.module').then( m => m.HotelInformationModule)
   },
   {
-    path: 'main',
-    loadChildren: () => import('src/app/modules/main/main.module').then( m => m.MainModule)
-  },
-  {
-    path: 'main/:menu',
-    loadChildren: () => import('src/app/modules/main/main.module').then( m => m.MainModule)
-  },
-  {
-    path: 'order',
-    loadChildren: () => import('src/app/modules/order/order.module').then( m => m.OrderModule)
-  },
-  {
     path: 'pre-check',
     loadChildren: () => import('src/app/modules/pre-check/pre-check.module').then( m => m.PreCheckModule)
   },
   {
     path: 'self-service',
     loadChildren: () => import('src/app/modules/self-service/self-service.module').then( m => m.SelfServiceModule)
-  }
+  },
+  {
+    path: 'main',
+    canActivate: [
+      AuthGuardService,
+    ],
+    children: [
+      {
+        path: '',
+        redirectTo: 'experience',
+        pathMatch: 'full'
+      },
+      {
+        path: 'experience',
+        loadChildren: () => import('src/app/modules/main/main.module').then( m => m.MainModule)
+      },
+      {
+        path: 'experience/:menu',
+        loadChildren: () => import('src/app/modules/main/main.module').then( m => m.MainModule)
+      },
+      {
+        path: 'order',
+        loadChildren: () => import('src/app/modules/order/order.module').then( m => m.OrderModule)
+      },
+    ]
+  },
 ];
 
 @NgModule({

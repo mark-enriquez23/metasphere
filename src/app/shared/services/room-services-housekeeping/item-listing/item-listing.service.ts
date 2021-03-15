@@ -5,17 +5,16 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class SecondaryCategoryService {
+export class ItemListingService {
 
   public api_type = 'customize/control'
 
   constructor(public http: HttpClient) { }
 
-  getSecondaryCategoryList(data) {
+  getItemListing() {
     const params = new HttpParams()
     .set('chainCode', environment.chainCode)
     .set('hotelCode', environment.hotelCode)
-    .set('cid', data.cid)
-    return this.http.get<any>( environment.api_path + this.api_type + '/Fetch2ndCategoryList', {params}).toPromise();
+    return this.http.get<any>( environment.api_path + this.api_type + '/FetchTemplateList', {params}).toPromise();
   }
 }

@@ -19,6 +19,7 @@ import { FbFoodComponent } from './pages/fb-food/fb-food.component';
 import { FbDrinksComponent } from './pages/fb-drinks/fb-drinks.component';
 import { FbComponent } from './layouts/fb/fb.component';
 import { FbNavHeaderComponent } from './components/fb-nav-header/fb-nav-header.component';
+import { CategoryCardsComponent } from './components/category-cards/category-cards/category-cards.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FbNavHeaderComponent } from './components/fb-nav-header/fb-nav-header.c
     FbFoodComponent,
     FbDrinksComponent,
     FbComponent,
-    FbNavHeaderComponent,],
+    FbNavHeaderComponent,
+    CategoryCardsComponent,],
   imports: [
     CommonModule,
     OrderRoutingModule,

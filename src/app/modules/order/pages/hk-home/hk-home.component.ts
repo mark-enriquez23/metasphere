@@ -31,7 +31,6 @@ export class HkHomeComponent implements OnInit {
     private activateRoute: ActivatedRoute,
     private router: Router,
   ) {
-
     if (this.activateRoute.snapshot.data.mainCategoryData) {
       this.mainCategoryData = this.activateRoute.snapshot.data.mainCategoryData;
       console.log(this.mainCategoryData)

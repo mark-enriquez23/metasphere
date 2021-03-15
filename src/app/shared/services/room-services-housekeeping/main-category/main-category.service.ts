@@ -7,14 +7,15 @@ import { environment } from 'src/environments/environment';
 })
 export class MainCategoryService {
 
+  public api_type = 'customize/control'
+
   constructor(public http: HttpClient) { }
 
-  getMainCategoryList(data) {
+  getMainCategoryList() {
     const params = new HttpParams()
-    .set('chainCode', data.chainCode)
-    .set('hotelCode', data.hotelCode)
-    .set('cid', data.cid)
-    return this.http.get<any>( environment.api_path + 'customize/control/FetchCategoryList', {params}).toPromise();
+    .set('chainCode', environment.chainCode)
+    .set('hotelCode', environment.hotelCode)
+    return this.http.get<any>( environment.api_path + this.api_type + '/FetchCategoryList', {params}).toPromise();
   }
 
 }

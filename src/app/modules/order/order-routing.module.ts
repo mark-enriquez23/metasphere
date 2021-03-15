@@ -15,6 +15,7 @@ import { FbComponent } from './layouts/fb/fb.component';
 
 // Resolvers
 import { HkhomeResolver } from './pages/hk-home/resolvers/hkhome.resolver';
+import { HkamenitiesResolver } from './pages/hk-amenities/resolvers/hkamenities.resolver';
 
 const routes: Routes = [
   {
@@ -47,7 +48,8 @@ const routes: Routes = [
         },
         {
           path: 'amenities',
-          component: HkAmenitiesComponent
+          component: HkAmenitiesComponent,
+          resolve: { itemListData: HkamenitiesResolver}
         },
         {
           path: 'cart',

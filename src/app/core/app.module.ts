@@ -10,6 +10,7 @@ import { PageLoaderComponent } from './layouts/page-loader/page-loader.component
 import { SharedModule } from '../shared/shared.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

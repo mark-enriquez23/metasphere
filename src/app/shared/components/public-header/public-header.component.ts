@@ -1,5 +1,7 @@
 import { Input } from '@angular/core';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-public-header',
@@ -27,7 +29,7 @@ export class PublicHeaderComponent implements OnInit {
   }
   //Variables
   scrolled = false;
-  constructor() {
+  constructor(private userService: UserService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -53,7 +55,7 @@ export class PublicHeaderComponent implements OnInit {
           },
           {
             name: 'Order',
-            route: 'main',
+            route: 'main/experience',
             params: 'menu'
           })
           break;
@@ -67,8 +69,13 @@ export class PublicHeaderComponent implements OnInit {
     }
   }
 
-  setMenuRoute(item) {
+  setMenuRoute(item): string {
     let initialRoute = '/' + item.route
     return item.params ? initialRoute = initialRoute + '/' + item.params : initialRoute
+  }
+
+  logout(): void {
+    this.userService.clearTokenData();
+    location.reload();
   }
 }
