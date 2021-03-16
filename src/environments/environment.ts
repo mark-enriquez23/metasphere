@@ -6,7 +6,9 @@ export const environment = {
   production: false,
   api_path: 'http://18.191.199.129:7779/',
   chainCode: 'CHA',
-  hotelCode: 'SINSC'
+  hotelCode: 'SINSC',
+  program: 'NEW',
+  kioskname: '001'
 };
 
 /*

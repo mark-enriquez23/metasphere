@@ -9,12 +9,12 @@ export class UserService {
 
   public userToken = localStorage.getItem('token')
   public hasToken = !!this.userToken;
+  public api_type = 'customize/control'
 
   constructor(private httpClient: HttpClient) { }
 
   public userLogin(roomNumber: string, lastName: string) {
-    console.log('test')
-    return this.httpClient.post(environment.api_path + 'user/login', {roomNumber: roomNumber, lastName:lastName }).toPromise();
+    return this.httpClient.post(environment.api_path + this.api_type + '/FetchBooKingwithlastNameAndRoomno', {roomNo: roomNumber, lastName:lastName }).toPromise();
   }
 
   public isUserLoggedIn() {

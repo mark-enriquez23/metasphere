@@ -54,11 +54,10 @@ export class LoginComponent implements OnInit {
       this.spinnerSrv.show('Signing you in...');
       console.log(this.f);
       this.userService.userLogin(this.f.room_number.value, this.f.last_name.value).then((res: any) => {
-        this.userService.storeToken(res.token);
-        this.router.navigate(['main/experience']);
+        console.log(res)
+        this.userService.storeToken(res);
         // this.router.navigateByUrl(environment.initial_page);
       }).finally(() =>{
-        this.userService.storeToken('test_token');
         this.router.navigate(['main/experience']);
         this.spinnerSrv.hide()}
       );
