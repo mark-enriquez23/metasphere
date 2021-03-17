@@ -16,6 +16,7 @@ import { FbComponent } from './layouts/fb/fb.component';
 // Resolvers
 import { HkhomeResolver } from './pages/hk-home/resolvers/hkhome.resolver';
 import { HkamenitiesResolver } from './pages/hk-amenities/resolvers/hkamenities.resolver';
+import { FbhomeResolver } from './pages/fb-home/resolvers/fbhome.resolver';
 
 const routes: Routes = [
   {
@@ -68,7 +69,8 @@ const routes: Routes = [
         },
         {
           path: 'home',
-          component: FbHomeComponent
+          component: FbHomeComponent,
+          resolve: { orderListingData: FbhomeResolver}
         },
         {
           path: 'foods',

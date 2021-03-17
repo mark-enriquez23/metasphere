@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 /**
  * FB Home Page Component
@@ -9,103 +10,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fb-home.component.scss']
 })
 export class FbHomeComponent implements OnInit {
+
   /**
    * Items
    *
    * @type {Array[Object]}
    */
-  items = [
-    {
-      name: 'Cheeze Cheezeburger',
-      description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 15,
-      quantity: 0
-    },
-    {
-      name: 'Veggo Burger',
-      description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 12,
-      quantity: 0
-    },
-    {
-      name: 'Cheeze Cheezeburger',
-      description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 15,
-      quantity: 0
-    },
-    {
-      name: 'Veggo Burger',
-      description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 12,
-      quantity: 0
-    },
-    {
-      name: 'Cheeze Cheezeburger',
-      description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 15,
-      quantity: 0
-    },
-    {
-      name: 'Veggo Burger',
-      description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 12,
-      quantity: 0
-    },
-    {
-      name: 'Cheeze Cheezeburger',
-      description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 15,
-      quantity: 0
-    },
-    {
-      name: 'Veggo Burger',
-      description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 12,
-      quantity: 0
-    },
-    {
-      name: 'Cheeze Cheezeburger',
-      description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 15,
-      quantity: 0
-    },
-    {
-      name: 'Veggo Burger',
-      description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 12,
-      quantity: 0
-    },
-    {
-      name: 'Cheeze Cheezeburger',
-      description: 'With original dressing, smoked baco, salad, and crispy fries',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 15,
-      quantity: 0
-    },
-    {
-      name: 'Veggo Burger',
-      description: 'Haloumi cheese, spicy sauce, and red onions',
-      image: './assets/images/order_-_f_b_-_home/u125.png',
-      price: 12,
-      quantity: 0
-    },
-  ]
+   items = []
+   /**
+    * Main Category Data
+    *
+    * @type {any}
+    */
+   orderListingData: any;
   /**
    * @ignore
    */
-  constructor() {
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private router: Router,
+  ) {
+    if (this.activateRoute.snapshot.data.orderListingData) {
+      this.orderListingData = this.activateRoute.snapshot.data.orderListingData;
+      console.log(this.orderListingData)
+    } else{
+      console.log('err')
+    }
   }
-
   /**
    * @ignore
    */

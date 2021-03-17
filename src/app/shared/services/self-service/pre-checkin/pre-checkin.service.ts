@@ -21,7 +21,7 @@ export class PreCheckinService {
     .set('hotelCode', environment.hotelCode)
     .set('program', environment.program)
     .set('kioskname', environment.kioskname)
-    return this.httpClient.post(environment.api_path + this.api_type + '/newFetchBooking', params).toPromise();
+    return this.httpClient.get(environment.api_path + this.api_type + '/newFetchBooking', {params}).toPromise();
   }
 
 

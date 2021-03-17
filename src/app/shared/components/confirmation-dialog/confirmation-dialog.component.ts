@@ -70,12 +70,12 @@ export class ConfirmationDialogComponent implements OnInit {
 
   setBtnMessage(): string {
     switch (this.content.type) {
-      case 'fail':
       case 'danger':
       case 'success':
         return 'Exit'
         break;
 
+      case 'fail':
       default:
         return 'Confirm'
         break;

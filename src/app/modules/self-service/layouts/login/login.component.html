@@ -33,7 +33,7 @@
               <button class="w-100 btn btn-secondary" [routerLink]="'/landing'">Exit</button>
             </div>
             <div class="col-6 pl-0 pl-1 ">
-              <button class="w-100 btn btn-primary"  [routerLink]="'/self-service/pre-checkin'" [disabled]="formErrorHandler">Next</button>
+              <button class="w-100 btn btn-primary" (click)="validateBooking()" [disabled]="formErrorHandler">Next</button>
             </div>
           </div>
         </div>
