@@ -28,6 +28,7 @@
     "bs-stepper": "^1.7.0",
     "jquery": "^3.5.1",
     "ng2-file-upload": "^1.4.0",
+    "ngx-infinite-scroll": "^10.0.1",
     "ngx-spinner": "^10.0.1",
     "rxjs": "^6.6.6",
     "sweetalert2": "^10.15.5",

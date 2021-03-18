@@ -8,7 +8,8 @@ export const environment = {
   chainCode: 'CHA',
   hotelCode: 'SINSC',
   program: 'NEW',
-  kioskname: '001'
+  kioskname: '001',
+  guestType: 'all' //Can be all, pre-check-in, or main-exp
 };
 
 /*

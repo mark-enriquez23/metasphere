@@ -6,7 +6,12 @@
       <h6 class="mb-0">Check out these cool amenities.</h6>
     </div>
   </div>
-  <div class="cards-section mt-4 pb-5 card-columns">
-    <app-category-cards class="" *ngFor="let item of this.mainCategoryData.list" [data]="item"></app-category-cards>
+  <div class="cards-section mt-4 pb-5 card-columns"
+  infinite-scroll
+  [infiniteScrollDistance]="scrollDistance"
+  [infiniteScrollUpDistance]="scrollUpDistance"
+  [infiniteScrollThrottle]="throttle"
+  (scrolled)="onScrollDown($event)">
+    <app-category-cards class="" *ngFor="let item of arrayItems" [data]="item"></app-category-cards>
   </div>
 </div>

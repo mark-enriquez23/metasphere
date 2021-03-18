@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { OrderRoutingModule } from './order-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { OrderComponent } from './layouts/order/order.component';
 import { ReviewOrdersComponent } from './pages/review-orders/review-orders.component';
@@ -20,6 +21,7 @@ import { FbDrinksComponent } from './pages/fb-drinks/fb-drinks.component';
 import { FbComponent } from './layouts/fb/fb.component';
 import { FbNavHeaderComponent } from './components/fb-nav-header/fb-nav-header.component';
 import { CategoryCardsComponent } from './components/category-cards/category-cards/category-cards.component';
+import { FbItemCardsComponent } from './components/fb-item-cards/fb-item-cards/fb-item-cards.component';
 
 
 @NgModule({
@@ -38,9 +40,11 @@ import { CategoryCardsComponent } from './components/category-cards/category-car
     FbDrinksComponent,
     FbComponent,
     FbNavHeaderComponent,
-    CategoryCardsComponent,],
+    CategoryCardsComponent,
+    FbItemCardsComponent,],
   imports: [
     CommonModule,
+    InfiniteScrollModule,
     OrderRoutingModule,
     FormsModule,
     SharedModule

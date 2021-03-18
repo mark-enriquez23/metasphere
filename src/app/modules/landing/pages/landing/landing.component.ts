@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as images from 'src/assets/json/images.json';
+import { environment } from 'src/environments/environment';
+
 
 /**
  * Landing Page Component
@@ -15,6 +17,12 @@ export class LandingComponent implements OnInit {
    * @type {any}
    */
   companyImgs: any;
+  /**
+   * App Type
+   * @type {any}
+   */
+  appType: any;
+  env = environment;
 
   /**
    * @ignore

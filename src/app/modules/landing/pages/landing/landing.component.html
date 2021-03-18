@@ -10,7 +10,7 @@
             </div>
             <div class="col-lg-8 align-self-baseline">
                 <p class=" font-weight-light mb-5">Start your experience today by clicking on My Experience.</p>
-                <div class="row no-gutters text-center">
+                <div class="row no-gutters text-center" *ngIf="env.guestType==='all'; else showGuest">
                   <div class="col-lg-6 pr-lg-2 text-lg-right">
                     <a [routerLink]="'/main/experience'" class="btn btn-primary btn-xl w-lg-50 w-75">My Experience</a>
                   </div>
@@ -97,3 +97,15 @@
 </section>
 <app-footer></app-footer>
 </div>
+
+
+<ng-template #showGuest>
+    <div class="col-lg-12 px-0" *ngIf="env.guestType!=='pre-check-in'; else mainExperience">
+      <a [routerLink]="'/main/experience'" class="btn btn-primary btn-xl w-lg-50 w-75">My Experience</a>
+    </div>
+    <ng-template #mainExperience>
+      <div class="col-lg-12 px-0">
+        <a [routerLink]="'/self-service/login'" class="btn btn-primary btn-xl w-lg-50 w-75">Pre check-in</a>
+      </div>
+    </ng-template>
+</ng-template>

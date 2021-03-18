@@ -24,6 +24,13 @@ export class HkAmenitiesComponent implements OnInit {
    */
   itemListing: any
 
+  arrayItems = [];
+  sum = 10;
+  throttle = 300;
+  scrollDistance = 1;
+  scrollUpDistance = 2;
+  direction = "";
+
   /**
    * @ignore
    */
@@ -42,7 +49,49 @@ export class HkAmenitiesComponent implements OnInit {
   /**
    * @ignore
    */
-  ngOnInit(): void {
+   ngOnInit(): void {
+    this.appendItems(0, this.sum);
+  }
+
+
+  onScrollDown(ev) {
+    console.log("scrolled down!!", ev);
+    if(this.sum <= this.itemListing.list.length) {
+      // add another 20 items
+      const start = this.sum;
+      this.sum += 10;
+      this.appendItems(start, this.sum);
+
+      console.log(this.sum)
+      this.direction = "down";
+      console.log(this.arrayItems)
+    }
+  }
+
+  onUp(ev) {
+    console.log("scrolled up!", ev);
+    const start = this.sum;
+    this.sum += 20;
+    this.prependItems(start, this.sum);
+
+    this.direction = "up";
+  }
+
+
+  appendItems(startIndex, endIndex) {
+    this.addItems(startIndex, endIndex, "push");
+  }
+
+
+  prependItems(startIndex, endIndex) {
+    this.addItems(startIndex, endIndex, "unshift");
+  }
+
+  addItems(startIndex, endIndex, _method) {
+    for (let i = startIndex; i < this.sum; ++i) {
+      if (this.itemListing.list[i])
+        this.arrayItems[_method](this.itemListing.list[i]);
+    }
   }
 
 }
