@@ -65,13 +65,13 @@
 <title>cluster_LoginModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="105,-70 105,-268 391,-268 391,-70 105,-70"/>
 </g>
-<g id="clust4" class="cluster">
-<title>cluster_LoginModule_exports</title>
-<polygon fill="none" stroke="black" points="169,-208 169,-260 327,-260 327,-208 169,-208"/>
-</g>
 <g id="clust3" class="cluster">
 <title>cluster_LoginModule_imports</title>
 <polygon fill="none" stroke="black" points="113,-78 113,-130 383,-130 383,-78 113,-78"/>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_LoginModule_exports</title>
+<polygon fill="none" stroke="black" points="169,-208 169,-260 327,-260 327,-208 169,-208"/>
 </g>
 <!-- LoginRoutingModule -->
 <g id="node1" class="node">
@@ -197,6 +197,7 @@ import { CommonModule } from &#x27;@angular/common&#x27;;
 // Modules
 import { LoginRoutingModule } from &#x27;./login-routing.module&#x27;;
 import { SharedModule } from &#x27;src/app/shared/shared.module&#x27;;
+import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 
 // Components
 import { LoginComponent } from &#x27;./pages/login/login.component&#x27;;
@@ -209,6 +210,8 @@ import { NavHeaderComponent } from &#x27;./components/nav-header/nav-header.comp
   imports: [
     CommonModule,
     LoginRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

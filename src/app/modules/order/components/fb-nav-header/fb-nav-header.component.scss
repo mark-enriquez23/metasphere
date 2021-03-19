@@ -38,6 +38,15 @@
     box-shadow: none;
   }
 }
+.cart-item {
+  align-items: center;
+  vertical-align: middle;
+  margin: auto;
+  display: grid;
+  div {
+    margin: auto;
+  }
+}
 
 
 @media all and (max-width: 767px) {

@@ -128,6 +128,26 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dialogRef">dialogRef</a>
+                            </li>
+                            <li>
+                                <a href="#errorMessage">errorMessage</a>
+                            </li>
+                            <li>
+                                <a href="#loginForm">loginForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -140,6 +160,9 @@
                             <li>
                                 <a href="#login">login</a>
                             </li>
+                            <li>
+                                <a href="#openErrorDialog">openErrorDialog</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -148,6 +171,26 @@
 
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#f">f</a>
+                                </li>
+                                <li>
+                                    <a href="#formErrorHandler">formErrorHandler</a>
+                                </li>
+                                <li>
+                                    <a href="#formStatusError">formStatusError</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
         </tbody>
     </table>
 </section>
@@ -158,19 +201,17 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(userService: <a href="../injectables/UserService.html">UserService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, dialog: DialogService, spinnerSrv: <a href="../injectables/SpinnerService.html">SpinnerService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:32</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor</p>
-</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -183,10 +224,58 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
                                                         <td>router</td>
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>DialogService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>spinnerSrv</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SpinnerService.html" target="_self" >SpinnerService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -234,8 +323,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:60</a></div>
                 </td>
             </tr>
 
@@ -259,14 +348,253 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openErrorDialog"></a>
+                    <span class="name">
+                        <b>
+                            openErrorDialog
+                        </b>
+                        <a href="#openErrorDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openErrorDialog()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialogRef"></a>
+                        <span class="name">
+                            <b>
+                            dialogRef</b>
+                            <a href="#dialogRef"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Dialog Reference</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="errorMessage"></a>
+                        <span class="name">
+                            <b>
+                            errorMessage</b>
+                            <a href="#errorMessage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginForm"></a>
+                        <span class="name">
+                            <b>
+                            loginForm</b>
+                            <a href="#loginForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Constructor</p>
+</div>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>privaterouter</td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
 </section>
 
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f"></a>
+                        <span class="name"><b>f</b><a href="#f"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>f()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:51</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formErrorHandler"></a>
+                        <span class="name"><b>formErrorHandler</b><a href="#formErrorHandler"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>formErrorHandler()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:52</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formStatusError"></a>
+                        <span class="name"><b>formStatusError</b><a href="#formStatusError"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>formStatusError()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/modules/authentication/login/pages/login/login.component.ts:53</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+import { DialogService } from &#x27;@ngneat/dialog&#x27;;
+import { ConfirmationDialogComponent } from &#x27;src/app/shared/components/confirmation-dialog/confirmation-dialog.component&#x27;;
+import { UserService } from &#x27;src/app/shared/services/user/user.service&#x27;;
+import { SpinnerService } from &#x27;src/app/shared/utilities/spinner/spinner.service&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
 
 /**
  * Login Component
@@ -282,13 +610,36 @@ export class LoginComponent implements OnInit {
    *
    * @param  {Router} privaterouter
    */
-  constructor(private router: Router) { }
+
+  loginForm: FormGroup;
+  errorMessage &#x3D; &#x27;&#x27;;
+  /**
+   * Dialog Reference
+   *
+   * @type {any}
+   */
+  dialogRef: any;
+
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private dialog: DialogService,
+    private spinnerSrv: SpinnerService) {
+  }
 
   /**
    * @ignore
    */
   ngOnInit(): void {
+    this.loginForm &#x3D; this.formBuilder.group({
+      room_number: [&#x27;&#x27;, [Validators.required]],
+      last_name: [&#x27;&#x27;, [Validators.required]]
+    });
   }
+  get f() { return this.loginForm.controls; }
+  get formErrorHandler() { return this.f.room_number.errors || this.f.last_name.errors;  }
+  get formStatusError() { return this.f.room_number.value &#x3D;&#x3D;&#x3D; &#x27;&#x27; || this.f.last_name.value &#x3D;&#x3D;&#x3D; &#x27;&#x27; }
 
   /**
    * Login
@@ -296,7 +647,32 @@ export class LoginComponent implements OnInit {
    * @returns void
    */
   login(): void {
-    this.router.navigate([&#x27;main&#x27;])
+    if (!this.formErrorHandler) {
+      this.errorMessage &#x3D; &#x27;&#x27;;
+      this.spinnerSrv.show(&#x27;Signing you in...&#x27;);
+      console.log(this.f);
+      this.userService.userLogin(this.f.room_number.value, this.f.last_name.value).then((res: any) &#x3D;&gt; {
+        console.log(res)
+        if (!res.data) {
+          this.userService.storeToken(res);
+          this.router.navigate([&#x27;main/experience&#x27;]);
+        } else {
+          this.openErrorDialog()
+        }
+      }).finally(() &#x3D;&gt;
+      this.spinnerSrv.hide()
+      );
+    }
+  }
+
+
+  openErrorDialog(): void {
+    this.dialogRef &#x3D; this.dialog.open(ConfirmationDialogComponent, {
+      data: {
+        message: &#x27;Room number or Last name is incorrect.&#x27;,
+        type: &#x27;fail&#x27;
+      }
+    })
   }
 
 }
@@ -315,12 +691,12 @@ export class LoginComponent implements OnInit {
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;col-lg-8 align-self-baseline&quot;&gt;
                 &lt;p class&#x3D;&quot;mb-3 white-text&quot;&gt;Login with your credentials.&lt;/p&gt;
-                &lt;div class&#x3D;&quot;row no-gutters text-center&quot;&gt;
+                &lt;div class&#x3D;&quot;row no-gutters text-center&quot; [formGroup]&#x3D;&quot;loginForm&quot;&gt;
                   &lt;div class&#x3D;&quot;col-1 col-lg-3 col-md-3&quot;&gt;&lt;/div&gt;
                   &lt;div class&#x3D;&quot;col-lg-6 col-md-6 col-10 mt-lg-0 mt-0 mx-0 px-4
                   px-lg-2 text-center&quot;&gt;
-                    &lt;input class&#x3D;&quot; w-100 px-3 py-2 mx-0 text-center&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Room Number&quot;&gt;
-                    &lt;input class&#x3D;&quot; w-100 px-3 py-2 mx-0 text-center&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Last Name&quot;&gt;
+                    &lt;input class&#x3D;&quot; w-100 px-3 py-2 mx-0 text-center&quot; formControlName&#x3D;&quot;room_number&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Room Number&quot;&gt;
+                    &lt;input class&#x3D;&quot; w-100 px-3 py-2 mx-0 text-center&quot; formControlName&#x3D;&quot;last_name&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Last Name&quot;&gt;
                     &lt;a class&#x3D;&quot;btn btn-primary btn-xl w-100 px-0 py-1 mx-0 py-3&quot; (click)&#x3D;&quot;login()&quot;&gt;Log in&lt;/a&gt;
                      &lt;p class&#x3D;&quot;white-text mb-0 font-weight-light&quot;&gt;Do you need any help to login?&lt;/p&gt;
                      &lt;a href&#x3D;&quot;&quot; class&#x3D;&quot;text-white font-weight-bold&quot;&gt;Contact an employee&lt;/a&gt;
@@ -417,8 +793,8 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-public-header></app-public-header><div class="h-100">   <!-- Head-->   <header class="masthead">    <div class="container h-100">        <div class="row h-100 align-items-center justify-content-center text-center">            <div class="col-lg-10 align-self-end">                <h2 class="text-uppercase font-weight-bold white-text">Start your experience.</h2>            </div>            <div class="col-lg-8 align-self-baseline">                <p class="mb-3 white-text">Login with your credentials.</p>                <div class="row no-gutters text-center">                  <div class="col-1 col-lg-3 col-md-3"></div>                  <div class="col-lg-6 col-md-6 col-10 mt-lg-0 mt-0 mx-0 px-4                  px-lg-2 text-center">                    <input class=" w-100 px-3 py-2 mx-0 text-center" type="text" placeholder="Room Number">                    <input class=" w-100 px-3 py-2 mx-0 text-center" type="text" placeholder="Last Name">                    <a class="btn btn-primary btn-xl w-100 px-0 py-1 mx-0 py-3" (click)="login()">Log in</a>                     <p class="white-text mb-0 font-weight-light">Do you need any help to login?</p>                     <a href="" class="text-white font-weight-bold">Contact an employee</a>                  </div>                </div>            </div>        </div>    </div></header></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
+        var COMPONENT_TEMPLATE = '<div><app-public-header></app-public-header><div class="h-100">   <!-- Head-->   <header class="masthead">    <div class="container h-100">        <div class="row h-100 align-items-center justify-content-center text-center">            <div class="col-lg-10 align-self-end">                <h2 class="text-uppercase font-weight-bold white-text">Start your experience.</h2>            </div>            <div class="col-lg-8 align-self-baseline">                <p class="mb-3 white-text">Login with your credentials.</p>                <div class="row no-gutters text-center" [formGroup]="loginForm">                  <div class="col-1 col-lg-3 col-md-3"></div>                  <div class="col-lg-6 col-md-6 col-10 mt-lg-0 mt-0 mx-0 px-4                  px-lg-2 text-center">                    <input class=" w-100 px-3 py-2 mx-0 text-center" formControlName="room_number" type="text" placeholder="Room Number">                    <input class=" w-100 px-3 py-2 mx-0 text-center" formControlName="last_name" type="text" placeholder="Last Name">                    <a class="btn btn-primary btn-xl w-100 px-0 py-1 mx-0 py-3" (click)="login()">Log in</a>                     <p class="white-text mb-0 font-weight-light">Do you need any help to login?</p>                     <a href="" class="text-white font-weight-bold">Contact an employee</a>                  </div>                </div>            </div>        </div>    </div></header></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent-1'};
 </script>

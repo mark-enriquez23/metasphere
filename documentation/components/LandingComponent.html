@@ -137,7 +137,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#appType">appType</a>
+                            </li>
+                            <li>
                                 <a href="#companyImgs">companyImgs</a>
+                            </li>
+                            <li>
+                                <a href="#env">env</a>
                             </li>
                         </ul>
                     </td>
@@ -167,6 +173,39 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="appType"></a>
+                        <span class="name">
+                            <b>
+                            appType</b>
+                            <a href="#appType"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/landing/pages/landing/landing.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>App Type</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="companyImgs"></a>
                         <span class="name">
                             <b>
@@ -183,7 +222,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/modules/landing/pages/landing/landing.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/modules/landing/pages/landing/landing.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -196,6 +235,32 @@
 
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="env"></a>
+                        <span class="name">
+                            <b>
+                            env</b>
+                            <a href="#env"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>environment</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/landing/pages/landing/landing.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
 </section>
 
 </div>
@@ -204,6 +269,8 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import * as images from &#x27;src/assets/json/images.json&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+
 
 /**
  * Landing Page Component
@@ -219,6 +286,12 @@ export class LandingComponent implements OnInit {
    * @type {any}
    */
   companyImgs: any;
+  /**
+   * App Type
+   * @type {any}
+   */
+  appType: any;
+  env &#x3D; environment;
 
   /**
    * @ignore
@@ -255,9 +328,9 @@ export class LandingComponent implements OnInit {
             &lt;/div&gt;
             &lt;div class&#x3D;&quot;col-lg-8 align-self-baseline&quot;&gt;
                 &lt;p class&#x3D;&quot; font-weight-light mb-5&quot;&gt;Start your experience today by clicking on My Experience.&lt;/p&gt;
-                &lt;div class&#x3D;&quot;row no-gutters text-center&quot;&gt;
+                &lt;div class&#x3D;&quot;row no-gutters text-center&quot; *ngIf&#x3D;&quot;env.guestType&#x3D;&#x3D;&#x3D;&#x27;all&#x27;; else showGuest&quot;&gt;
                   &lt;div class&#x3D;&quot;col-lg-6 pr-lg-2 text-lg-right&quot;&gt;
-                    &lt;a [routerLink]&#x3D;&quot;&#x27;/authenticate/login&#x27;&quot; class&#x3D;&quot;btn btn-primary btn-xl w-lg-50 w-75&quot;&gt;My Experience&lt;/a&gt;
+                    &lt;a [routerLink]&#x3D;&quot;&#x27;/main/experience&#x27;&quot; class&#x3D;&quot;btn btn-primary btn-xl w-lg-50 w-75&quot;&gt;My Experience&lt;/a&gt;
                   &lt;/div&gt;
                   &lt;div class&#x3D;&quot;col-lg-6 pl-lg-2 text-lg-left mt-lg-0 mt-2&quot;&gt;
                     &lt;a [routerLink]&#x3D;&quot;&#x27;/self-service/login&#x27;&quot; class&#x3D;&quot;btn btn-primary btn-xl w-lg-50 w-75&quot;&gt;Pre check-in&lt;/a&gt;
@@ -342,6 +415,18 @@ export class LandingComponent implements OnInit {
 &lt;/section&gt;
 &lt;app-footer&gt;&lt;/app-footer&gt;
 &lt;/div&gt;
+
+
+&lt;ng-template #showGuest&gt;
+    &lt;div class&#x3D;&quot;col-lg-12 px-0&quot; *ngIf&#x3D;&quot;env.guestType!&#x3D;&#x3D;&#x27;pre-check-in&#x27;; else mainExperience&quot;&gt;
+      &lt;a [routerLink]&#x3D;&quot;&#x27;/main/experience&#x27;&quot; class&#x3D;&quot;btn btn-primary btn-xl w-lg-50 w-75&quot;&gt;My Experience&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;ng-template #mainExperience&gt;
+      &lt;div class&#x3D;&quot;col-lg-12 px-0&quot;&gt;
+        &lt;a [routerLink]&#x3D;&quot;&#x27;/self-service/login&#x27;&quot; class&#x3D;&quot;btn btn-primary btn-xl w-lg-50 w-75&quot;&gt;Pre check-in&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/ng-template&gt;
+&lt;/ng-template&gt;
 </code></pre>
     </div>
 
@@ -407,8 +492,8 @@ export class LandingComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-public-header></app-public-header><div class="h-100">   <!-- Head-->   <header class="masthead">    <div class="container h-100">        <div class="row h-100 align-items-center justify-content-center text-center">            <div class="col-lg-10 align-self-end">                <h1 class="text-uppercase font-weight-bold">Welcome to Hotel Metasphere</h1>                <hr class="divider my-4" />            </div>            <div class="col-lg-8 align-self-baseline">                <p class=" font-weight-light mb-5">Start your experience today by clicking on My Experience.</p>                <div class="row no-gutters text-center">                  <div class="col-lg-6 pr-lg-2 text-lg-right">                    <a [routerLink]="\'/authenticate/login\'" class="btn btn-primary btn-xl w-lg-50 w-75">My Experience</a>                  </div>                  <div class="col-lg-6 pl-lg-2 text-lg-left mt-lg-0 mt-2">                    <a [routerLink]="\'/self-service/login\'" class="btn btn-primary btn-xl w-lg-50 w-75">Pre check-in</a>                  </div>                </div>            </div>        </div>    </div></header><!-- Services--><section class="page-section" id="services">    <div class="container">        <h2 class="text-center mt-0">About the hotel</h2>        <hr class="divider my-4" />        <div class="row">            <div class="mx-auto col-lg-6 col-md-6 text-center">                <div class="mt-2">                    <i class="fas fa-4x fa-gem text-primary mb-4"></i>                    <p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>                </div>            </div>        </div>    </div></section><div id="portfolio">    <div class="container-fluid p-0">        <div class="row no-gutters">            <div class="col-lg-4 col-sm-6">                <a class="portfolio-box"  [routerLink]="\'/hotel-information/facilities\'">                    <img class="img-fluid" [src]="companyImgs.facilityImg" alt="" />                    <div class="portfolio-box-caption">                        <div class="project-category text-white-50">Metasphere</div>                        <div class="project-name">Facilities</div>                    </div>                </a>            </div>            <div class="col-lg-4 col-sm-6">                <a class="portfolio-box"  [routerLink]="\'/hotel-information/\'">                    <img class="img-fluid" [src]="companyImgs.serviceImg" alt="" />                    <div class="portfolio-box-caption">                        <div class="project-category text-white-50">Metasphere</div>                        <div class="project-name">Services</div>                    </div>                </a>            </div>            <div class="col-lg-4 col-sm-6">                <a class="portfolio-box"  [routerLink]="\'/hotel-information/faq\'">                    <img class="img-fluid" [src]="companyImgs.faqImg" alt="" />                    <div class="portfolio-box-caption">                        <div class="project-category text-white-50">Metasphere</div>                        <div class="project-name">Frequently asked questions</div>                    </div>                </a>            </div>        </div>    </div></div><!-- Contact--><section class="page-section" id="contact">    <div class="container">        <div class="row justify-content-center">            <div class="col-lg-8 text-center">                <h2 class="mt-0">Contact Details</h2>                <hr class="divider my-4" />                <p class="text-muted mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Street Grand Ave. 1, Detroit MI. 9043 434, USA</p>            </div>        </div>        <div class="row">            <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">                <i class="fas fa-phone fa-3x mb-3 text-muted"></i>                <div>202-555-0619</div>            </div>            <div class="col-lg-4 mr-auto text-center">                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>                <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->                <a class="d-block" href="mailto:hotel@metasphere.com">hotel@metasphere.com</a>            </div>        </div>    </div></section><app-footer></app-footer></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
+        var COMPONENT_TEMPLATE = '<div><app-public-header></app-public-header><div class="h-100">   <!-- Head-->   <header class="masthead">    <div class="container h-100">        <div class="row h-100 align-items-center justify-content-center text-center">            <div class="col-lg-10 align-self-end">                <h1 class="text-uppercase font-weight-bold">Welcome to Hotel Metasphere</h1>                <hr class="divider my-4" />            </div>            <div class="col-lg-8 align-self-baseline">                <p class=" font-weight-light mb-5">Start your experience today by clicking on My Experience.</p>                <div class="row no-gutters text-center" *ngIf="env.guestType===\'all\'; else showGuest">                  <div class="col-lg-6 pr-lg-2 text-lg-right">                    <a [routerLink]="\'/main/experience\'" class="btn btn-primary btn-xl w-lg-50 w-75">My Experience</a>                  </div>                  <div class="col-lg-6 pl-lg-2 text-lg-left mt-lg-0 mt-2">                    <a [routerLink]="\'/self-service/login\'" class="btn btn-primary btn-xl w-lg-50 w-75">Pre check-in</a>                  </div>                </div>            </div>        </div>    </div></header><!-- Services--><section class="page-section" id="services">    <div class="container">        <h2 class="text-center mt-0">About the hotel</h2>        <hr class="divider my-4" />        <div class="row">            <div class="mx-auto col-lg-6 col-md-6 text-center">                <div class="mt-2">                    <i class="fas fa-4x fa-gem text-primary mb-4"></i>                    <p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>                </div>            </div>        </div>    </div></section><div id="portfolio">    <div class="container-fluid p-0">        <div class="row no-gutters">            <div class="col-lg-4 col-sm-6">                <a class="portfolio-box"  [routerLink]="\'/hotel-information/facilities\'">                    <img class="img-fluid" [src]="companyImgs.facilityImg" alt="" />                    <div class="portfolio-box-caption">                        <div class="project-category text-white-50">Metasphere</div>                        <div class="project-name">Facilities</div>                    </div>                </a>            </div>            <div class="col-lg-4 col-sm-6">                <a class="portfolio-box"  [routerLink]="\'/hotel-information/\'">                    <img class="img-fluid" [src]="companyImgs.serviceImg" alt="" />                    <div class="portfolio-box-caption">                        <div class="project-category text-white-50">Metasphere</div>                        <div class="project-name">Services</div>                    </div>                </a>            </div>            <div class="col-lg-4 col-sm-6">                <a class="portfolio-box"  [routerLink]="\'/hotel-information/faq\'">                    <img class="img-fluid" [src]="companyImgs.faqImg" alt="" />                    <div class="portfolio-box-caption">                        <div class="project-category text-white-50">Metasphere</div>                        <div class="project-name">Frequently asked questions</div>                    </div>                </a>            </div>        </div>    </div></div><!-- Contact--><section class="page-section" id="contact">    <div class="container">        <div class="row justify-content-center">            <div class="col-lg-8 text-center">                <h2 class="mt-0">Contact Details</h2>                <hr class="divider my-4" />                <p class="text-muted mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Street Grand Ave. 1, Detroit MI. 9043 434, USA</p>            </div>        </div>        <div class="row">            <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">                <i class="fas fa-phone fa-3x mb-3 text-muted"></i>                <div>202-555-0619</div>            </div>            <div class="col-lg-4 mr-auto text-center">                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>                <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->                <a class="d-block" href="mailto:hotel@metasphere.com">hotel@metasphere.com</a>            </div>        </div>    </div></section><app-footer></app-footer></div><ng-template #showGuest>    <div class="col-lg-12 px-0" *ngIf="env.guestType!==\'pre-check-in\'; else mainExperience">      <a [routerLink]="\'/main/experience\'" class="btn btn-primary btn-xl w-lg-50 w-75">My Experience</a>    </div>    <ng-template #mainExperience>      <div class="col-lg-12 px-0">        <a [routerLink]="\'/self-service/login\'" class="btn btn-primary btn-xl w-lg-50 w-75">Pre check-in</a>      </div>    </ng-template></ng-template></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LandingComponent'};
 </script>

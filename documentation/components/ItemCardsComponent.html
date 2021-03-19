@@ -128,6 +128,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#itemData">itemData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
                 <tr>
@@ -171,7 +185,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/modules/order/components/item-cards/item-cards.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/modules/order/components/item-cards/item-cards.component.ts:19</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -187,12 +201,52 @@
 
 
 
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="itemData"></a>
+                        <span class="name">
+                            <b>
+                            itemData</b>
+                            <a href="#itemData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/modules/order/components/item-cards/item-cards.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Item Data</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
+import { SecondaryCategoryService } from &#x27;src/app/shared/services/room-services-housekeeping/secondary-category/secondary-category.service&#x27;;
 
 /**
  * Order Product Cards
@@ -212,14 +266,37 @@ export class ItemCardsComponent implements OnInit {
   @Input() data: any;
 
   /**
+   * Item Data
+   *
+   * @type {any}
+   */
+  itemData: any;
+
+  /**
    * @ignore
    */
-  constructor() { }
+  constructor(public secondaryCategoryService: SecondaryCategoryService) {
+  }
 
   /**
    * @ignore
    */
   ngOnInit(): void {
+    this.itemData &#x3D; {
+      ...this.data,
+      quantity: 0,
+      items: [],
+    }
+
+    const initialContent &#x3D; {
+      cid: this.data.cid
+    }
+    this.secondaryCategoryService.getSecondaryCategoryList(initialContent).then((res: any) &#x3D;&gt; {
+      res.list.forEach(element &#x3D;&gt; {
+        this.itemData.items.push(element.typename)
+      });
+    })
+
   }
 
 }
@@ -228,24 +305,24 @@ export class ItemCardsComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card card-block&quot;&gt;
-    &lt;img [src]&#x3D;&quot;data.image&quot;&gt;
+    &lt;img [src]&#x3D;&quot;itemData.image&quot;&gt;
     &lt;div class&#x3D;&quot;price py-2 px-3&quot;&gt;
-      &lt;p class&#x3D;&quot;mb-0&quot;&gt;${{ data.price }}&lt;/p&gt;
+      &lt;p class&#x3D;&quot;mb-0&quot;&gt;${{ itemData.price || 0 }}&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;p-3&quot;&gt;
-      &lt;h5 class&#x3D;&quot;card-title my-1&quot;&gt;{{ data.name }}&lt;/h5&gt;
-      &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ data.description }}&lt;/p&gt;
+      &lt;h5 class&#x3D;&quot;card-title  mb-1 mt-4&quot;&gt;{{ itemData.item_name }}&lt;/h5&gt;
+      &lt;p class&#x3D;&quot;card-text&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
       &lt;div class&#x3D;&quot;row no-gutters&quot;&gt;
         &lt;div class&#x3D;&quot;&quot;&gt;
             &lt;div class&#x3D;&quot;input-group&quot;&gt;
                 &lt;span class&#x3D;&quot;input-group-prepend&quot;&gt;
-                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-number&quot; [disabled]&#x3D;&quot;data.quantity &#x3D;&#x3D;&#x3D; 0&quot; data-type&#x3D;&quot;minus&quot;  (click)&#x3D;&quot;data.quantity &#x3D; data.quantity - 1&quot;&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-number&quot; [disabled]&#x3D;&quot;itemData.quantity &#x3D;&#x3D;&#x3D; 0&quot; itemData-type&#x3D;&quot;minus&quot;  (click)&#x3D;&quot;itemData.quantity &#x3D; itemData.quantity - 1&quot;&gt;
                         &lt;span class&#x3D;&quot;fa fa-minus&quot;&gt;&lt;/span&gt;
                     &lt;/button&gt;
                 &lt;/span&gt;
-                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;quant[1]&quot; class&#x3D;&quot;form-control input-number&quot; [value]&#x3D;&quot;data.quantity&quot; min&#x3D;&quot;0&quot;&gt;
+                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;quant[1]&quot; class&#x3D;&quot;form-control input-number&quot; [value]&#x3D;&quot;itemData.quantity&quot; min&#x3D;&quot;0&quot;&gt;
                 &lt;span class&#x3D;&quot;input-group-append&quot;&gt;
-                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-number&quot; data-type&#x3D;&quot;plus&quot; (click)&#x3D;&quot;data.quantity &#x3D; data.quantity + 1&quot;&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-number&quot; itemData-type&#x3D;&quot;plus&quot; (click)&#x3D;&quot;itemData.quantity &#x3D; itemData.quantity + 1&quot;&gt;
                         &lt;span class&#x3D;&quot;fa fa-plus&quot;&gt;&lt;/span&gt;
                     &lt;/button&gt;
                 &lt;/span&gt;
@@ -370,8 +447,8 @@ export class ItemCardsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="card card-block">    <img [src]="data.image">    <div class="price py-2 px-3">      <p class="mb-0">${{ data.price }}</p>    </div>    <div class="p-3">      <h5 class="card-title my-1">{{ data.name }}</h5>      <p class="card-text">{{ data.description }}</p>      <div class="row no-gutters">        <div class="">            <div class="input-group">                <span class="input-group-prepend">                    <button type="button" class="btn btn-number" [disabled]="data.quantity === 0" data-type="minus"  (click)="data.quantity = data.quantity - 1">                        <span class="fa fa-minus"></span>                    </button>                </span>                <input type="text" name="quant[1]" class="form-control input-number" [value]="data.quantity" min="0">                <span class="input-group-append">                    <button type="button" class="btn btn-number" data-type="plus" (click)="data.quantity = data.quantity + 1">                        <span class="fa fa-plus"></span>                    </button>                </span>            </div>        </div>    </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
+        var COMPONENT_TEMPLATE = '<div><div class="card card-block">    <img [src]="itemData.image">    <div class="price py-2 px-3">      <p class="mb-0">${{ itemData.price || 0 }}</p>    </div>    <div class="p-3">      <h5 class="card-title  mb-1 mt-4">{{ itemData.item_name }}</h5>      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>      <div class="row no-gutters">        <div class="">            <div class="input-group">                <span class="input-group-prepend">                    <button type="button" class="btn btn-number" [disabled]="itemData.quantity === 0" itemData-type="minus"  (click)="itemData.quantity = itemData.quantity - 1">                        <span class="fa fa-minus"></span>                    </button>                </span>                <input type="text" name="quant[1]" class="form-control input-number" [value]="itemData.quantity" min="0">                <span class="input-group-append">                    <button type="button" class="btn btn-number" itemData-type="plus" (click)="itemData.quantity = itemData.quantity + 1">                        <span class="fa fa-plus"></span>                    </button>                </span>            </div>        </div>    </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ItemCardsComponent'};
 </script>

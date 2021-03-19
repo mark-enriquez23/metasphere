@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GeneralService } from 'src/app/shared/services/general/general.service';
 
 /**
  * HK Amenities Page Component
@@ -37,6 +38,7 @@ export class HkAmenitiesComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private router: Router,
+    private generalService: GeneralService
   ) {
     if (this.activateRoute.snapshot.data.itemListData) {
       this.itemListing = this.activateRoute.snapshot.data.itemListData;
@@ -89,8 +91,18 @@ export class HkAmenitiesComponent implements OnInit {
 
   addItems(startIndex, endIndex, _method) {
     for (let i = startIndex; i < this.sum; ++i) {
-      if (this.itemListing.list[i])
-        this.arrayItems[_method](this.itemListing.list[i]);
+      if (this.itemListing.list[i]) {
+        const itemData = {
+          ...this.itemListing.list[i],
+          image: ''
+        }
+        this.generalService.fileExists('./assets/images/SA-HK/' + this.itemListing.list[i].item_name +'.png').then(res => {
+          itemData.image = './assets/images/SA-HK/' + this.itemListing.list[i].item_name +'.png'
+        }).catch(err => {
+          itemData.image = './assets/images/SA-HK/250.png'
+        }).finally(() =>
+        this.arrayItems[_method](itemData))
+      }
     }
   }
 

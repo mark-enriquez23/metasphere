@@ -72,6 +72,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { SelfServiceGuardService } from &#x27;src/app/core/guards/self-service/self-service-guard.service&#x27;;
 
 import { LoginComponent } from &#x27;./layouts/login/login.component&#x27;;
 import { StepperComponent } from &#x27;./layouts/stepper/stepper.component&#x27;;
@@ -88,7 +89,10 @@ const routes: Routes &#x3D; [
   },
   {
     path: &#x27;pre-checkin&#x27;,
-    component: StepperComponent
+    component: StepperComponent,
+    canActivate: [
+      SelfServiceGuardService,
+    ],
   },
 ]
 @NgModule({

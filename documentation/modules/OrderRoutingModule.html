@@ -85,6 +85,12 @@ import { FbFoodComponent } from &#x27;./pages/fb-food/fb-food.component&#x27;;
 import { FbDrinksComponent } from &#x27;./pages/fb-drinks/fb-drinks.component&#x27;;
 import { FbComponent } from &#x27;./layouts/fb/fb.component&#x27;;
 
+// Resolvers
+import { HkhomeResolver } from &#x27;./pages/hk-home/resolvers/hkhome.resolver&#x27;;
+import { HkamenitiesResolver } from &#x27;./pages/hk-amenities/resolvers/hkamenities.resolver&#x27;;
+import { FbhomeResolver } from &#x27;./pages/fb-home/resolvers/fbhome.resolver&#x27;;
+import { HkServicesResolver } from &#x27;./pages/hk-services/resolvers/hkservices.resolver&#x27;;
+
 const routes: Routes &#x3D; [
   {
     path: &#x27;review-orders&#x27;,
@@ -107,15 +113,18 @@ const routes: Routes &#x3D; [
         },
         {
           path: &#x27;home&#x27;,
-          component: HkHomeComponent
+          component: HkHomeComponent,
+          resolve: { mainCategoryData: HkhomeResolver}
         },
         {
           path: &#x27;services&#x27;,
-          component: HkServicesComponent
+          component: HkServicesComponent,
+          resolve: { servicesListData: HkServicesResolver}
         },
         {
           path: &#x27;amenities&#x27;,
-          component: HkAmenitiesComponent
+          component: HkAmenitiesComponent,
+          resolve: { itemListData: HkamenitiesResolver}
         },
         {
           path: &#x27;cart&#x27;,
@@ -134,7 +143,8 @@ const routes: Routes &#x3D; [
         },
         {
           path: &#x27;home&#x27;,
-          component: FbHomeComponent
+          component: FbHomeComponent,
+          resolve: { orderListingData: FbhomeResolver}
         },
         {
           path: &#x27;foods&#x27;,
