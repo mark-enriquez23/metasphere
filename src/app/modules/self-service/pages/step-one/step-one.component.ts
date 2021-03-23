@@ -10,7 +10,7 @@ export class StepOneComponent implements OnInit {
   public stepOneForm: FormGroup;
   public currentDate: any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, ) {
     this.stepOneForm = this.fb.group({
       reservation_number: ['', [Validators.required]],
       first_name: ['', [Validators.required]],
@@ -30,6 +30,7 @@ export class StepOneComponent implements OnInit {
   get formErrorHandler() { return this.stepOneForm.status === 'INVALID' }
 
   ngOnInit(): void {
+
   }
 
   stepOneSubmit() {

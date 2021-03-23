@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -7,14 +7,18 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
 
-  public userToken = localStorage.getItem('token')
-  public hasToken = !!this.userToken;
+  public userData = localStorage.getItem('user')
+  public hasToken = !!this.userData;
   public api_type = 'customize/control'
 
   constructor(private httpClient: HttpClient) { }
 
   public userLogin(roomNumber: string, lastName: string) {
-    return this.httpClient.post(environment.api_path + this.api_type + '/FetchBooKingwithlastNameAndRoomno', {roomNo: roomNumber, lastName:lastName }).toPromise();
+    const params = new HttpParams()
+    .set('roomNo', roomNumber)
+    .set('lastName', lastName)
+    const test = params.toString()
+    return this.httpClient.post(environment.api_path + this.api_type + '/FetchBooKingwithlastNameAndRoomno?' + test , {}).toPromise();
   }
 
   public isUserLoggedIn() {
@@ -30,13 +34,13 @@ export class UserService {
 
   public clearTokenData() {
     this.hasToken = false;
-    this.userToken = '';
-    localStorage.removeItem('token');
+    this.userData = null;
+    localStorage.removeItem('user');
   }
 ß
-  public storeToken(token: string) {
-    localStorage.setItem('token', token);
-    this.userToken = token;
+  public storeToken(user) {
+    localStorage.setItem('user', user);
+    this.userData = user;
     this.hasToken = true;
   }
 }

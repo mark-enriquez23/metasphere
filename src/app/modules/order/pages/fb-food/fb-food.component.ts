@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 /**
  * FB Food Page Component
@@ -9,92 +10,86 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fb-food.component.scss']
 })
 export class FbFoodComponent implements OnInit {
+
   /**
    * Items
    *
    * @type {Array[Object]}
    */
-  items = [
-    {
-      name: 'English Breakfast',
-      description: 'Organic Bacon, Scrambled Eggs, Tomatoes, and Toast',
-      image: './assets/images/order_-_f_b_-_food/u259.jpg',
-      price: 12,
-      quantity: 0
-    },
-    {
-      name: 'Organic Musli',
-      description: 'Musli with Strawberries, Raisins, and Crunchy flakes',
-      image: './assets/images/order_-_f_b_-_food/u259.jpg',
-      price: 8,
-      quantity: 0
-    },
-    {
-      name: 'English Breakfast',
-      description: 'Organic Bacon, Scrambled Eggs, Tomatoes, and Toast',
-      image: './assets/images/order_-_f_b_-_food/u259.jpg',
-      price: 12,
-      quantity: 0
-    },
-    {
-      name: 'Organic Musli',
-      description: 'Musli with Strawberries, Raisins, and Crunchy flakes',
-      image: './assets/images/order_-_f_b_-_food/u259.jpg',
-      price: 8,
-      quantity: 0
-    },
-    {
-      name: 'English Breakfast',
-      description: 'Organic Bacon, Scrambled Eggs, Tomatoes, and Toast',
-      image: './assets/images/order_-_f_b_-_food/u259.jpg',
-      price: 12,
-      quantity: 0
-    },
-    {
-      name: 'Organic Musli',
-      description: 'Musli with Strawberries, Raisins, and Crunchy flakes',
-      image: './assets/images/order_-_f_b_-_food/u259.jpg',
-      price: 8,
-      quantity: 0
-    },
-    {
-      name: 'English Breakfast',
-      description: 'Organic Bacon, Scrambled Eggs, Tomatoes, and Toast',
-      image: './assets/images/order_-_f_b_-_food/u259.jpg',
-      price: 12,
-      quantity: 0
-    },
-    {
-      name: 'Organic Musli',
-      description: 'Musli with Strawberries, Raisins, and Crunchy flakes',
-      image: './assets/images/order_-_f_b_-_food/u259.jpg',
-      price: 8,
-      quantity: 0
-    },
-    {
-      name: 'English Breakfast',
-      description: 'Organic Bacon, Scrambled Eggs, Tomatoes, and Toast',
-      image: './assets/images/order_-_f_b_-_food/u259.jpg',
-      price: 12,
-      quantity: 0
-    },
-    {
-      name: 'Organic Musli',
-      description: 'Musli with Strawberries, Raisins, and Crunchy flakes',
-      image: './assets/images/order_-_f_b_-_food/u259.jpg',
-      price: 8,
-      quantity: 0
-    },
-  ]
+   items = []
+   /**
+    * Main Category Data
+    *
+    * @type {any}
+    */
+   roomServerListingData: any;
+
+  arrayItems = [];
+  sum = 10;
+  throttle = 300;
+  scrollDistance = 1;
+  scrollUpDistance = 2;
+  direction = "";
+
   /**
    * @ignore
    */
-  constructor() { }
-
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private router: Router,
+  ) {
+    if (this.activateRoute.snapshot.data.roomServerData) {
+      this.roomServerListingData = this.activateRoute.snapshot.data.roomServerData;
+      console.log(this.roomServerListingData)
+    } else{
+      console.log('err')
+    }
+  }
   /**
    * @ignore
    */
   ngOnInit(): void {
+    this.appendItems(0, this.sum);
   }
 
+  onScrollDown(ev) {
+    if (this.sum <= this.roomServerListingData.list.length) {
+      console.log("scrolled down!!", ev);
+
+      // add another 20 items
+      const start = this.sum;
+      this.sum += 10;
+      this.appendItems(start, this.sum);
+
+      console.log(this.sum, this.roomServerListingData.list.length)
+      this.direction = "down";
+      console.log(this.arrayItems)
+    }
+  }
+
+  onUp(ev) {
+    console.log("scrolled up!", ev);
+    const start = this.sum;
+    this.sum += 20;
+    this.prependItems(start, this.sum);
+
+    this.direction = "up";
+  }
+
+
+  appendItems(startIndex, endIndex) {
+    this.addItems(startIndex, endIndex, "push");
+  }
+
+
+  prependItems(startIndex, endIndex) {
+    this.addItems(startIndex, endIndex, "unshift");
+  }
+
+  addItems(startIndex, endIndex, _method) {
+    for (let i = startIndex; i < this.sum; ++i) {
+      if (this.roomServerListingData.list[i])
+        this.arrayItems[_method](this.roomServerListingData.list[i]);
+    }
+  }
 }

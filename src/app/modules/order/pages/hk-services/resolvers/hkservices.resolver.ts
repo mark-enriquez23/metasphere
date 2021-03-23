@@ -16,8 +16,8 @@ export class HkServicesResolver implements Resolve<any>{
   ) { }
 
   resolve() {
-    const userData: any = this.userService.userToken;
-    return this.serviceListingSrv.serviceOrderItemListing(userData.roomNo).then(data => {
+    const userData: any = this.userService.userData;
+    return this.serviceListingSrv.serviceOrderItemListing(userData.room_no).then(data => {
       return data
     }).catch(err => {return null})
   };

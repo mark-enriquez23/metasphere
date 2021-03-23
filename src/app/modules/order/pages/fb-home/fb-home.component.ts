@@ -52,7 +52,6 @@ export class FbHomeComponent implements OnInit {
     this.appendItems(0, this.sum);
   }
 
-
   onScrollDown(ev) {
     if (this.sum <= this.orderListingData.list.length) {
       console.log("scrolled down!!", ev);

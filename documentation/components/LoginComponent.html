@@ -352,8 +352,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:59</a></div>
                 </td>
             </tr>
 
@@ -571,12 +571,14 @@ export class LoginComponent implements OnInit {
   validateBooking(): void {
     if (!this.formErrorHandler) {
       this.spinnerSrv.show(&#x27;Validating Booking...&#x27;);
+      this.preCheckinSrv.storeBooking(&#x27;test&#x27;);
+      this.router.navigate([&#x27;self-service/pre-checkin&#x27;]);
       console.log(this.f);
       this.preCheckinSrv.fetchBooking(this.f.confirmationNumber.value, this.f.confirmationNumberLastName.value).then((res: any) &#x3D;&gt; {
         console.log(res)
-        if (res.resultCode !&#x3D;&#x3D; &#x27;-1&#x27;) {
+        if (res.resultCode &#x3D;&#x3D;&#x3D; &#x27;-1&#x27;) {
           this.preCheckinSrv.storeBooking(res);
-          this.router.navigate([&#x27;pre-checkin&#x27;]);
+          this.router.navigate([&#x27;self-service/pre-checkin&#x27;]);
         } else {
           this.openErrorDialog()
         }
