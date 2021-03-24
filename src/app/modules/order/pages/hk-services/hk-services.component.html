@@ -1,6 +1,11 @@
 
 <div class="container mt-2">
-  <div class="cards-section mt-4 pb-5 card-columns">
-    <app-item-cards class="" *ngFor="let item of items" [data]="item"></app-item-cards>
+  <div class="cards-section mt-4 pb-5 card-columns"
+  infinite-scroll
+  [infiniteScrollDistance]="scrollDistance"
+  [infiniteScrollUpDistance]="scrollUpDistance"
+  [infiniteScrollThrottle]="throttle"
+  (scrolled)="onScrollDown($event)">
+    <app-fb-item-cards class="" *ngFor="let item of arrayItems" [data]="item"></app-fb-item-cards>
   </div>
 </div>

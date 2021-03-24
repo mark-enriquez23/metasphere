@@ -17,8 +17,8 @@ export class UserService {
     const params = new HttpParams()
     .set('roomNo', roomNumber)
     .set('lastName', lastName)
-    const test = params.toString()
-    return this.httpClient.post(environment.api_path + this.api_type + '/FetchBooKingwithlastNameAndRoomno?' + test , {}).toPromise();
+    const userData = params.toString()
+    return this.httpClient.post(environment.api_path + this.api_type + '/FetchBooKingwithlastNameAndRoomno?' + userData , {}).toPromise();
   }
 
   public isUserLoggedIn() {

@@ -15,7 +15,8 @@ export class ServiceOrderListingService {
     const params = new HttpParams()
     .set('chainCode', environment.chainCode)
     .set('hotelCode', environment.hotelCode)
-    .set('roomno', roomNo)
-    return this.http.get<any>( environment.api_path + this.api_type + '/getServiceOrderListByRoom', {params}).toPromise();
+    .set('roomnumber', roomNo)
+    const serviceData = params.toString()
+    return this.http.get<any>( environment.api_path + this.api_type + '/getServiceOrderListByRoom'  + serviceData, {}).toPromise();
   }
 }
