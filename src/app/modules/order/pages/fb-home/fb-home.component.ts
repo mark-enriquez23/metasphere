@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GeneralService } from 'src/app/shared/services/general/general.service';
 
 /**
  * FB Home Page Component
@@ -37,6 +38,7 @@ export class FbHomeComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private router: Router,
+    private generalService: GeneralService
   ) {
     if (this.activateRoute.snapshot.data.orderListingData) {
       this.orderListingData = this.activateRoute.snapshot.data.orderListingData;
@@ -88,10 +90,18 @@ export class FbHomeComponent implements OnInit {
 
   addItems(startIndex, endIndex, _method) {
     for (let i = startIndex; i < this.sum; ++i) {
-      if (this.orderListingData.list[i])
-        this.arrayItems[_method](this.orderListingData.list[i]);
+      if (this.orderListingData.list[i]) {
+          const itemData = {
+            ...this.orderListingData.list[i],
+            image: ''
+          }
+          this.generalService.fileExists('./assets/images/SA-HK/' + this.orderListingData.list[i].item_name +'.png').then(res => {
+            itemData.image = './assets/images/SA-HK/' + this.orderListingData.list[i].item_name +'.png'
+          }).catch(err => {
+            itemData.image = './assets/images/SA-HK/250.png'
+          }).finally(() =>
+          this.arrayItems[_method](itemData))
+      }
     }
   }
-
-
 }

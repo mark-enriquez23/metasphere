@@ -22,6 +22,7 @@ import { FbComponent } from './layouts/fb/fb.component';
 import { FbNavHeaderComponent } from './components/fb-nav-header/fb-nav-header.component';
 import { CategoryCardsComponent } from './components/category-cards/category-cards/category-cards.component';
 import { FbItemCardsComponent } from './components/fb-item-cards/fb-item-cards/fb-item-cards.component';
+import { ServicesCardsComponent } from './components/services-cards/services-cards/services-cards.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { FbItemCardsComponent } from './components/fb-item-cards/fb-item-cards/f
     FbComponent,
     FbNavHeaderComponent,
     CategoryCardsComponent,
-    FbItemCardsComponent,],
+    FbItemCardsComponent,
+    ServicesCardsComponent,],
   imports: [
     CommonModule,
     InfiniteScrollModule,

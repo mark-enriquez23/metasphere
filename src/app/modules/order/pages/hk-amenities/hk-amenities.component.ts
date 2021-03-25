@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GeneralService } from 'src/app/shared/services/general/general.service';
+import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
 
 /**
  * HK Amenities Page Component
@@ -38,11 +39,13 @@ export class HkAmenitiesComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private router: Router,
-    private generalService: GeneralService
+    private generalService: GeneralService,
+    private mainCategoryService: MainCategoryService
   ) {
     if (this.activateRoute.snapshot.data.itemListData) {
-      this.itemListing = this.activateRoute.snapshot.data.itemListData;
-      console.log(this.itemListing)
+      console.log(this.activateRoute.snapshot.data.itemListData)
+      this.mainCategoryService.mainCategoryData = this.activateRoute.snapshot.data.itemListData[0].list
+      this.itemListing = this.activateRoute.snapshot.data.itemListData[1];
     } else{
       console.log('err')
     }

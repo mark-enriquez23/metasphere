@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GeneralService } from 'src/app/shared/services/general/general.service';
+import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
 
 /**
  * FB Food Page Component
@@ -18,7 +20,7 @@ export class FbFoodComponent implements OnInit {
    */
    items = []
    /**
-    * Main Category Data
+    * Room Server Listing Data
     *
     * @type {any}
     */
@@ -37,10 +39,12 @@ export class FbFoodComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private router: Router,
+    private generalService: GeneralService,
+    private mainCategoryService: MainCategoryService
   ) {
     if (this.activateRoute.snapshot.data.roomServerData) {
-      this.roomServerListingData = this.activateRoute.snapshot.data.roomServerData;
-      console.log(this.roomServerListingData)
+      this.mainCategoryService.mainCategoryData = this.activateRoute.snapshot.data.roomServerData[0].list
+      this.roomServerListingData = this.activateRoute.snapshot.data.roomServerData[1]
     } else{
       console.log('err')
     }
@@ -88,8 +92,18 @@ export class FbFoodComponent implements OnInit {
 
   addItems(startIndex, endIndex, _method) {
     for (let i = startIndex; i < this.sum; ++i) {
-      if (this.roomServerListingData.list[i])
-        this.arrayItems[_method](this.roomServerListingData.list[i]);
+      if (this.roomServerListingData.list[i]) {
+        const itemData = {
+          ...this.roomServerListingData.list[i],
+          image: ''
+        }
+        this.generalService.fileExists('./assets/images/SA-HK/' + this.roomServerListingData.list[i].item_name +'.png').then(res => {
+          itemData.image = './assets/images/SA-HK/' + this.roomServerListingData.list[i].item_name +'.png'
+        }).catch(err => {
+          itemData.image = './assets/images/SA-HK/250.png'
+        }).finally(() =>
+        this.arrayItems[_method](itemData))
+    }
     }
   }
 }

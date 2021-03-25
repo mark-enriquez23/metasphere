@@ -9,13 +9,21 @@ import { MainCategoryService } from 'src/app/shared/services/room-services-house
 export class HkamenitiesResolver implements Resolve<any>{
 
   constructor(
-    private itemListing: ItemListingService
+    private itemListing: ItemListingService,
+    private mainCategoryService: MainCategoryService
   ) { }
 
   resolve() {
-    return this.itemListing.getItemListing().then(data => {
-      return data
-    }).catch(err => {return null})
+
+   return Promise.all(
+    [
+      this.mainCategoryService.getMainCategoryList(),
+      this.itemListing.getItemListing()
+    ]
+  );
+    // return this.itemListing.getItemListing().then(data => {
+    //   return data
+    // }).catch(err => {return null})
   };
 
 }

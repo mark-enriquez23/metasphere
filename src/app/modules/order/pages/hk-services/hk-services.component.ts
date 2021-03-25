@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
 
 /**
  * HK Services Page Component
@@ -37,19 +38,20 @@ export class HkServicesComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private router: Router,
+    private mainCategoryService: MainCategoryService
   ) {
     if (this.activateRoute.snapshot.data.servicesListData) {
-
-      let tempService = this.activateRoute.snapshot.data.servicesListData;
-      this.servicesListData = {
-        ...tempService,
-        list: []
-      }
-      tempService.forEach(element => {
-        element.forEach(serviceItem => {
-          this.servicesListData.list.push(serviceItem);
-        });
-      });
+      this.mainCategoryService.mainCategoryData = this.activateRoute.snapshot.data.servicesListData[0].list
+      this.servicesListData = this.activateRoute.snapshot.data.servicesListData[1].data;
+      // this.servicesListData = {
+      //   ...tempService,
+      //   list: []
+      // }
+      // tempService.forEach(element => {
+      //   element.forEach(serviceItem => {
+      //     this.servicesListData.list.push(serviceItem);
+      //   });
+      // });
     } else{
       console.log('err')
     }
@@ -62,7 +64,7 @@ export class HkServicesComponent implements OnInit {
   }
 
   onScrollDown(ev) {
-    if (this.sum <= this.servicesListData.list.length) {
+    if (this.sum <= this.servicesListData.length) {
       console.log("scrolled down!!", ev);
 
       // add another 20 items
@@ -70,7 +72,7 @@ export class HkServicesComponent implements OnInit {
       this.sum += 10;
       this.appendItems(start, this.sum);
 
-      console.log(this.sum, this.servicesListData.list.length)
+      console.log(this.sum, this.servicesListData.length)
       this.direction = "down";
       console.log(this.arrayItems)
     }
@@ -97,8 +99,14 @@ export class HkServicesComponent implements OnInit {
 
   addItems(startIndex, endIndex, _method) {
     for (let i = startIndex; i < this.sum; ++i) {
-      if (this.servicesListData.list[i])
-        this.arrayItems[_method](this.servicesListData.list[i]);
+      if (this.servicesListData[i]) {
+        const itemData = {
+          ...this.servicesListData[i],
+          image: this.servicesListData.image || './assets/images/SA-HK/250.png'
+        }
+        this.arrayItems[_method](itemData);
+      }
+
     }
   }
 

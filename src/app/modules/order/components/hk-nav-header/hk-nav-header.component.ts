@@ -1,6 +1,7 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
 
 /**
  * HK Navigation Header
@@ -48,7 +49,7 @@ export class HkNavHeaderComponent implements OnInit {
    *
    * @ignore
    */
-  constructor(private router:Router) {
+  constructor(private router:Router, public mainCategoryService: MainCategoryService) {
     this.router.events.subscribe((res: any) => {
       if (res.url) {
         let tempUrl = res.url;

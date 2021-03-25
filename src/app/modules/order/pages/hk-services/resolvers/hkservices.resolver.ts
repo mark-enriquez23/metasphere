@@ -12,14 +12,25 @@ export class HkServicesResolver implements Resolve<any>{
 
   constructor(
     private userService: UserService,
-    private serviceListingSrv: ServiceOrderListingService
+    private serviceListingSrv: ServiceOrderListingService,
+    private mainCategoryService: MainCategoryService
   ) { }
 
+
   resolve() {
+    console.log(this.userService.userData)
     const userData: any = this.userService.userData;
-    return this.serviceListingSrv.serviceOrderItemListing(userData.room_no).then(data => {
-      return data
-    }).catch(err => {return null})
+    // Set to 101 - API Dev
+
+   return Promise.all(
+    [
+      this.mainCategoryService.getMainCategoryList(),
+      this.serviceListingSrv.serviceOrderItemListing(101)
+    ]
+  );
+    // return this.serviceListingSrv.serviceOrderItemListing(101).then(data => {
+    //   return data
+    // }).catch(err => {return null})
   };
 
 }

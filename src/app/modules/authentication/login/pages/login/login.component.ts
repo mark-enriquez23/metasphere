@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
       this.userService.userLogin(this.f.room_number.value, this.f.last_name.value).then((res: any) => {
         console.log(res)
         if (res.data) {
-          this.userService.storeToken(res);
+          this.userService.storeToken(res.data[0]);
           this.router.navigate(['main/experience']);
         } else {
           this.openErrorDialog()

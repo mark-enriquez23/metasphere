@@ -9,9 +9,6 @@ export class ApiService {
 
   constructor(public http: HttpClient) { }
 
-
-
-
   getMenuList(data){
     return this.http.get<any>( environment.api_path + 'customize/control/FetchMenuList?chainCode='+ data.chainCode + '&hotelCode=' + data.hotelCode);
   }

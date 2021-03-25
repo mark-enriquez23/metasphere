@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
 
 /**
  * Fb Navigation Header
@@ -48,7 +49,7 @@ export class FbNavHeaderComponent implements OnInit {
   /**
    * @ignore
    */
-  constructor(private router:Router) {
+  constructor(private router:Router, public mainCategoryService: MainCategoryService) {
     this.router.events.subscribe((res: any) => {
       if (res.url) {
         let tempUrl = res.url;

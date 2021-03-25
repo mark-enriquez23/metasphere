@@ -1,0 +1,27 @@
+<div class="card card-block">
+  <img [src]="itemData.image">
+  <div class="price py-2 px-3">
+    <p class="mb-0">${{ itemData.price || 0 }}</p>
+  </div>
+  <div class="p-3">
+    <h5 class="card-title mb-1 mt-4">{{ itemData.service_name }}</h5>
+    <p class="card-text">{{ itemData.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}}</p>
+    <div class="row no-gutters">
+      <div class="">
+          <div class="input-group">
+              <span class="input-group-prepend">
+                  <button type="button" class="btn btn-number" [disabled]="itemData.quantity === 0" itemData-type="minus"  (click)="itemData.quantity = itemData.quantity - 1">
+                      <span class="fa fa-minus"></span>
+                  </button>
+              </span>
+              <input type="text" name="quant[1]" class="form-control input-number" [value]="itemData.quantity" min="0">
+              <span class="input-group-append">
+                  <button type="button" class="btn btn-number" itemData-type="plus" (click)="itemData.quantity = itemData.quantity + 1">
+                      <span class="fa fa-plus"></span>
+                  </button>
+              </span>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>

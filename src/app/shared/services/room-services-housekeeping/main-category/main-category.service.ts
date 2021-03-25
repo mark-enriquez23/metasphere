@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 export class MainCategoryService {
 
   public api_type = 'customize/control'
+  public mainCategoryData: any;
 
   constructor(public http: HttpClient) { }
 
