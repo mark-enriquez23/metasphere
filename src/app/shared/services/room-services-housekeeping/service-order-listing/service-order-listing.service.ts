@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, from, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -8,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class ServiceOrderListingService {
 
   public api_type = 'customize/control'
+  public serviceListing = new BehaviorSubject([]);
 
   constructor(public http: HttpClient) { }
 
@@ -17,6 +19,12 @@ export class ServiceOrderListingService {
     .set('hotelCode', environment.hotelCode)
     .set('roomnumber', roomNo)
     const serviceData = params.toString()
-    return this.http.get<any>( environment.api_path + this.api_type + '/getServiceOrderListByRoom?'  + serviceData, {}).toPromise();
+    return this.http.get<any>( environment.api_path + this.api_type + '/getServiceOrderListByRoom?'  + serviceData, {})
+  }
+
+  searchServiceOrderListing(e) {
+    this.serviceOrderItemListing(101).subscribe( res => {
+      this.serviceListing.next(res);
+    })
   }
 }

@@ -4,8 +4,8 @@
     <!-- <a class="navbar-brand js-scroll-trigger" [routerLink]="'/landing'">Hotel Information</a> -->
     <div class="row no-gutters w-100">
       <div class="input-group col-lg-5 px-0 mt-lg-0 mt-2 order-lg-1 order-2" *ngIf="currentRoute !== 'home' && currentRoute !== 'cart'">
-        <select class="custom-select" id="gender3">
-          <option [value]="type.cid" *ngFor="let type of mainCategoryService.mainCategoryData">{{ type.categoryname }}</option>
+        <select class="custom-select" id="gender3" (change)="onChange($event)">
+          <option [value]="type.cid" *ngFor="let type of (mainCategoryService.mainCategoryData | async )?.list">{{ type.categoryname }}</option>
         </select>
       </div>
         <div class="nav-items ml-auto order-lg-2 order-1">

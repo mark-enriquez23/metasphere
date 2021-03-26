@@ -12,9 +12,9 @@ export class HkhomeResolver implements Resolve<any>{
   ) { }
 
   resolve() {
-    return this.mainCategoryService.getMainCategoryList().then(data => {
-      return data
-    }).catch(err => {return null})
+    // return this.mainCategoryService.getMainCategoryList().then(data => {
+    //   return data
+    // }).catch(err => {return null})
   };
 
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
+import { ServiceOrderListingService } from 'src/app/shared/services/room-services-housekeeping/service-order-listing/service-order-listing.service';
+import { defer, from } from 'rxjs'
+import {shareReplay } from 'rxjs/operators'
 
 /**
  * HK Services Page Component
@@ -38,21 +41,19 @@ export class HkServicesComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private router: Router,
-    private mainCategoryService: MainCategoryService
+    private mainCategoryService: MainCategoryService,
+    private serviceOrderListingService: ServiceOrderListingService
   ) {
     if (this.activateRoute.snapshot.data.servicesListData) {
-      this.mainCategoryService.mainCategoryData = this.activateRoute.snapshot.data.servicesListData[0].list
-      this.servicesListData = this.activateRoute.snapshot.data.servicesListData[1].data;
-      // this.servicesListData = {
-      //   ...tempService,
-      //   list: []
-      // }
-      // tempService.forEach(element => {
-      //   element.forEach(serviceItem => {
-      //     this.servicesListData.list.push(serviceItem);
-      //   });
-      // });
-    } else{
+      const serviceData = this.activateRoute.snapshot.data.servicesListData
+      console.log(serviceData)
+      this.mainCategoryService.mainCategoryData.next(serviceData[0])
+      this.serviceOrderListingService.serviceListing.next(serviceData[1])
+      this.serviceOrderListingService.serviceListing.subscribe((res: any) => {
+        this.servicesListData = res.data
+        this.appendItems(0, this.sum);
+      })
+    } else {
       console.log('err')
     }
   }

@@ -45,7 +45,7 @@ export class FbFoodComponent implements OnInit {
     if (this.activateRoute.snapshot.data.roomServerData) {
       this.mainCategoryService.mainCategoryData = this.activateRoute.snapshot.data.roomServerData[0].list
       this.roomServerListingData = this.activateRoute.snapshot.data.roomServerData[1]
-    } else{
+    } else {
       console.log('err')
     }
   }

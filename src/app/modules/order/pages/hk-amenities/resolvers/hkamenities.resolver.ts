@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from "@angular/router";
+import { zip } from 'rxjs';
 import { ItemListingService } from 'src/app/shared/services/room-services-housekeeping/item-listing/item-listing.service';
 import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
 
@@ -15,15 +16,9 @@ export class HkamenitiesResolver implements Resolve<any>{
 
   resolve() {
 
-   return Promise.all(
-    [
-      this.mainCategoryService.getMainCategoryList(),
-      this.itemListing.getItemListing()
-    ]
-  );
-    // return this.itemListing.getItemListing().then(data => {
-    //   return data
-    // }).catch(err => {return null})
+   return zip(
+    this.mainCategoryService.getMainCategoryList(),
+    this.itemListing.getItemListing())
   };
 
 }

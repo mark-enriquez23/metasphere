@@ -19,12 +19,9 @@ export class FbfoodResolver implements Resolve<any>{
       cnid: 'MnTd418b8ed2kdpghrz7'
     }
 
-   return Promise.all(
-      [
+   return Promise.all([
         this.mainCategoryService.getMainCategoryList(),
         this.roomserverListingService.roomServerItemListing(defaultData)
-      ]
-    );
-  };
+      ]);};
 
 }

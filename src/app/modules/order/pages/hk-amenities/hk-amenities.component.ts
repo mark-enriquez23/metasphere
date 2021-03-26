@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GeneralService } from 'src/app/shared/services/general/general.service';
+import { ItemListingService } from 'src/app/shared/services/room-services-housekeeping/item-listing/item-listing.service';
 import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
 
 /**
@@ -40,12 +41,17 @@ export class HkAmenitiesComponent implements OnInit {
     private activateRoute: ActivatedRoute,
     private router: Router,
     private generalService: GeneralService,
-    private mainCategoryService: MainCategoryService
+    private mainCategoryService: MainCategoryService,
+    private itemListingService: ItemListingService
   ) {
     if (this.activateRoute.snapshot.data.itemListData) {
-      console.log(this.activateRoute.snapshot.data.itemListData)
-      this.mainCategoryService.mainCategoryData = this.activateRoute.snapshot.data.itemListData[0].list
-      this.itemListing = this.activateRoute.snapshot.data.itemListData[1];
+      const itemsData = this.activateRoute.snapshot.data.itemListData
+      this.mainCategoryService.mainCategoryData.next(itemsData[0])
+      this.itemListingService.itemListing.next(itemsData[1])
+      this.itemListingService.itemListing.subscribe((res: any) => {
+        this.itemListing = res
+        this.appendItems(0, this.sum);
+      })
     } else{
       console.log('err')
     }
