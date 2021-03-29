@@ -40,7 +40,7 @@
 
 <ol class="breadcrumb">
     <li>Guards</li>
-    <li>HkServicesResolver</li>
+    <li>FbfoodResolver</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,7 +58,7 @@
             <h3>File</h3>
             </p>
             <p class="comment">
-                <code>src/app/modules/order/pages/hk-services/resolvers/hkservices.resolver.ts</code>
+                <code>src/app/modules/order/pages/fb-food/resolvers/fbfood.resolver.ts</code>
             </p>
 
 
@@ -99,12 +99,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html">UserService</a>, serviceListingSrv: <a href="../injectables/ServiceOrderListingService.html">ServiceOrderListingService</a>, mainCategoryService: <a href="../injectables/MainCategoryService.html">MainCategoryService</a>)</code>
+<code>constructor(roomserverListingService: <a href="../injectables/RoomServerListingService.html">RoomServerListingService</a>, mainCategoryService: <a href="../injectables/MainCategoryService.html">MainCategoryService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/modules/order/pages/hk-services/resolvers/hkservices.resolver.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/modules/order/pages/fb-food/resolvers/fbfood.resolver.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -122,22 +122,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>userService</td>
+                                                        <td>roomserverListingService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>serviceListingSrv</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/ServiceOrderListingService.html" target="_self" >ServiceOrderListingService</a></code>
+                                                                        <code><a href="../injectables/RoomServerListingService.html" target="_self" >RoomServerListingService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -193,8 +181,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/modules/order/pages/hk-services/resolvers/hkservices.resolver.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/modules/order/pages/fb-food/resolvers/fbfood.resolver.ts:17</a></div>
                 </td>
             </tr>
 
@@ -218,30 +206,28 @@
             <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { Resolve } from &quot;@angular/router&quot;;
 import { zip } from &#x27;rxjs&#x27;;
-import { map } from &#x27;rxjs/operators&#x27;;
-import { ItemListingService } from &#x27;src/app/shared/services/room-services-housekeeping/item-listing/item-listing.service&#x27;;
+import { RoomServerListingService } from &#x27;src/app/shared/services/food-drinks-orders/room-server-listing/room-server-listing.service&#x27;;
 import { MainCategoryService } from &#x27;src/app/shared/services/room-services-housekeeping/main-category/main-category.service&#x27;;
-import { ServiceOrderListingService } from &#x27;src/app/shared/services/room-services-housekeeping/service-order-listing/service-order-listing.service&#x27;;
-import { UserService } from &#x27;src/app/shared/services/user/user.service&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-export class HkServicesResolver implements Resolve&lt;any&gt;{
+export class FbfoodResolver implements Resolve&lt;any&gt;{
 
   constructor(
-    private userService: UserService,
-    private serviceListingSrv: ServiceOrderListingService,
+    private roomserverListingService: RoomServerListingService,
     private mainCategoryService: MainCategoryService
   ) { }
 
-
   resolve() {
-    console.log(this.userService.userData)
-    const userData: any &#x3D; this.userService.userData;
-    // Set to 101 - API Dev
+    const defaultData &#x3D; {
+      cid: &#x27;Mend4055a7e3kczvauyg&#x27;,
+      cnid: &#x27;MnTd418b8ed2kdpghrz7&#x27;
+    }
 
-   return zip(this.mainCategoryService.getMainCategoryList(), this.serviceListingSrv.serviceOrderItemListing(101))
+   return zip(
+     this.mainCategoryService.getMainCategoryList(),
+    this.roomserverListingService.roomServerItemListing(defaultData))
   };
 
 }
@@ -275,7 +261,7 @@ export class HkServicesResolver implements Resolve&lt;any&gt;{
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
-            var COMPODOC_CURRENT_PAGE_URL = 'HkServicesResolver.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'FbfoodResolver.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

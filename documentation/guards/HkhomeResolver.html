@@ -179,7 +179,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                 </td>
@@ -205,9 +205,9 @@ export class HkhomeResolver implements Resolve&lt;any&gt;{
   ) { }
 
   resolve() {
-    return this.mainCategoryService.getMainCategoryList().then(data &#x3D;&gt; {
-      return data
-    }).catch(err &#x3D;&gt; {return null})
+    // return this.mainCategoryService.getMainCategoryList().then(data &#x3D;&gt; {
+    //   return data
+    // }).catch(err &#x3D;&gt; {return null})
   };
 
 }

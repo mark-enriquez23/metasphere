@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RoomServerListingService } from 'src/app/shared/services/food-drinks-orders/room-server-listing/room-server-listing.service';
 import { GeneralService } from 'src/app/shared/services/general/general.service';
 import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
 
@@ -19,6 +20,7 @@ export class FbFoodComponent implements OnInit {
    * @type {Array[Object]}
    */
    items = []
+
    /**
     * Room Server Listing Data
     *
@@ -26,11 +28,45 @@ export class FbFoodComponent implements OnInit {
     */
    roomServerListingData: any;
 
+  /**
+    * Items Array Data
+    *
+    * @type {Array}
+  */
   arrayItems = [];
+
+  /**
+    * Items Sum Data
+    *
+    * @type {number}
+  */
   sum = 10;
+
+  /**
+    * throttle Data
+    *
+    * @type {number}
+  */
   throttle = 300;
+
+  /**
+    * Scroll Distance Data
+    *
+    * @type {number}
+  */
   scrollDistance = 1;
+  /**
+    * Up Scroll Distance Data
+    *
+    * @type {number}
+  */
   scrollUpDistance = 2;
+
+  /**
+    * Direction Data
+    *
+    * @type {string}
+  */
   direction = "";
 
   /**
@@ -40,11 +76,18 @@ export class FbFoodComponent implements OnInit {
     private activateRoute: ActivatedRoute,
     private router: Router,
     private generalService: GeneralService,
-    private mainCategoryService: MainCategoryService
+    private mainCategoryService: MainCategoryService,
+    private roomServerListingService: RoomServerListingService
   ) {
     if (this.activateRoute.snapshot.data.roomServerData) {
-      this.mainCategoryService.mainCategoryData = this.activateRoute.snapshot.data.roomServerData[0].list
-      this.roomServerListingData = this.activateRoute.snapshot.data.roomServerData[1]
+      const roomServerData = this.activateRoute.snapshot.data.roomServerData
+      this.mainCategoryService.mainCategoryData.next(roomServerData[0])
+      this.roomServerListingService.roomServerItemisting.next(roomServerData[1])
+      this.roomServerListingService.roomServerItemisting.subscribe((res: any) => {
+        console.log(res)
+        this.roomServerListingData = res
+        this.appendItems(0, this.sum);
+      })
     } else {
       console.log('err')
     }
@@ -55,8 +98,13 @@ export class FbFoodComponent implements OnInit {
   ngOnInit(): void {
     this.appendItems(0, this.sum);
   }
-
-  onScrollDown(ev) {
+  /**
+   *
+   * On Scroll Down Method
+   *
+   * @param  {} ev
+   */
+  onScrollDown(ev): void {
     if (this.sum <= this.roomServerListingData.list.length) {
       console.log("scrolled down!!", ev);
 
@@ -71,7 +119,15 @@ export class FbFoodComponent implements OnInit {
     }
   }
 
-  onUp(ev) {
+
+  /**
+   *
+   * On Scroll Up
+   *
+   * @param  {} ev
+   * @returns void
+   */
+  onUp(ev): void {
     console.log("scrolled up!", ev);
     const start = this.sum;
     this.sum += 20;
@@ -80,17 +136,38 @@ export class FbFoodComponent implements OnInit {
     this.direction = "up";
   }
 
-
-  appendItems(startIndex, endIndex) {
+  /**
+   *
+   * Apend Items on Array Items
+   *
+   * @param  {} startIndex
+   * @param  {} endIndex
+   */
+  appendItems(startIndex, endIndex): void {
     this.addItems(startIndex, endIndex, "push");
   }
 
-
-  prependItems(startIndex, endIndex) {
+  /**
+   *
+   * Prepend Items on Array Items
+   *
+   * @param  {} startIndex
+   * @param  {} endIndex
+   */
+  prependItems(startIndex, endIndex): void {
     this.addItems(startIndex, endIndex, "unshift");
   }
 
-  addItems(startIndex, endIndex, _method) {
+  /**
+   *
+   * Add Items Method
+   *
+   * @param  {} startIndex
+   * @param  {} endIndex
+   * @param  {} _method
+   *
+   */
+  addItems(startIndex, endIndex, _method): void {
     for (let i = startIndex; i < this.sum; ++i) {
       if (this.roomServerListingData.list[i]) {
         const itemData = {

@@ -24,107 +24,107 @@
 <title>cluster_HotelInformationModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-268 945,-268 945,-70 8,-70"/>
 </g>
-<g id="clust7" class="cluster">
-<title>cluster_HotelInformationModule_imports</title>
-<polygon fill="none" stroke="black" points="602,-78 602,-130 937,-130 937,-78 602,-78"/>
+<g id="clust8" class="cluster">
+<title>cluster_HotelInformationModule_exports</title>
+<polygon fill="none" stroke="black" points="397,-208 397,-260 619,-260 619,-208 397,-208"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_HotelInformationModule_declarations</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 594,-130 594,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="359,-78 359,-130 937,-130 937,-78 359,-78"/>
 </g>
-<g id="clust8" class="cluster">
-<title>cluster_HotelInformationModule_exports</title>
-<polygon fill="none" stroke="black" points="341,-208 341,-260 563,-260 563,-208 341,-208"/>
+<g id="clust7" class="cluster">
+<title>cluster_HotelInformationModule_imports</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 351,-130 351,-78 16,-78"/>
 </g>
 <!-- FacilitiesComponent -->
 <g id="node1" class="node">
 <title>FacilitiesComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="586.16,-122 453.84,-122 453.84,-86 586.16,-86 586.16,-122"/>
-<text text-anchor="middle" x="520" y="-99.8" font-family="Times,serif" font-size="14.00">FacilitiesComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="929.16,-122 796.84,-122 796.84,-86 929.16,-86 929.16,-122"/>
+<text text-anchor="middle" x="863" y="-99.8" font-family="Times,serif" font-size="14.00">FacilitiesComponent</text>
 </g>
 <!-- HotelInformationModule -->
 <g id="node5" class="node">
 <title>HotelInformationModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="530.52,-187 527.52,-191 506.52,-191 503.52,-187 373.48,-187 373.48,-151 530.52,-151 530.52,-187"/>
-<text text-anchor="middle" x="452" y="-164.8" font-family="Times,serif" font-size="14.00">HotelInformationModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="586.52,-187 583.52,-191 562.52,-191 559.52,-187 429.48,-187 429.48,-151 586.52,-151 586.52,-187"/>
+<text text-anchor="middle" x="508" y="-164.8" font-family="Times,serif" font-size="14.00">HotelInformationModule</text>
 </g>
 <!-- FacilitiesComponent&#45;&gt;HotelInformationModule -->
 <g id="edge1" class="edge">
 <title>FacilitiesComponent&#45;&gt;HotelInformationModule</title>
-<path fill="none" stroke="black" d="M492.22,-122.11C492.22,-122.11 492.22,-140.99 492.22,-140.99"/>
-<polygon fill="black" stroke="black" points="488.72,-140.99 492.22,-150.99 495.72,-140.99 488.72,-140.99"/>
+<path fill="none" stroke="black" d="M863,-122.28C863,-143.32 863,-175 863,-175 863,-175 596.79,-175 596.79,-175"/>
+<polygon fill="black" stroke="black" points="596.79,-171.5 586.79,-175 596.79,-178.5 596.79,-171.5"/>
 </g>
 <!-- FaqComponent -->
 <g id="node2" class="node">
 <title>FaqComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="436.33,-122 333.67,-122 333.67,-86 436.33,-86 436.33,-122"/>
-<text text-anchor="middle" x="385" y="-99.8" font-family="Times,serif" font-size="14.00">FaqComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="779.33,-122 676.67,-122 676.67,-86 779.33,-86 779.33,-122"/>
+<text text-anchor="middle" x="728" y="-99.8" font-family="Times,serif" font-size="14.00">FaqComponent</text>
 </g>
 <!-- FaqComponent&#45;&gt;HotelInformationModule -->
 <g id="edge2" class="edge">
 <title>FaqComponent&#45;&gt;HotelInformationModule</title>
-<path fill="none" stroke="black" d="M404.7,-122.11C404.7,-122.11 404.7,-140.99 404.7,-140.99"/>
-<polygon fill="black" stroke="black" points="401.2,-140.99 404.7,-150.99 408.2,-140.99 401.2,-140.99"/>
+<path fill="none" stroke="black" d="M728,-122.02C728,-139.37 728,-163 728,-163 728,-163 596.8,-163 596.8,-163"/>
+<polygon fill="black" stroke="black" points="596.8,-159.5 586.8,-163 596.8,-166.5 596.8,-159.5"/>
 </g>
 <!-- NavHeaderComponent -->
 <g id="node3" class="node">
 <title>NavHeaderComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="315.56,-122 170.44,-122 170.44,-86 315.56,-86 315.56,-122"/>
-<text text-anchor="middle" x="243" y="-99.8" font-family="Times,serif" font-size="14.00">NavHeaderComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="658.56,-122 513.44,-122 513.44,-86 658.56,-86 658.56,-122"/>
+<text text-anchor="middle" x="586" y="-99.8" font-family="Times,serif" font-size="14.00">NavHeaderComponent</text>
 </g>
 <!-- NavHeaderComponent&#45;&gt;HotelInformationModule -->
 <g id="edge3" class="edge">
 <title>NavHeaderComponent&#45;&gt;HotelInformationModule</title>
-<path fill="none" stroke="black" d="M243,-122.02C243,-139.37 243,-163 243,-163 243,-163 363.28,-163 363.28,-163"/>
-<polygon fill="black" stroke="black" points="363.28,-166.5 373.28,-163 363.28,-159.5 363.28,-166.5"/>
+<path fill="none" stroke="black" d="M550.11,-122.11C550.11,-122.11 550.11,-140.99 550.11,-140.99"/>
+<polygon fill="black" stroke="black" points="546.61,-140.99 550.11,-150.99 553.61,-140.99 546.61,-140.99"/>
 </g>
 <!-- ServicesComponent -->
 <g id="node4" class="node">
 <title>ServicesComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="152.25,-122 23.75,-122 23.75,-86 152.25,-86 152.25,-122"/>
-<text text-anchor="middle" x="88" y="-99.8" font-family="Times,serif" font-size="14.00">ServicesComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="495.25,-122 366.75,-122 366.75,-86 495.25,-86 495.25,-122"/>
+<text text-anchor="middle" x="431" y="-99.8" font-family="Times,serif" font-size="14.00">ServicesComponent</text>
 </g>
 <!-- ServicesComponent&#45;&gt;HotelInformationModule -->
 <g id="edge4" class="edge">
 <title>ServicesComponent&#45;&gt;HotelInformationModule</title>
-<path fill="none" stroke="black" d="M88,-122.28C88,-143.32 88,-175 88,-175 88,-175 363.47,-175 363.47,-175"/>
-<polygon fill="black" stroke="black" points="363.47,-178.5 373.47,-175 363.47,-171.5 363.47,-178.5"/>
+<path fill="none" stroke="black" d="M462.31,-122.11C462.31,-122.11 462.31,-140.99 462.31,-140.99"/>
+<polygon fill="black" stroke="black" points="458.81,-140.99 462.31,-150.99 465.81,-140.99 458.81,-140.99"/>
 </g>
 <!-- HotelInformationRoutingModule  -->
 <g id="node8" class="node">
 <title>HotelInformationRoutingModule </title>
-<polygon fill="#fb8072" stroke="black" points="555.14,-252 348.86,-252 348.86,-216 555.14,-216 555.14,-252"/>
-<text text-anchor="middle" x="452" y="-229.8" font-family="Times,serif" font-size="14.00">HotelInformationRoutingModule </text>
+<polygon fill="#fb8072" stroke="black" points="611.14,-252 404.86,-252 404.86,-216 611.14,-216 611.14,-252"/>
+<text text-anchor="middle" x="508" y="-229.8" font-family="Times,serif" font-size="14.00">HotelInformationRoutingModule </text>
 </g>
 <!-- HotelInformationModule&#45;&gt;HotelInformationRoutingModule  -->
 <g id="edge7" class="edge">
 <title>HotelInformationModule&#45;&gt;HotelInformationRoutingModule </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M452,-187.11C452,-187.11 452,-205.99 452,-205.99"/>
-<polygon fill="black" stroke="black" points="448.5,-205.99 452,-215.99 455.5,-205.99 448.5,-205.99"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M508,-187.11C508,-187.11 508,-205.99 508,-205.99"/>
+<polygon fill="black" stroke="black" points="504.5,-205.99 508,-215.99 511.5,-205.99 504.5,-205.99"/>
 </g>
 <!-- HotelInformationRoutingModule -->
 <g id="node6" class="node">
 <title>HotelInformationRoutingModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="929.14,-122 926.14,-126 905.14,-126 902.14,-122 726.86,-122 726.86,-86 929.14,-86 929.14,-122"/>
-<text text-anchor="middle" x="828" y="-99.8" font-family="Times,serif" font-size="14.00">HotelInformationRoutingModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="343.14,-122 340.14,-126 319.14,-126 316.14,-122 140.86,-122 140.86,-86 343.14,-86 343.14,-122"/>
+<text text-anchor="middle" x="242" y="-99.8" font-family="Times,serif" font-size="14.00">HotelInformationRoutingModule</text>
 </g>
 <!-- HotelInformationRoutingModule&#45;&gt;HotelInformationModule -->
 <g id="edge5" class="edge">
 <title>HotelInformationRoutingModule&#45;&gt;HotelInformationModule</title>
-<path fill="none" stroke="black" d="M828,-122.28C828,-143.32 828,-175 828,-175 828,-175 540.82,-175 540.82,-175"/>
-<polygon fill="black" stroke="black" points="540.82,-171.5 530.82,-175 540.82,-178.5 540.82,-171.5"/>
+<path fill="none" stroke="black" d="M242,-122.02C242,-139.37 242,-163 242,-163 242,-163 419.27,-163 419.27,-163"/>
+<polygon fill="black" stroke="black" points="419.27,-166.5 429.27,-163 419.27,-159.5 419.27,-166.5"/>
 </g>
 <!-- SharedModule -->
 <g id="node7" class="node">
 <title>SharedModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="708.42,-122 705.42,-126 684.42,-126 681.42,-122 609.58,-122 609.58,-86 708.42,-86 708.42,-122"/>
-<text text-anchor="middle" x="659" y="-99.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="122.42,-122 119.42,-126 98.42,-126 95.42,-122 23.58,-122 23.58,-86 122.42,-86 122.42,-122"/>
+<text text-anchor="middle" x="73" y="-99.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
 </g>
 <!-- SharedModule&#45;&gt;HotelInformationModule -->
 <g id="edge6" class="edge">
 <title>SharedModule&#45;&gt;HotelInformationModule</title>
-<path fill="none" stroke="black" d="M659,-122.02C659,-139.37 659,-163 659,-163 659,-163 540.55,-163 540.55,-163"/>
-<polygon fill="black" stroke="black" points="540.55,-159.5 530.55,-163 540.55,-166.5 540.55,-159.5"/>
+<path fill="none" stroke="black" d="M73,-122.28C73,-143.32 73,-175 73,-175 73,-175 419.48,-175 419.48,-175"/>
+<polygon fill="black" stroke="black" points="419.48,-178.5 429.48,-175 419.48,-171.5 419.48,-178.5"/>
 </g>
 </g>
 </svg>

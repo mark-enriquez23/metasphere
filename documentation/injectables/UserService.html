@@ -87,7 +87,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#userToken">userToken</a>
+                                <a href="#userData">userData</a>
                             </li>
                         </ul>
                     </td>
@@ -207,8 +207,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/shared/services/user/user.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/shared/services/user/user.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -248,8 +248,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/shared/services/user/user.service.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/shared/services/user/user.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -282,15 +282,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>storeToken(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>storeToken(user)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/shared/services/user/user.service.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/shared/services/user/user.service.ts:41</a></div>
                 </td>
             </tr>
 
@@ -304,16 +304,12 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
-                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>token</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
+                                    <td>user</td>
 
                                     <td>
                                         No
@@ -475,7 +471,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>!!this.userToken</code>
+                            <i>Default value : </i><code>!!this.userData</code>
                         </td>
                     </tr>
                         <tr>
@@ -501,7 +497,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/shared/services/user/user.service.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/shared/services/user/user.service.ts:40</a></div>
                             </td>
                         </tr>
 
@@ -512,18 +508,18 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="userToken"></a>
+                        <a name="userData"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            userToken</b>
-                            <a href="#userToken"><span class="icon ion-ios-link"></span></a>
+                            userData</b>
+                            <a href="#userData"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>localStorage.getItem(&#x27;token&#x27;)</code>
+                            <i>Default value : </i><code>localStorage.getItem(&#x27;user&#x27;)</code>
                         </td>
                     </tr>
                         <tr>
@@ -541,7 +537,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpParams } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
 
@@ -550,14 +546,18 @@ import { environment } from &#x27;src/environments/environment&#x27;;
 })
 export class UserService {
 
-  public userToken &#x3D; localStorage.getItem(&#x27;token&#x27;)
-  public hasToken &#x3D; !!this.userToken;
+  public userData &#x3D; localStorage.getItem(&#x27;user&#x27;)
+  public hasToken &#x3D; !!this.userData;
   public api_type &#x3D; &#x27;customize/control&#x27;
 
   constructor(private httpClient: HttpClient) { }
 
   public userLogin(roomNumber: string, lastName: string) {
-    return this.httpClient.post(environment.api_path + this.api_type + &#x27;/FetchBooKingwithlastNameAndRoomno&#x27;, {roomNo: roomNumber, lastName:lastName }).toPromise();
+    const params &#x3D; new HttpParams()
+    .set(&#x27;roomNo&#x27;, roomNumber)
+    .set(&#x27;lastName&#x27;, lastName)
+    const userData &#x3D; params.toString()
+    return this.httpClient.post(environment.api_path + this.api_type + &#x27;/FetchBooKingwithlastNameAndRoomno?&#x27; + userData , {}).toPromise();
   }
 
   public isUserLoggedIn() {
@@ -573,13 +573,13 @@ export class UserService {
 
   public clearTokenData() {
     this.hasToken &#x3D; false;
-    this.userToken &#x3D; &#x27;&#x27;;
-    localStorage.removeItem(&#x27;token&#x27;);
+    this.userData &#x3D; null;
+    localStorage.removeItem(&#x27;user&#x27;);
   }
 ß
-  public storeToken(token: string) {
-    localStorage.setItem(&#x27;token&#x27;, token);
-    this.userToken &#x3D; token;
+  public storeToken(user) {
+    localStorage.setItem(&#x27;user&#x27;, user);
+    this.userData &#x3D; user;
     this.hasToken &#x3D; true;
   }
 }

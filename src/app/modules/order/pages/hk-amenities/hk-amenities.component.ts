@@ -27,12 +27,47 @@ export class HkAmenitiesComponent implements OnInit {
    */
   itemListing: any
 
-  arrayItems = [];
-  sum = 10;
-  throttle = 300;
-  scrollDistance = 1;
-  scrollUpDistance = 2;
-  direction = "";
+
+  /**
+    * Items Array Data
+    *
+    * @type {Array}
+  */
+   arrayItems = [];
+
+   /**
+     * Items Sum Data
+     *
+     * @type {number}
+   */
+   sum = 10;
+
+   /**
+     * throttle Data
+     *
+     * @type {number}
+   */
+   throttle = 300;
+
+   /**
+     * Scroll Distance Data
+     *
+     * @type {number}
+   */
+   scrollDistance = 1;
+   /**
+     * Up Scroll Distance Data
+     *
+     * @type {number}
+   */
+   scrollUpDistance = 2;
+
+   /**
+     * Direction Data
+     *
+     * @type {string}
+   */
+   direction = "";
 
   /**
    * @ignore
@@ -64,8 +99,13 @@ export class HkAmenitiesComponent implements OnInit {
     this.appendItems(0, this.sum);
   }
 
-
-  onScrollDown(ev) {
+ /**
+   *
+   * On Scroll Down Method
+   *
+   * @param  {} ev
+   */
+  onScrollDown(ev): void {
     console.log("scrolled down!!", ev);
     if(this.sum <= this.itemListing.list.length) {
       // add another 20 items
@@ -79,7 +119,14 @@ export class HkAmenitiesComponent implements OnInit {
     }
   }
 
-  onUp(ev) {
+/**
+   *
+   * On Scroll Up
+   *
+   * @param  {} ev
+   * @returns void
+   */
+ onUp(ev): void {
     console.log("scrolled up!", ev);
     const start = this.sum;
     this.sum += 20;
@@ -89,16 +136,39 @@ export class HkAmenitiesComponent implements OnInit {
   }
 
 
-  appendItems(startIndex, endIndex) {
+ /**
+   *
+   * Apend Items on Array Items
+   *
+   * @param  {} startIndex
+   * @param  {} endIndex
+   */
+  appendItems(startIndex, endIndex): void {
     this.addItems(startIndex, endIndex, "push");
   }
 
 
-  prependItems(startIndex, endIndex) {
+ /**
+   *
+   * Prepend Items on Array Items
+   *
+   * @param  {} startIndex
+   * @param  {} endIndex
+   */
+  prependItems(startIndex, endIndex): void {
     this.addItems(startIndex, endIndex, "unshift");
   }
 
-  addItems(startIndex, endIndex, _method) {
+  /**
+   *
+   * Add Items Method
+   *
+   * @param  {} startIndex
+   * @param  {} endIndex
+   * @param  {} _method
+   *
+   */
+   addItems(startIndex, endIndex, _method): void {
     for (let i = startIndex; i < this.sum; ++i) {
       if (this.itemListing.list[i]) {
         const itemData = {

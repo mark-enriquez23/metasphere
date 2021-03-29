@@ -90,6 +90,7 @@ import { HkhomeResolver } from &#x27;./pages/hk-home/resolvers/hkhome.resolver&#
 import { HkamenitiesResolver } from &#x27;./pages/hk-amenities/resolvers/hkamenities.resolver&#x27;;
 import { FbhomeResolver } from &#x27;./pages/fb-home/resolvers/fbhome.resolver&#x27;;
 import { HkServicesResolver } from &#x27;./pages/hk-services/resolvers/hkservices.resolver&#x27;;
+import { FbfoodResolver } from &#x27;./pages/fb-food/resolvers/fbfood.resolver&#x27;;
 
 const routes: Routes &#x3D; [
   {
@@ -148,7 +149,8 @@ const routes: Routes &#x3D; [
         },
         {
           path: &#x27;foods&#x27;,
-          component: FbFoodComponent
+          component: FbFoodComponent,
+          resolve: { roomServerData: FbfoodResolver}
         },
         {
           path: &#x27;drinks&#x27;,

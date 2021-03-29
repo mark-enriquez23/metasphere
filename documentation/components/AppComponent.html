@@ -73,6 +73,12 @@
     </p>
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -146,6 +152,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
                                 <a href="#onActivate">onActivate</a>
                             </li>
                         </ul>
@@ -160,6 +169,54 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(userService: <a href="../injectables/UserService.html">UserService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/app.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -170,6 +227,45 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/core/app.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -192,8 +288,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/core/app.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/core/app.component.ts:28</a></div>
                 </td>
             </tr>
 
@@ -274,7 +370,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/core/app.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/app.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -293,7 +389,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { OnInit } from &#x27;@angular/core&#x27;;
+import { Component } from &#x27;@angular/core&#x27;;
+import { UserService } from &#x27;../shared/services/user/user.service&#x27;;
 
 /**
  *
@@ -305,13 +403,13 @@
   templateUrl: &#x27;./app.component.html&#x27;,
   styleUrls: [&#x27;./app.component.scss&#x27;]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   /**
    * Title
    * @type {String}
    */
   title &#x3D; &#x27;metasphere&#x27;;
-
+  constructor(private userService: UserService) {}
   /**
    * Set&#x27;s the App to scroll to the top after route change
    *
@@ -320,6 +418,14 @@ export class AppComponent {
    */
   onActivate(event: Event): void {
     window.scroll(0,0);
+  }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add &#x27;implements OnInit&#x27; to the class.
+    if (this.userService.userData.constructor &#x3D;&#x3D;&#x3D; Object) {
+      this.userService.clearTokenData();
+    }
   }
 }
 </code></pre>
@@ -365,7 +471,7 @@ export class AppComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><app-spinner></app-spinner><router-outlet (activate)="onActivate($event)"></router-outlet><app-page-loader></app-page-loader></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesCardsComponent', 'selector': 'app-services-cards'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

@@ -181,13 +181,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/OrderModule.html" data-type="entity-link">OrderModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-OrderModule-d4b113dd899e63dfdae26f6d03552947"' : 'data-target="#xs-components-links-module-OrderModule-d4b113dd899e63dfdae26f6d03552947"' }>
+                                            'data-target="#components-links-module-OrderModule-92ffe365d0a992710b43d0e90d083eb1"' : 'data-target="#xs-components-links-module-OrderModule-92ffe365d0a992710b43d0e90d083eb1"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-OrderModule-d4b113dd899e63dfdae26f6d03552947"' :
-                                            'id="xs-components-links-module-OrderModule-d4b113dd899e63dfdae26f6d03552947"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-OrderModule-92ffe365d0a992710b43d0e90d083eb1"' :
+                                            'id="xs-components-links-module-OrderModule-92ffe365d0a992710b43d0e90d083eb1"' }>
                                             <li class="link">
                                                 <a href="components/CartComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">CartComponent</a>
@@ -251,6 +251,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/ReviewOrdersComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ReviewOrdersComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ServicesCardsComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ServicesCardsComponent</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -480,6 +484,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <ul class="links collapse " ${ isNormalMode ? 'id="guards-links"' : 'id="xs-guards-links"' }>
                             <li class="link">
                                 <a href="guards/AuthGuardService.html" data-type="entity-link">AuthGuardService</a>
+                            </li>
+                            <li class="link">
+                                <a href="guards/FbfoodResolver.html" data-type="entity-link">FbfoodResolver</a>
                             </li>
                             <li class="link">
                                 <a href="guards/FbhomeResolver.html" data-type="entity-link">FbhomeResolver</a>

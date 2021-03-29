@@ -24,12 +24,47 @@ export class HkHomeComponent implements OnInit {
    */
   mainCategoryData: any;
 
-  arrayItems = [];
-  sum = 10;
-  throttle = 300;
-  scrollDistance = 1;
-  scrollUpDistance = 2;
-  direction = "";
+
+  /**
+    * Items Array Data
+    *
+    * @type {Array}
+  */
+   arrayItems = [];
+
+   /**
+     * Items Sum Data
+     *
+     * @type {number}
+   */
+   sum = 10;
+
+   /**
+     * throttle Data
+     *
+     * @type {number}
+   */
+   throttle = 300;
+
+   /**
+     * Scroll Distance Data
+     *
+     * @type {number}
+   */
+   scrollDistance = 1;
+   /**
+     * Up Scroll Distance Data
+     *
+     * @type {number}
+   */
+   scrollUpDistance = 2;
+
+   /**
+     * Direction Data
+     *
+     * @type {string}
+   */
+   direction = "";
 
   /**
    * @ignore
