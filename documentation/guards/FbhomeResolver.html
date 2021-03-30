@@ -104,7 +104,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/modules/order/pages/fb-home/resolvers/fbhome.resolver.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/modules/order/pages/fb-home/resolvers/fbhome.resolver.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -169,8 +169,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/modules/order/pages/fb-home/resolvers/fbhome.resolver.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/modules/order/pages/fb-home/resolvers/fbhome.resolver.ts:15</a></div>
                 </td>
             </tr>
 
@@ -193,6 +193,7 @@
         <div class="tab-pane fade  tab-source-code" id="c-source">
             <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { Resolve } from &quot;@angular/router&quot;;
+import { zip } from &#x27;rxjs&#x27;;
 import { OrderListingService } from &#x27;src/app/shared/services/food-drinks-orders/order-listing/order-listing.service&#x27;;
 
 @Injectable({
@@ -205,9 +206,7 @@ export class FbhomeResolver implements Resolve&lt;any&gt;{
   ) { }
 
   resolve() {
-    return this.orderListingService.getOrderListing().then(data &#x3D;&gt; {
-      return data
-    }).catch(err &#x3D;&gt; {return null})
+    return zip(this.orderListingService.getOrderListing());
   };
 
 }

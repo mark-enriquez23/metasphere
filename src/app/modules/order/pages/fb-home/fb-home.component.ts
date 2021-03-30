@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { OrderListingService } from 'src/app/shared/services/food-drinks-orders/order-listing/order-listing.service';
 import { GeneralService } from 'src/app/shared/services/general/general.service';
 
 /**
@@ -73,11 +74,14 @@ export class FbHomeComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private router: Router,
-    private generalService: GeneralService
+    private generalService: GeneralService,
+    private orderListingService: OrderListingService
   ) {
     if (this.activateRoute.snapshot.data.orderListingData) {
-      this.orderListingData = this.activateRoute.snapshot.data.orderListingData;
-      console.log(this.orderListingData)
+      this.orderListingData = this.activateRoute.snapshot.data.orderListingData[0];
+      this.orderListingService.orderServerItemisting.subscribe((res: any) => {
+        this.orderListingService = res;
+      })
     } else{
       console.log('err')
     }

@@ -18,11 +18,11 @@
       <div class="row no-gutters">
         <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">
           <label class="w-100 text-center text-lg-left" for="lastName">Check-In Date</label>
-          <input type="date" name="check-in/out-dates" [min]="currentDate" formControlName="check_in_date" class="form-control text-center text-lg-left" id="lastName" placeholder="Check in">
+          <input name="check-in/out-dates" formControlName="check_in_date" class="form-control text-center text-lg-left" id="lastName" placeholder="Check in" readonly>
         </div>
         <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">
           <label class="w-100 text-center text-lg-left" for="lastName">Check-Out Date</label>
-          <input type="date" name="check-in/out-dates" [min]="currentDate"  formControlName="check_out_date" class="form-control text-center text-lg-left" id="lastName" placeholder="Check out">
+          <input name="check-in/out-dates" formControlName="check_out_date" class="form-control text-center text-lg-left" id="lastName" placeholder="Check out" readonly>
         </div>
       </div>
       <div class="row no-gutters">

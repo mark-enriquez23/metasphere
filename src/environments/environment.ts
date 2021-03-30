@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   api_path: 'http://18.191.199.129:7779/',
-  chainCode: 'CHA',
-  hotelCode: 'SINSC',
+  chainCode: 'USNPS',  // CHA
+  hotelCode: 'FSDH', //SINSC
   program: 'NEW',
   kioskname: '001',
   guestType: 'all' //Can be all, pre-check-in, or main-exp

@@ -82,6 +82,10 @@
                                     <span class="modifier">Public</span>
                                 <a href="#http">http</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#orderServerItemisting">orderServerItemisting</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -120,7 +124,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/services/food-drinks-orders/order-listing/order-listing.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/services/food-drinks-orders/order-listing/order-listing.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -185,8 +189,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/shared/services/food-drinks-orders/order-listing/order-listing.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/shared/services/food-drinks-orders/order-listing/order-listing.service.ts:17</a></div>
                 </td>
             </tr>
 
@@ -234,7 +238,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/services/food-drinks-orders/order-listing/order-listing.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/services/food-drinks-orders/order-listing/order-listing.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -262,6 +266,33 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/services/food-drinks-orders/order-listing/order-listing.service.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="orderServerItemisting"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            orderServerItemisting</b>
+                            <a href="#orderServerItemisting"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new BehaviorSubject([])</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/services/food-drinks-orders/order-listing/order-listing.service.ts:13</a></div>
                             </td>
                         </tr>
@@ -277,6 +308,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpParams } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
+import { BehaviorSubject } from &#x27;rxjs&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
 
 @Injectable({
@@ -286,6 +318,7 @@ export class OrderListingService {
 
 
   public api_type &#x3D; &#x27;customize/control&#x27;
+  public orderServerItemisting &#x3D; new BehaviorSubject([]);
 
   constructor(public http: HttpClient) { }
 
@@ -293,7 +326,7 @@ export class OrderListingService {
     const params &#x3D; new HttpParams()
     .set(&#x27;chainCode&#x27;, environment.chainCode)
     .set(&#x27;hotelCode&#x27;, environment.hotelCode)
-    return this.http.get&lt;any&gt;( environment.api_path + this.api_type + &#x27;/FetchMenuList&#x27;, {params}).toPromise();
+    return this.http.get&lt;any&gt;( environment.api_path + this.api_type + &#x27;/FetchMenuList&#x27;, {params});
   }
 
 }

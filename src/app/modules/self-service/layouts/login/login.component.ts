@@ -40,12 +40,10 @@ export class LoginComponent implements OnInit {
   validateBooking(): void {
     if (!this.formErrorHandler) {
       this.spinnerSrv.show('Validating Booking...');
-      this.preCheckinSrv.storeBooking('test');
-      this.router.navigate(['self-service/pre-checkin']);
       console.log(this.f);
       this.preCheckinSrv.fetchBooking(this.f.confirmationNumber.value, this.f.confirmationNumberLastName.value).then((res: any) => {
         console.log(res)
-        if (res.resultCode === '-1') {
+        if (res.resultCode !== '-1') {
           this.preCheckinSrv.storeBooking(res);
           this.router.navigate(['self-service/pre-checkin']);
         } else {
