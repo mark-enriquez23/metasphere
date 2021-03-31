@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PreCheckinService } from 'src/app/shared/services/self-service/pre-checkin/pre-checkin.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-step-one',
@@ -12,22 +13,22 @@ export class StepOneComponent implements OnInit {
   public currentDate: any;
   public user: any;
 
-  constructor(private fb: FormBuilder, private preCheckinService: PreCheckinService) {
+  constructor(private fb: FormBuilder,
+    private preCheckinService: PreCheckinService) {
     this.user = this.preCheckinService.userBooking;
     this.stepOneForm = this.fb.group({
-      reservation_number: [this.user.confirmation_number , [Validators.required]],
-      first_name: ['' , [Validators.required]],
-      last_name: ['', [Validators.required]],
-      check_in_date: [this.user.arrivalDate, [Validators.required]],
-      check_out_date: [ this.user.departureDate, [Validators.required]],
-      room_nights: [this.user.numberOfUnits, [Validators.required]],
-      num_adults: [this.user.adultcount, [Validators.required]],
-      num_child: [this.user.childcount, [Validators.required]],
-      room_type: [this.user.roomTypeShortDescription, [Validators.required]],
-      room_rate: ['$' + this.user.roomCharge, [Validators.required]]
+      reservation_number: [this.user.confirmation_number ],
+      first_name: [''],
+      last_name: [''],
+      check_in_date: [this.user.arrivalDate],
+      check_out_date: [ this.user.departureDate],
+      room_nights: [this.user.numberOfUnits],
+      num_adults: [this.user.adultcount],
+      num_child: [this.user.childcount],
+      room_type: [this.user.roomTypeShortDescription],
+      room_rate: ['$' + this.user.roomCharge]
     });
     this.currentDate = new Date().toISOString().split('T')[0];
-
   }
 
   get f() { return this.stepOneForm.controls; }
@@ -38,5 +39,10 @@ export class StepOneComponent implements OnInit {
   }
 
   stepOneSubmit() {
+  }
+
+  exit(): void {
+    this.preCheckinService.clearBookingData();
+    location.reload();
   }
 }

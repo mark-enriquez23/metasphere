@@ -26,7 +26,7 @@ export class PreCheckinService {
 
   public isBookingSet() {
     return new Promise((resolve, reject) => {
-      if (this.hasBooking) {
+      if (this.hasBooking && this.userBooking.constructor === Object) {
         resolve(true)
       } else {
         reject(false)

@@ -313,8 +313,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -352,8 +352,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:62</a></div>
                 </td>
             </tr>
 
@@ -391,8 +391,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:45</a></div>
                 </td>
             </tr>
 
@@ -496,7 +496,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:42</a></div>
                                 </td>
                             </tr>
 
@@ -518,7 +518,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/modules/self-service/layouts/login/login.component.ts:43</a></div>
                                 </td>
                             </tr>
 
@@ -556,7 +556,12 @@ export class LoginComponent implements OnInit {
     private spinnerSrv: SpinnerService,
     private router: Router,
     private dialog: DialogService,
-    private preCheckinSrv: PreCheckinService) { }
+    private preCheckinSrv: PreCheckinService) {
+
+      this.preCheckinSrv.isBookingSet().then((result: any) &#x3D;&gt; {
+        this.router.navigate([&#x27;self-service/pre-checkin&#x27;]);
+      })
+    }
 
   ngOnInit(): void {
     this.checkInForm &#x3D; this.formBuilder.group({

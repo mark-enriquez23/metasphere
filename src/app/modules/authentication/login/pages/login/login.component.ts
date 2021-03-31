@@ -37,6 +37,9 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private dialog: DialogService,
     private spinnerSrv: SpinnerService) {
+      this.userService.isUserLoggedIn().then((result: any) => {
+        this.router.navigate(['/main/experience'])
+      })
   }
 
   /**

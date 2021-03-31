@@ -207,8 +207,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/shared/services/user/user.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/shared/services/user/user.service.ts:34</a></div>
                 </td>
             </tr>
 
@@ -289,8 +289,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/app/shared/services/user/user.service.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/shared/services/user/user.service.ts:40</a></div>
                 </td>
             </tr>
 
@@ -497,7 +497,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/shared/services/user/user.service.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/shared/services/user/user.service.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -562,14 +562,13 @@ export class UserService {
 
   public isUserLoggedIn() {
     return new Promise((resolve, reject) &#x3D;&gt; {
-      if (this.hasToken) {
+      if (this.hasToken &amp;&amp; this.userData.constructor &#x3D;&#x3D;&#x3D; Object) {
         resolve(true)
       } else {
         reject(false)
       }
     })
   }
-
 
   public clearTokenData() {
     this.hasToken &#x3D; false;

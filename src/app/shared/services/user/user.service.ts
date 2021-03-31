@@ -23,14 +23,13 @@ export class UserService {
 
   public isUserLoggedIn() {
     return new Promise((resolve, reject) => {
-      if (this.hasToken) {
+      if (this.hasToken && this.userData.constructor === Object) {
         resolve(true)
       } else {
         reject(false)
       }
     })
   }
-
 
   public clearTokenData() {
     this.hasToken = false;

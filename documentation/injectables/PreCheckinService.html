@@ -569,7 +569,7 @@ export class PreCheckinService {
 
   public isBookingSet() {
     return new Promise((resolve, reject) &#x3D;&gt; {
-      if (this.hasBooking) {
+      if (this.hasBooking &amp;&amp; this.userBooking.constructor &#x3D;&#x3D;&#x3D; Object) {
         resolve(true)
       } else {
         reject(false)

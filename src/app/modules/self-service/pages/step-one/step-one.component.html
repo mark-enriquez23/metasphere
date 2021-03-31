@@ -51,7 +51,7 @@
       </div>
       <div class="mt-4 row px-0">
         <div class="col-6 pr-0 pr-1 ">
-          <button class="w-100 btn btn-secondary" [routerLink]="'/landing'">Exit</button>
+          <button class="w-100 btn btn-secondary" (click)="exit()">Exit</button>
         </div>
         <div class="col-6 pl-0 pl-1 ">
           <button class="w-100 btn btn-primary" [disabled]="formErrorHandler" cdkStepperNext>Next</button>

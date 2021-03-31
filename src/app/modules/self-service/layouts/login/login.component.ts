@@ -25,7 +25,12 @@ export class LoginComponent implements OnInit {
     private spinnerSrv: SpinnerService,
     private router: Router,
     private dialog: DialogService,
-    private preCheckinSrv: PreCheckinService) { }
+    private preCheckinSrv: PreCheckinService) {
+
+      this.preCheckinSrv.isBookingSet().then((result: any) => {
+        this.router.navigate(['self-service/pre-checkin']);
+      })
+    }
 
   ngOnInit(): void {
     this.checkInForm = this.formBuilder.group({
