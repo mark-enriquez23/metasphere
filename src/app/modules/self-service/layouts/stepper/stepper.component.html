@@ -21,7 +21,7 @@
               <ng-template cdkStepLabel>
                 <div class="step-bullet"></div>
               </ng-template>
-              <app-step-two #stepTwo></app-step-two>
+              <app-step-two [roomServerData]="roomServerListingData" #stepTwo ></app-step-two>
             </cdk-step>
 
             <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="false">

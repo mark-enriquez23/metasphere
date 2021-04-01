@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { DialogService } from '@ngneat/dialog';
 import { OptionsDialogComponent } from 'src/app/shared/components/options-dialog/options-dialog.component';
@@ -9,6 +9,7 @@ import { OptionsDialogComponent } from 'src/app/shared/components/options-dialog
   styleUrls: ['./step-two.component.scss']
 })
 export class StepTwoComponent implements OnInit {
+  @Input() roomServerData: any;
   public stepTwoForm: FormGroup;
   public currentDate: any;
   public orderItems = [
@@ -83,17 +84,11 @@ export class StepTwoComponent implements OnInit {
     this.stepTwoForm = this.fb.group({
       orders: this.fb.array([])
     })
-    this.orderItems.forEach((element, index) => {
-      const orderItem = this.fb.group({
-        id: [element.id, [Validators.required]],
-        quantity: [0, [Validators.required]],
-      })
-      this.addItem(orderItem)
-    })
 
     console.log(this.f)
     this.currentDate = new Date().toISOString().split('T')[0];
   }
+
 
   get f() {
     const control = this.stepTwoForm.get('orders') as FormArray
@@ -108,6 +103,13 @@ export class StepTwoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.roomServerData.list.forEach((element, index) => {
+      const orderItem = this.fb.group({
+        ...element,
+        quantity: [0, [Validators.required]],
+      })
+      this.addItem(orderItem)
+    })
   }
 
   async setItem(t) {

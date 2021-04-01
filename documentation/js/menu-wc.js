@@ -500,6 +500,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="guards/HkServicesResolver.html" data-type="entity-link">HkServicesResolver</a>
                             </li>
+                            <li class="link">
+                                <a href="guards/StepperResolver.html" data-type="entity-link">StepperResolver</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="chapter">

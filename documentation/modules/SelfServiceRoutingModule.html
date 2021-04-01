@@ -75,6 +75,7 @@ import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { SelfServiceGuardService } from &#x27;src/app/core/guards/self-service/self-service-guard.service&#x27;;
 
 import { LoginComponent } from &#x27;./layouts/login/login.component&#x27;;
+import { StepperResolver } from &#x27;./layouts/stepper/resolvers/stepperresolver&#x27;;
 import { StepperComponent } from &#x27;./layouts/stepper/stepper.component&#x27;;
 
 const routes: Routes &#x3D; [
@@ -93,6 +94,7 @@ const routes: Routes &#x3D; [
     canActivate: [
       SelfServiceGuardService,
     ],
+    resolve: { stepperData: StepperResolver}
   },
 ]
 @NgModule({

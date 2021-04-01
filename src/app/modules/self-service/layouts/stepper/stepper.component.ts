@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RoomServerListingService } from 'src/app/shared/services/food-drinks-orders/room-server-listing/room-server-listing.service';
+import { GeneralService } from 'src/app/shared/services/general/general.service';
+import { MainCategoryService } from 'src/app/shared/services/room-services-housekeeping/main-category/main-category.service';
 
 /**
   * Stepper Component
@@ -23,10 +27,34 @@ export class StepperComponent implements OnInit {
   */
   stepperMessage: String = '';
 
+   /**
+    * Room Server Listing Data
+    *
+    * @type {any}
+    */
+    roomServerListingData: any;
+
   /**
   * @ignore
   */
-  constructor(private formBuilder: FormBuilder, ) { }
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private router: Router,
+    private generalService: GeneralService,
+    private mainCategoryService: MainCategoryService,
+    private roomServerListingService: RoomServerListingService
+  ) {
+    if (this.activateRoute.snapshot.data.stepperData) {
+      const stepperData = this.activateRoute.snapshot.data.stepperData
+      this.roomServerListingService.roomServerItemisting.next(stepperData[0])
+      this.roomServerListingService.roomServerItemisting.subscribe((res: any) => {
+        console.log(res)
+        this.roomServerListingData = res
+      })
+    } else {
+      console.log('err')
+    }
+  }
 
   /**
   * @ignore
