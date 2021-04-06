@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
         } else {
           this.openErrorDialog()
         }
-      }).finally(() => this.spinnerSrv.hide());
+      })
     }
   }
 

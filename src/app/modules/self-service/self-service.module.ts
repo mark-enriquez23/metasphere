@@ -17,7 +17,16 @@ import { StepSixComponent } from './pages/step-six/step-six.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
-  declarations: [LoginComponent, StepperComponent, StepOneComponent, StepTwoComponent, StepThreeComponent, StepFourComponent, StepFiveComponent, StepSixComponent, ConfirmDialogComponent],
+  declarations: [
+    LoginComponent,
+    StepperComponent,
+    StepOneComponent,
+    StepTwoComponent,
+    StepThreeComponent,
+    StepFourComponent,
+    StepFiveComponent,
+    StepSixComponent,
+    ConfirmDialogComponent],
   imports: [
     CommonModule,
     SelfServiceRoutingModule,

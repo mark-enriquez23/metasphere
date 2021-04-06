@@ -99,12 +99,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(roomServerItemListingService: <a href="../injectables/RoomServerListingService.html">RoomServerListingService</a>)</code>
+<code>constructor(roomServerItemListingService: <a href="../injectables/RoomServerListingService.html">RoomServerListingService</a>, generalService: <a href="../injectables/GeneralService.html">GeneralService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/modules/self-service/layouts/stepper/resolvers/stepperresolver.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/modules/self-service/layouts/stepper/resolvers/stepperresolver.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -126,6 +126,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/RoomServerListingService.html" target="_self" >RoomServerListingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>generalService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GeneralService.html" target="_self" >GeneralService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -169,8 +181,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/resolvers/stepperresolver.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/resolvers/stepperresolver.ts:18</a></div>
                 </td>
             </tr>
 
@@ -196,6 +208,7 @@ import { Resolve } from &quot;@angular/router&quot;;
 import { zip } from &#x27;rxjs&#x27;;
 import { OrderListingService } from &#x27;src/app/shared/services/food-drinks-orders/order-listing/order-listing.service&#x27;;
 import { RoomServerListingService } from &#x27;src/app/shared/services/food-drinks-orders/room-server-listing/room-server-listing.service&#x27;;
+import { GeneralService } from &#x27;src/app/shared/services/general/general.service&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -203,7 +216,8 @@ import { RoomServerListingService } from &#x27;src/app/shared/services/food-drin
 export class StepperResolver implements Resolve&lt;any&gt;{
 
   constructor(
-    private roomServerItemListingService: RoomServerListingService
+    private roomServerItemListingService: RoomServerListingService,
+    private generalService: GeneralService
   ) { }
 
   resolve() {
@@ -211,7 +225,7 @@ export class StepperResolver implements Resolve&lt;any&gt;{
       cid: &#x27;Mend4055a7e3kczvauyg&#x27;,
       cnid: &#x27;MnTd418b8ed2kdpghrz7&#x27;
     }
-    return zip(this.roomServerItemListingService.roomServerItemListing(defaultData));
+    return zip(this.roomServerItemListingService.roomServerItemListing(defaultData), this.generalService.getCountries());
   };
 }
 </code></pre>

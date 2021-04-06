@@ -1,0 +1,28 @@
+<div class="p-5 h-100">
+  <div class="">
+    <h1 class="text-center">
+      <i class="fas fa-question-circle"></i>
+    </h1>
+    <h6>
+      {{ content.message }}
+    </h6>
+    <div *ngFor="let progressInfo of progressInfos" class="mb-2">
+      <span class="mx-2">{{ progressInfo.fileName }}</span>
+      <progress-bar [progress]="progressInfo.value" [color]="'#488aff'">
+      </progress-bar>
+    </div>
+    <div *ngIf="message.length" class="alert alert-secondary my-3" role="alert">
+      <ul *ngFor="let msg of message; let i = index">
+        <li>{{ msg }}</li>
+      </ul>
+    </div>
+    <div class="row no-gutters w-100  mt-3 mx-2">
+      <div class="ml-auto pr-1 col-lg-3 col-6">
+        <button class="btn w-100 text-center btn-secondary" (click)="ref.close()">Exit</button>
+      </div>
+      <div class="pl-1 col-lg-3 col-6">
+        <button class="btn text-center btn-primary w-100" (click)="confirm()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

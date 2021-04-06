@@ -287,13 +287,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/SelfServiceModule.html" data-type="entity-link">SelfServiceModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-SelfServiceModule-7f37e14047c3c333edfbdffc1e3d6b97"' : 'data-target="#xs-components-links-module-SelfServiceModule-7f37e14047c3c333edfbdffc1e3d6b97"' }>
+                                            'data-target="#components-links-module-SelfServiceModule-d98d5e5c434fce1143031dcb77b75371"' : 'data-target="#xs-components-links-module-SelfServiceModule-d98d5e5c434fce1143031dcb77b75371"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SelfServiceModule-7f37e14047c3c333edfbdffc1e3d6b97"' :
-                                            'id="xs-components-links-module-SelfServiceModule-7f37e14047c3c333edfbdffc1e3d6b97"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SelfServiceModule-d98d5e5c434fce1143031dcb77b75371"' :
+                                            'id="xs-components-links-module-SelfServiceModule-d98d5e5c434fce1143031dcb77b75371"' }>
                                             <li class="link">
                                                 <a href="components/ConfirmDialogComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ConfirmDialogComponent</a>
@@ -340,13 +340,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/SharedModule.html" data-type="entity-link">SharedModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-SharedModule-831d6914960b48e788e7c0a9f6730c54"' : 'data-target="#xs-components-links-module-SharedModule-831d6914960b48e788e7c0a9f6730c54"' }>
+                                            'data-target="#components-links-module-SharedModule-8ef8cce6c7f3448edb9ff0c62afde0a1"' : 'data-target="#xs-components-links-module-SharedModule-8ef8cce6c7f3448edb9ff0c62afde0a1"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedModule-831d6914960b48e788e7c0a9f6730c54"' :
-                                            'id="xs-components-links-module-SharedModule-831d6914960b48e788e7c0a9f6730c54"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedModule-8ef8cce6c7f3448edb9ff0c62afde0a1"' :
+                                            'id="xs-components-links-module-SharedModule-8ef8cce6c7f3448edb9ff0c62afde0a1"' }>
                                             <li class="link">
                                                 <a href="components/ConfirmationDialogComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ConfirmationDialogComponent</a>
@@ -366,6 +366,25 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/SpinnerComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">SpinnerComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/UploadDialogComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">UploadDialogComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#pipes-links-module-SharedModule-8ef8cce6c7f3448edb9ff0c62afde0a1"' : 'data-target="#xs-pipes-links-module-SharedModule-8ef8cce6c7f3448edb9ff0c62afde0a1"' }>
+                                            <span class="icon ion-md-add"></span>
+                                            <span>Pipes</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-SharedModule-8ef8cce6c7f3448edb9ff0c62afde0a1"' :
+                                            'id="xs-pipes-links-module-SharedModule-8ef8cce6c7f3448edb9ff0c62afde0a1"' }>
+                                            <li class="link">
+                                                <a href="pipes/ValidateNationalitiesListPipe.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ValidateNationalitiesListPipe</a>
                                             </li>
                                         </ul>
                                     </li>

@@ -16,6 +16,9 @@ export class GeneralService {
   public fileExists(url: string)  {
       return this.httpClient.get(url,
         {responseType: 'blob'}).toPromise();
+  }
 
+  public getCountries() {
+    return this.httpClient.get('https://restcountries.eu/rest/v2/all')
   }
 }

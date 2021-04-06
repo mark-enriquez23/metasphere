@@ -1,9 +1,15 @@
+import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { ElementRef } from '@angular/core';
 import { Component, OnInit, Renderer2  } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogService } from '@ngneat/dialog';
+import { Observable } from 'rxjs';
+import { UploadDialogComponent } from 'src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component';
+import { PreCheckinService } from 'src/app/shared/services/self-service/pre-checkin/pre-checkin.service';
+import { SaveDocumentsService } from 'src/app/shared/services/self-service/save-documents/save-documents.service';
 import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
+import { CdkStepper } from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-step-four',
@@ -14,34 +20,53 @@ export class StepFourComponent implements OnInit {
   public stepFourForm: FormGroup;
   public state: string;
   public dialogRef: any;
+  public user: any;
 
   constructor(private fb: FormBuilder,
     private elementRef: ElementRef,
     private render: Renderer2,
     private dialog: DialogService,
-    private router: Router) {
+    private router: Router,
+    private preCheckinService: PreCheckinService,
+    private cdkStepperModule: CdkStepper,
+    private saveDocumentsService: SaveDocumentsService) {
+    this.user = this.preCheckinService.userBooking;
     this.stepFourForm = this.fb.group({
-      passportAdult1: ['', [Validators.required]],
-      passportAdult2: ['', [Validators.required]],
-      passportChild1: ['', [Validators.required]],
-      passportChild2: ['', [Validators.required]],
-    });
+      orders: this.fb.array([])
+    })
 
   }
 
 
-  ngOnInit(): void {
+  get f() {
+    const control = this.stepFourForm.get('orders') as FormArray
+    return control
   }
-
-  get f() { return this.stepFourForm.controls; }
   get formErrorHandler() { return this.stepFourForm.status === 'INVALID' }
+
+
+  addItem(form): void {
+    const control = this.stepFourForm.get('orders') as FormArray
+    control.push(form)
+  }
+
   check() {
-
-
     console.log(this.stepFourForm)
   }
 
-  handleUpload(event, formControlValue, index): void {
+  ngOnInit(): void {
+    this.user.prolist.forEach((element, index) => {
+      const orderItem = this.fb.group({
+        ...element,
+        document: ['', [Validators.required]],
+        documentBase64: ['', [Validators.required]],
+      })
+      this.addItem(orderItem)
+    })
+  }
+
+
+  handleUpload(event, index): void {
       const fileName = event.target.files[0].name;
       const element = this.elementRef.nativeElement.querySelectorAll('.custom-file-label')[index];
       this.render.addClass(element,"selected");
@@ -50,7 +75,8 @@ export class StepFourComponent implements OnInit {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
-          this.f[formControlValue].setValue(reader.result)
+        this.f.controls[index].get('document').setValue(file)
+        this.f.controls[index].get('documentBase64').setValue(reader.result)
       };
   }
 
@@ -58,4 +84,20 @@ export class StepFourComponent implements OnInit {
     console.log('test')
     this.dialogRef = this.dialog.open(ConfirmDialogComponent)
    }
+
+   upload(): void {
+    this.dialogRef = this.dialog.open(UploadDialogComponent, {
+      data: {
+        files: this.f.value
+      }
+    })
+    this.dialogRef.afterClosed$.subscribe(res => {
+      if (res) {
+        if (res.confirmed) {
+          this.cdkStepperModule.next();
+        }
+      }
+    });
+   }
+
 }

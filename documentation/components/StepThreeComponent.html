@@ -135,7 +135,19 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#documentTypes">documentTypes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#genders">genders</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#stepThreeForm">stepThreeForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#user">user</a>
                             </li>
                         </ul>
                     </td>
@@ -159,6 +171,20 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#nationalitiesData">nationalitiesData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -190,12 +216,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, preCheckinService: <a href="../injectables/PreCheckinService.html">PreCheckinService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -224,6 +250,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>preCheckinService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PreCheckinService.html" target="_self" >PreCheckinService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -233,7 +271,30 @@
         </table>
 </section>
 
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nationalitiesData"></a>
+                        <b>nationalitiesData</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -264,8 +325,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:39</a></div>
                 </td>
             </tr>
 
@@ -303,8 +364,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:43</a></div>
                 </td>
             </tr>
 
@@ -347,7 +408,73 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="documentTypes"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            documentTypes</b>
+                            <a href="#documentTypes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;Passport&#x27;, &#x27;ID&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="genders"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            genders</b>
+                            <a href="#genders"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;Male&#x27;, &#x27;Female&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -375,7 +502,35 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            user</b>
+                            <a href="#user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -404,7 +559,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:36</a></div>
                                 </td>
                             </tr>
 
@@ -426,7 +581,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/modules/self-service/pages/step-three/step-three.component.ts:37</a></div>
                                 </td>
                             </tr>
 
@@ -437,8 +592,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
 import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+import { PreCheckinService } from &#x27;src/app/shared/services/self-service/pre-checkin/pre-checkin.service&#x27;;
 
 @Component({
   selector: &#x27;app-step-three&#x27;,
@@ -446,17 +602,24 @@ import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
   styleUrls: [&#x27;./step-three.component.scss&#x27;]
 })
 export class StepThreeComponent implements OnInit {
+  @Input() nationalitiesData: any
   public stepThreeForm: FormGroup;
   public currentDate: any;
+  public user: any;
+  public documentTypes &#x3D; [&#x27;Passport&#x27;, &#x27;ID&#x27;];
+  public genders &#x3D; [&#x27;Male&#x27;, &#x27;Female&#x27;];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private preCheckinService: PreCheckinService) {
+    this.user &#x3D; this.preCheckinService.userBooking;
+
     this.stepThreeForm &#x3D; this.fb.group({
       full_name: [&#x27;&#x27;, [Validators.required]],
-      gender_code: [&#x27;&#x27;, [Validators.required]],
+      gender_code: [&#x27;Male&#x27;, [Validators.required]],
       dob: [&#x27;&#x27;, [Validators.required]],
-      nationality: [&#x27;&#x27;, [Validators.required]],
+      nationality: [&#x27;Colombian&#x27;, [Validators.required]],
       birth_place: [&#x27;&#x27;, [Validators.required]],
-      document_type: [&#x27;&#x27;, [Validators.required]],
+      document_type: [&#x27;Passport&#x27;, [Validators.required]],
       document_number: [&#x27;&#x27;, [Validators.required]],
       issued_date: [&#x27;&#x27;, [Validators.required]],
       exp_date: [&#x27;&#x27;, [Validators.required]],
@@ -468,6 +631,7 @@ export class StepThreeComponent implements OnInit {
   get formErrorHandler() { return this.stepThreeForm.status &#x3D;&#x3D;&#x3D; &#x27;INVALID&#x27; }
 
   ngOnInit(): void {
+    console.log(this.nationalitiesData)
   }
 
   stepOneSubmit() {
@@ -487,7 +651,11 @@ export class StepThreeComponent implements OnInit {
       &lt;div class&#x3D;&quot;row no-gutters&quot;&gt;
         &lt;div class&#x3D;&quot;form-group col-lg-6 col-12 pr-lg-1 pr-0&quot;&gt;
           &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;gender_code&quot;&gt;Gender Code&lt;/label&gt;
-          &lt;input formControlName&#x3D;&quot;gender_code&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;gender_code&quot; placeholder&#x3D;&quot;Gender Code&quot;&gt;
+          &lt;select formControlName&#x3D;&quot;gender_code&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;gender_code&quot; placeholder&#x3D;&quot;Gender Code&quot;&gt;
+            &lt;option [value]&#x3D;&quot;gender&quot; *ngFor&#x3D;&quot;let gender of genders; let i &#x3D; index&quot;&gt;
+                {{ gender }}
+            &lt;/option&gt;
+          &lt;/select&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;form-group col-lg-6 col-12 pr-lg-1 pr-0&quot;&gt;
           &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;dob&quot;&gt;Date of Birth&lt;/label&gt;
@@ -495,10 +663,16 @@ export class StepThreeComponent implements OnInit {
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;row no-gutters&quot;&gt;
-        &lt;div class&#x3D;&quot;form-group col-6 pr-1&quot;&gt;
-          &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;nationality&quot;&gt;Nationality&lt;/label&gt;
-          &lt;input formControlName&#x3D;&quot;nationality&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;nationality&quot; placeholder&#x3D;&quot;Nationality&quot;&gt;
-        &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-group col-6 pr-1&quot;&gt;
+        &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;nationality&quot;&gt;Nationality&lt;/label&gt;
+        &lt;select formControlName&#x3D;&quot;nationality&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;nationality&quot; placeholder&#x3D;&quot;Nationality&quot;&gt;
+          &lt;option [value]&#x3D;&quot;nationality.demonym&quot; *ngFor&#x3D;&quot;let nationality of nationalitiesData | validateNationalitiesList: nationalitiesData; let i &#x3D; index&quot; &gt;
+            &lt;div *ngIf&#x3D;&quot;nationality.demonym !&#x3D;&#x3D; &#x27;&#x27;&quot;&gt;
+              {{ nationality.demonym }}
+            &lt;/div&gt;
+          &lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
         &lt;div class&#x3D;&quot;form-group col-6 pl-1&quot;&gt;
           &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;birth_place&quot;&gt;Birth Place&lt;/label&gt;
           &lt;input formControlName&#x3D;&quot;birth_place&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;birth_place&quot; placeholder&#x3D;&quot;Birth Place&quot;&gt;
@@ -507,7 +681,11 @@ export class StepThreeComponent implements OnInit {
       &lt;div class&#x3D;&quot;row no-gutters&quot;&gt;
         &lt;div class&#x3D;&quot;form-group col-lg-6 col-12 pr-lg-1 pr-0&quot;&gt;
           &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;document_type&quot;&gt;Document Type&lt;/label&gt;
-          &lt;input formControlName&#x3D;&quot;document_type&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;document_type&quot; placeholder&#x3D;&quot;Document Type&quot;&gt;
+          &lt;select formControlName&#x3D;&quot;document_type&quot; class&#x3D;&quot;form-control text-center text-lg-left&quot; id&#x3D;&quot;document_type&quot; placeholder&#x3D;&quot;Document Type&quot;&gt;
+            &lt;option [value]&#x3D;&quot;types&quot; *ngFor&#x3D;&quot;let types of documentTypes; let i &#x3D; index&quot;&gt;
+                {{ types }}
+            &lt;/option&gt;
+          &lt;/select&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;form-group col-lg-6 col-12 pl-lg-1 pl-0&quot;&gt;
           &lt;label class&#x3D;&quot;w-100 text-center text-lg-left&quot; for&#x3D;&quot;document_number&quot;&gt;Document Number&lt;/label&gt;
@@ -597,8 +775,8 @@ export class StepThreeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <form [formGroup]="stepThreeForm"        #formRef="ngForm">      <div class="form-group">        <label class="w-100 text-center text-lg-left" for="full_name">Full Name</label>        <input formControlName="full_name" class="form-control text-center text-lg-left" id="full_name" placeholder="Full Name">      </div>      <div class="row no-gutters">        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">          <label class="w-100 text-center text-lg-left" for="gender_code">Gender Code</label>          <input formControlName="gender_code" class="form-control text-center text-lg-left" id="gender_code" placeholder="Gender Code">        </div>        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">          <label class="w-100 text-center text-lg-left" for="dob">Date of Birth</label>          <input type="date" name="dob" [max]="currentDate" formControlName="dob" class="form-control text-center text-lg-left" id="dob" placeholder="Date of Birth">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-6 pr-1">          <label class="w-100 text-center text-lg-left" for="nationality">Nationality</label>          <input formControlName="nationality" class="form-control text-center text-lg-left" id="nationality" placeholder="Nationality">        </div>        <div class="form-group col-6 pl-1">          <label class="w-100 text-center text-lg-left" for="birth_place">Birth Place</label>          <input formControlName="birth_place" class="form-control text-center text-lg-left" id="birth_place" placeholder="Birth Place">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">          <label class="w-100 text-center text-lg-left" for="document_type">Document Type</label>          <input formControlName="document_type" class="form-control text-center text-lg-left" id="document_type" placeholder="Document Type">        </div>        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">          <label class="w-100 text-center text-lg-left" for="document_number">Document Number</label>          <input formControlName="document_number" class="form-control text-center text-lg-left" id="document_number" placeholder="Document Number">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">          <label class="w-100 text-center text-lg-left" for="issued_date">Issued Date</label>          <input type="date" name="issued_date" formControlName="issued_date" class="form-control text-center text-lg-left" id="issued_date" placeholder="Issued Date">        </div>        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">          <label class="w-100 text-center text-lg-left" for="exp_date">Expiry Date</label>          <input type="date" name="exp_date" formControlName="exp_date" class="form-control text-center text-lg-left" id="exp_date" placeholder="Expiry Date">        </div>      </div>      <div class="mt-4 row px-0">        <div class="col-6 pr-0 pr-1 ">          <button class="w-100 btn btn-secondary" cdkStepperPrevious>Back</button>        </div>        <div class="col-6 pl-0 pl-1 ">          <button class="w-100 btn btn-primary" [disabled]="formErrorHandler" cdkStepperNext>Next</button>        </div>      </div>  </form></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesCardsComponent', 'selector': 'app-services-cards'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <form [formGroup]="stepThreeForm"        #formRef="ngForm">      <div class="form-group">        <label class="w-100 text-center text-lg-left" for="full_name">Full Name</label>        <input formControlName="full_name" class="form-control text-center text-lg-left" id="full_name" placeholder="Full Name">      </div>      <div class="row no-gutters">        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">          <label class="w-100 text-center text-lg-left" for="gender_code">Gender Code</label>          <select formControlName="gender_code" class="form-control text-center text-lg-left" id="gender_code" placeholder="Gender Code">            <option [value]="gender" *ngFor="let gender of genders; let i = index">                {{ gender }}            </option>          </select>        </div>        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">          <label class="w-100 text-center text-lg-left" for="dob">Date of Birth</label>          <input type="date" name="dob" [max]="currentDate" formControlName="dob" class="form-control text-center text-lg-left" id="dob" placeholder="Date of Birth">        </div>      </div>      <div class="row no-gutters">      <div class="form-group col-6 pr-1">        <label class="w-100 text-center text-lg-left" for="nationality">Nationality</label>        <select formControlName="nationality" class="form-control text-center text-lg-left" id="nationality" placeholder="Nationality">          <option [value]="nationality.demonym" *ngFor="let nationality of nationalitiesData | validateNationalitiesList: nationalitiesData; let i = index" >            <div *ngIf="nationality.demonym !== \'\'">              {{ nationality.demonym }}            </div>          </option>        </select>      </div>        <div class="form-group col-6 pl-1">          <label class="w-100 text-center text-lg-left" for="birth_place">Birth Place</label>          <input formControlName="birth_place" class="form-control text-center text-lg-left" id="birth_place" placeholder="Birth Place">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">          <label class="w-100 text-center text-lg-left" for="document_type">Document Type</label>          <select formControlName="document_type" class="form-control text-center text-lg-left" id="document_type" placeholder="Document Type">            <option [value]="types" *ngFor="let types of documentTypes; let i = index">                {{ types }}            </option>          </select>        </div>        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">          <label class="w-100 text-center text-lg-left" for="document_number">Document Number</label>          <input formControlName="document_number" class="form-control text-center text-lg-left" id="document_number" placeholder="Document Number">        </div>      </div>      <div class="row no-gutters">        <div class="form-group col-lg-6 col-12 pr-lg-1 pr-0">          <label class="w-100 text-center text-lg-left" for="issued_date">Issued Date</label>          <input type="date" name="issued_date" formControlName="issued_date" class="form-control text-center text-lg-left" id="issued_date" placeholder="Issued Date">        </div>        <div class="form-group col-lg-6 col-12 pl-lg-1 pl-0">          <label class="w-100 text-center text-lg-left" for="exp_date">Expiry Date</label>          <input type="date" name="exp_date" formControlName="exp_date" class="form-control text-center text-lg-left" id="exp_date" placeholder="Expiry Date">        </div>      </div>      <div class="mt-4 row px-0">        <div class="col-6 pr-0 pr-1 ">          <button class="w-100 btn btn-secondary" cdkStepperPrevious>Back</button>        </div>        <div class="col-6 pl-0 pl-1 ">          <button class="w-100 btn btn-primary" [disabled]="formErrorHandler" cdkStepperNext>Next</button>        </div>      </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesCardsComponent', 'selector': 'app-services-cards'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'},{'name': 'UploadDialogComponent', 'selector': 'app-upload-dialog'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'StepThreeComponent'};
 </script>

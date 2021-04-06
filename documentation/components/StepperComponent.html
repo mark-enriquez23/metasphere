@@ -140,6 +140,9 @@
                                 <a href="#checkInForm">checkInForm</a>
                             </li>
                             <li>
+                                <a href="#nationalitiesData">nationalitiesData</a>
+                            </li>
+                            <li>
                                 <a href="#roomServerListingData">roomServerListingData</a>
                             </li>
                             <li>
@@ -207,8 +210,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="73"
-                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:73</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:81</a></div>
                 </td>
             </tr>
 
@@ -287,8 +290,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:93</a></div>
                 </td>
             </tr>
 
@@ -378,6 +381,39 @@
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>Check In Form</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nationalitiesData"></a>
+                        <span class="name">
+                            <b>
+                            nationalitiesData</b>
+                            <a href="#nationalitiesData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/modules/self-service/layouts/stepper/stepper.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Nationalities Data</p>
 </div>
                     </td>
                 </tr>
@@ -497,6 +533,13 @@ export class StepperComponent implements OnInit {
     */
     roomServerListingData: any;
 
+   /**
+    * Nationalities Data
+    *
+    * @type {any}
+    */
+    nationalitiesData: any;
+
   /**
   * @ignore
   */
@@ -510,6 +553,7 @@ export class StepperComponent implements OnInit {
     if (this.activateRoute.snapshot.data.stepperData) {
       const stepperData &#x3D; this.activateRoute.snapshot.data.stepperData
       this.roomServerListingService.roomServerItemisting.next(stepperData[0])
+      this.nationalitiesData &#x3D; stepperData[1];
       this.roomServerListingService.roomServerItemisting.subscribe((res: any) &#x3D;&gt; {
         console.log(res)
         this.roomServerListingData &#x3D; res
@@ -595,6 +639,7 @@ export class StepperComponent implements OnInit {
           &lt;h5 class&#x3D;&quot;px-4&quot;&gt;Pre-checkin&lt;/h5&gt;
           &lt;p class&#x3D;&quot;sub-text px-4&quot;&gt;{{ stepperMessage }}&lt;/p&gt;
           &lt;ng-stepper #cdkStepper [linear]&#x3D;&quot;true&quot; (selectionChange)&#x3D;&quot;onStepChange($event)&quot;&gt;
+
             &lt;cdk-step [stepControl]&#x3D;&quot;stepOne.stepOneForm&quot; [optional]&#x3D;&quot;false&quot;&gt;
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
@@ -613,7 +658,7 @@ export class StepperComponent implements OnInit {
               &lt;ng-template cdkStepLabel&gt;
                 &lt;div class&#x3D;&quot;step-bullet&quot;&gt;&lt;/div&gt;
               &lt;/ng-template&gt;
-              &lt;app-step-three #stepThree&gt;&lt;/app-step-three&gt;
+              &lt;app-step-three [nationalitiesData]&#x3D;&quot;nationalitiesData&quot;  #stepThree&gt;&lt;/app-step-three&gt;
             &lt;/cdk-step&gt;
 
             &lt;cdk-step [stepControl]&#x3D;&quot;stepFour.stepFourForm&quot; [optional]&#x3D;&quot;false&quot; [state]&#x3D;&quot;stepFour.state&quot;&gt;
@@ -749,8 +794,8 @@ export class StepperComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div> <app-public-header state="pre-checkin"></app-public-header> <div class="d-lg-flex half masthead">   <div class="bg order-1" style="background-image: url(\'./assets/images/self-service_-_page_1/u696.jpg\');"></div>   <div class="contents order-2">     <div class="container">       <div class="row align-items-center justify-content-center px-0 ">         <div class="col-md-8">          <h5 class="px-4">Pre-checkin</h5>          <p class="sub-text px-4">{{ stepperMessage }}</p>          <ng-stepper #cdkStepper [linear]="true" (selectionChange)="onStepChange($event)">            <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-one #stepOne></app-step-one>            </cdk-step>            <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-two [roomServerData]="roomServerListingData" #stepTwo ></app-step-two>            </cdk-step>            <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-three #stepThree></app-step-three>            </cdk-step>            <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="false" [state]="stepFour.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-four #stepFour></app-step-four>            </cdk-step>            <cdk-step [stepControl]="stepFive.stepFiveForm" [optional]="false" [state]="stepFive.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-five #stepFive></app-step-five>            </cdk-step>            <cdk-step [stepControl]="stepSix.stepSixForm" [optional]="false" [state]="stepSix.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-six #stepSix></app-step-six>            </cdk-step>          </ng-stepper>         </div>       </div>     </div>   </div> </div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesCardsComponent', 'selector': 'app-services-cards'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'}];
+        var COMPONENT_TEMPLATE = '<div> <app-public-header state="pre-checkin"></app-public-header> <div class="d-lg-flex half masthead">   <div class="bg order-1" style="background-image: url(\'./assets/images/self-service_-_page_1/u696.jpg\');"></div>   <div class="contents order-2">     <div class="container">       <div class="row align-items-center justify-content-center px-0 ">         <div class="col-md-8">          <h5 class="px-4">Pre-checkin</h5>          <p class="sub-text px-4">{{ stepperMessage }}</p>          <ng-stepper #cdkStepper [linear]="true" (selectionChange)="onStepChange($event)">            <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-one #stepOne></app-step-one>            </cdk-step>            <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-two [roomServerData]="roomServerListingData" #stepTwo ></app-step-two>            </cdk-step>            <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="false">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-three [nationalitiesData]="nationalitiesData"  #stepThree></app-step-three>            </cdk-step>            <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="false" [state]="stepFour.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-four #stepFour></app-step-four>            </cdk-step>            <cdk-step [stepControl]="stepFive.stepFiveForm" [optional]="false" [state]="stepFive.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-five #stepFive></app-step-five>            </cdk-step>            <cdk-step [stepControl]="stepSix.stepSixForm" [optional]="false" [state]="stepSix.state">              <ng-template cdkStepLabel>                <div class="step-bullet"></div>              </ng-template>              <app-step-six #stepSix></app-step-six>            </cdk-step>          </ng-stepper>         </div>       </div>     </div>   </div> </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesCardsComponent', 'selector': 'app-services-cards'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'},{'name': 'UploadDialogComponent', 'selector': 'app-upload-dialog'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'StepperComponent'};
 </script>

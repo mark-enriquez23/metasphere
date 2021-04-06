@@ -320,7 +320,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpParams } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
 
@@ -334,14 +334,15 @@ export class SaveDocumentsService {
   constructor(private httpClient: HttpClient) { }
 
   public saveDocuments(documentData: any, confirmationNumber: string) {
-    const userData &#x3D; {
-      confirmationNumber: confirmationNumber,
-      image: documentData.image,
-      pkId: documentData.pkId,
-      imgId: documentData.imgId,
-    }
-    return this.httpClient.post(this.env.api_path + this.api_type + &#x27;/newFetchBooking&#x27;, userData).toPromise();
+    const params &#x3D; new HttpParams()
+    .set(&#x27;confirmationNumber&#x27;, confirmationNumber)
+    .set(&#x27;image&#x27;, documentData.documentBase64)
+    .set(&#x27;pkId&#x27;, &#x27;Msen46dfb8f3kmo81vx1&#x27;)
+    .set(&#x27;imgId&#x27;, &#x27;0&#x27;)
+    const userData &#x3D; params.toString()
+    return this.httpClient.post(this.env.api_path + this.api_type + &#x27;/newFetchBooking?&#x27; + userData, {});
   }
+
 }
 </code></pre>
     </div>

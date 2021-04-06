@@ -34,6 +34,13 @@ export class StepperComponent implements OnInit {
     */
     roomServerListingData: any;
 
+   /**
+    * Nationalities Data
+    *
+    * @type {any}
+    */
+    nationalitiesData: any;
+
   /**
   * @ignore
   */
@@ -47,6 +54,7 @@ export class StepperComponent implements OnInit {
     if (this.activateRoute.snapshot.data.stepperData) {
       const stepperData = this.activateRoute.snapshot.data.stepperData
       this.roomServerListingService.roomServerItemisting.next(stepperData[0])
+      this.nationalitiesData = stepperData[1];
       this.roomServerListingService.roomServerItemisting.subscribe((res: any) => {
         console.log(res)
         this.roomServerListingData = res

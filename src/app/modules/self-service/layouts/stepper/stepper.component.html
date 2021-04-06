@@ -10,6 +10,7 @@
           <h5 class="px-4">Pre-checkin</h5>
           <p class="sub-text px-4">{{ stepperMessage }}</p>
           <ng-stepper #cdkStepper [linear]="true" (selectionChange)="onStepChange($event)">
+
             <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="false">
               <ng-template cdkStepLabel>
                 <div class="step-bullet"></div>
@@ -28,7 +29,7 @@
               <ng-template cdkStepLabel>
                 <div class="step-bullet"></div>
               </ng-template>
-              <app-step-three #stepThree></app-step-three>
+              <app-step-three [nationalitiesData]="nationalitiesData"  #stepThree></app-step-three>
             </cdk-step>
 
             <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="false" [state]="stepFour.state">
