@@ -8,8 +8,7 @@
     </h6>
     <div *ngFor="let progressInfo of progressInfos" class="mb-2">
       <span class="mx-2">{{ progressInfo.fileName }}</span>
-      <progress-bar [progress]="progressInfo.value" [color]="'#488aff'">
-      </progress-bar>
+      <progress-bar [progress]="progressInfo.value" [color-degraded]="{'0': '#008080',  '100': '#21B531'}"></progress-bar>
     </div>
     <div *ngIf="message.length" class="alert alert-secondary my-3" role="alert">
       <ul *ngFor="let msg of message; let i = index">
