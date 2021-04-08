@@ -850,7 +850,7 @@ export class StepFourComponent implements OnInit {
     private saveDocumentsService: SaveDocumentsService) {
     this.user &#x3D; this.preCheckinService.userBooking;
     this.stepFourForm &#x3D; this.fb.group({
-      validate: [Boolean, Validators.required],
+      validate: [&#x27;&#x27;, Validators.required],
       orders: this.fb.array([])
     })
 
@@ -913,13 +913,12 @@ export class StepFourComponent implements OnInit {
     this.dialogRef.afterClosed$.subscribe(res &#x3D;&gt; {
       if (res) {
         if (res.confirmed) {
-          this.stepFourForm.get(&#x27;validate&#x27;).setValue(true);
+          this.stepFourForm.get(&#x27;validate&#x27;).setValue(&#x27;true&#x27;);
           this.cdkStepperModule.next();
         }
       }
     });
    }
-
 }
 </code></pre>
     </div>
@@ -953,7 +952,7 @@ export class StepFourComponent implements OnInit {
         &lt;button class&#x3D;&quot;w-100 btn btn-secondary&quot; cdkStepperPrevious&gt;Back&lt;/button&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;col-6 pl-0 pl-1 &quot;&gt;
-        &lt;button class&#x3D;&quot;w-100 btn btn-primary&quot; [disabled]&#x3D;&quot;formErrorHandler&quot; (click)&#x3D;&quot;upload()&quot;&gt;Next&lt;/button&gt;
+        &lt;button class&#x3D;&quot;w-100 btn btn-primary&quot; (click)&#x3D;&quot;upload()&quot;&gt;Next&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/form&gt;
@@ -1023,7 +1022,7 @@ export class StepFourComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <form [formGroup]="stepFourForm"        #formRef="ngForm">      <div  formArrayName="orders" *ngFor="let item of f.controls; let i = index">      <div class="form-group">        <div [formGroupName]="i">          <label class="w-100 text-center text-lg-left" for="passport1">Passport Profile Page Adult {{ i + 1 }}</label>          <div class="row no-gutters" id="passport1" >            <div class="col-11 my-auto pr-2">              <div class="custom-file">                <input type="file" class=" custom-file-input" id="customFile" (change)="handleUpload($event, i)">                <label class="w-100 text-center text-lg-left" class="custom-file-label" for="customFile">Choose file</label>              </div>            </div>            <div  (click)="openInformationDialog()" class="curs-pointer question_icon col-1 my-auto">              <i class="far fa-question-circle"></i>            </div>          </div>        </div>      </div>    </div>    <div class="mt-4 row px-0">      <div class="col-6 pr-0 pr-1 ">        <button class="w-100 btn btn-secondary" cdkStepperPrevious>Back</button>      </div>      <div class="col-6 pl-0 pl-1 ">        <button class="w-100 btn btn-primary" [disabled]="formErrorHandler" (click)="upload()">Next</button>      </div>    </div>  </form></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <form [formGroup]="stepFourForm"        #formRef="ngForm">      <div  formArrayName="orders" *ngFor="let item of f.controls; let i = index">      <div class="form-group">        <div [formGroupName]="i">          <label class="w-100 text-center text-lg-left" for="passport1">Passport Profile Page Adult {{ i + 1 }}</label>          <div class="row no-gutters" id="passport1" >            <div class="col-11 my-auto pr-2">              <div class="custom-file">                <input type="file" class=" custom-file-input" id="customFile" (change)="handleUpload($event, i)">                <label class="w-100 text-center text-lg-left" class="custom-file-label" for="customFile">Choose file</label>              </div>            </div>            <div  (click)="openInformationDialog()" class="curs-pointer question_icon col-1 my-auto">              <i class="far fa-question-circle"></i>            </div>          </div>        </div>      </div>    </div>    <div class="mt-4 row px-0">      <div class="col-6 pr-0 pr-1 ">        <button class="w-100 btn btn-secondary" cdkStepperPrevious>Back</button>      </div>      <div class="col-6 pl-0 pl-1 ">        <button class="w-100 btn btn-primary" (click)="upload()">Next</button>      </div>    </div>  </form></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesCardsComponent', 'selector': 'app-services-cards'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'},{'name': 'UploadDialogComponent', 'selector': 'app-upload-dialog'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'StepFourComponent'};

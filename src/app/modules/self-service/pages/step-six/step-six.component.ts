@@ -20,7 +20,7 @@ export class StepSixComponent implements OnInit {
     this.stepSixForm = this.fb.group({
       tel: ['', [Validators.required, Validators.pattern(`[- +()0-9]{6,}`)]],
       email: ['', [Validators.required, Validators.email]],
-      special_request: ['', [Validators.required]],
+      special_request: [''],
     });
     this.currentDate = new Date().toISOString().split('T')[0];
   }

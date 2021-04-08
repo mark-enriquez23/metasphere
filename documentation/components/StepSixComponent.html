@@ -602,7 +602,7 @@ export class StepSixComponent implements OnInit {
     this.stepSixForm &#x3D; this.fb.group({
       tel: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x60;[- +()0-9]{6,}&#x60;)]],
       email: [&#x27;&#x27;, [Validators.required, Validators.email]],
-      special_request: [&#x27;&#x27;, [Validators.required]],
+      special_request: [&#x27;&#x27;],
     });
     this.currentDate &#x3D; new Date().toISOString().split(&#x27;T&#x27;)[0];
   }

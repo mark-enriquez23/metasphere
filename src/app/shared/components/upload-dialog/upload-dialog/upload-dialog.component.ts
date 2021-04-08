@@ -19,6 +19,7 @@ export class UploadDialogComponent implements OnInit {
   message: string[] = [];
   user: any
   fileInfos?: Observable<any>;
+  public uploadValidated = true;
 
   constructor(public ref: DialogRef,
     private preCheckinService: PreCheckinService,
@@ -29,7 +30,14 @@ export class UploadDialogComponent implements OnInit {
 
     this.message = [];
 
-    if (this.files.length > 0) {
+    for (let index = 0; index < this.files.length; index++) {
+      const element = this.files[index];
+      if(!element.document) {
+        this.uploadValidated = false;
+      }
+    }
+
+    if (this.files.length > 0 && this.uploadValidated) {
       for (let i = 0; i < this.files.length; i++) {
         this.upload(i, this.files[i]);
       }
@@ -45,7 +53,6 @@ export class UploadDialogComponent implements OnInit {
         this.ref.close()
       }
     }
-
     this.ref.close({confirmed: true})
   }
 

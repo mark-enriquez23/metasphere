@@ -1,11 +1,8 @@
 <div class="p-5 h-100">
-  <div class="">
+  <div class="" *ngIf="uploadValidated; else noFiles">
     <h1 class="text-center">
-      <i class="fas fa-question-circle"></i>
+      <i class="fas fa-information-circle"></i>
     </h1>
-    <h6>
-      {{ content.message }}
-    </h6>
     <div *ngFor="let progressInfo of progressInfos" class="mb-2">
       <span class="mx-2">{{ progressInfo.fileName }}</span>
       <progress-bar [progress]="progressInfo.value" [color-degraded]="{'0': '#008080',  '100': '#21B531'}"></progress-bar>
@@ -24,4 +21,24 @@
       </div>
     </div>
   </div>
+  <ng-template #noFiles>
+
+  <div class="text-center">
+    <h1>
+      <i class="fas fa-exclamation-circle"></i>
+    </h1>
+    <h6>
+      Please upload all needed documents.
+    </h6>
+    <div class="row no-gutters w-100  mt-3 ">
+      <div class="ml-auto pr-1 col-lg-3 col-6">
+        <button class="btn w-100 text-center btn-secondary" (click)="ref.close()">Exit</button>
+      </div>
+      <div class="pl-1 col-lg-3 col-6">
+        <button class="btn text-center btn-primary w-100" (click)="confirm()">Confirm</button>
+      </div>
+    </div>
+  </div>
+  </ng-template>
+
 </div>

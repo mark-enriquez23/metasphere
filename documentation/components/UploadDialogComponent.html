@@ -150,6 +150,10 @@
                                 <a href="#ref">ref</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#uploadValidated">uploadValidated</a>
+                            </li>
+                            <li>
                                 <a href="#user">user</a>
                             </li>
                         </ul>
@@ -196,7 +200,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -289,8 +293,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:49</a></div>
                 </td>
             </tr>
 
@@ -328,8 +332,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:47</a></div>
                 </td>
             </tr>
 
@@ -367,8 +371,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:59</a></div>
                 </td>
             </tr>
 
@@ -607,7 +611,34 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uploadValidated"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            uploadValidated</b>
+                            <a href="#uploadValidated"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/components/upload-dialog/upload-dialog/upload-dialog.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -668,6 +699,7 @@ export class UploadDialogComponent implements OnInit {
   message: string[] &#x3D; [];
   user: any
   fileInfos?: Observable&lt;any&gt;;
+  public uploadValidated &#x3D; true;
 
   constructor(public ref: DialogRef,
     private preCheckinService: PreCheckinService,
@@ -678,7 +710,14 @@ export class UploadDialogComponent implements OnInit {
 
     this.message &#x3D; [];
 
-    if (this.files.length &gt; 0) {
+    for (let index &#x3D; 0; index &lt; this.files.length; index++) {
+      const element &#x3D; this.files[index];
+      if(!element.document) {
+        this.uploadValidated &#x3D; false;
+      }
+    }
+
+    if (this.files.length &gt; 0 &amp;&amp; this.uploadValidated) {
       for (let i &#x3D; 0; i &lt; this.files.length; i++) {
         this.upload(i, this.files[i]);
       }
@@ -694,7 +733,6 @@ export class UploadDialogComponent implements OnInit {
         this.ref.close()
       }
     }
-
     this.ref.close({confirmed: true})
   }
 
@@ -737,13 +775,10 @@ export class UploadDialogComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;p-5 h-100&quot;&gt;
-  &lt;div class&#x3D;&quot;&quot;&gt;
+  &lt;div class&#x3D;&quot;&quot; *ngIf&#x3D;&quot;uploadValidated; else noFiles&quot;&gt;
     &lt;h1 class&#x3D;&quot;text-center&quot;&gt;
-      &lt;i class&#x3D;&quot;fas fa-question-circle&quot;&gt;&lt;/i&gt;
+      &lt;i class&#x3D;&quot;fas fa-information-circle&quot;&gt;&lt;/i&gt;
     &lt;/h1&gt;
-    &lt;h6&gt;
-      {{ content.message }}
-    &lt;/h6&gt;
     &lt;div *ngFor&#x3D;&quot;let progressInfo of progressInfos&quot; class&#x3D;&quot;mb-2&quot;&gt;
       &lt;span class&#x3D;&quot;mx-2&quot;&gt;{{ progressInfo.fileName }}&lt;/span&gt;
       &lt;progress-bar [progress]&#x3D;&quot;progressInfo.value&quot; [color-degraded]&#x3D;&quot;{&#x27;0&#x27;: &#x27;#008080&#x27;,  &#x27;100&#x27;: &#x27;#21B531&#x27;}&quot;&gt;&lt;/progress-bar&gt;
@@ -762,6 +797,26 @@ export class UploadDialogComponent implements OnInit {
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
+  &lt;ng-template #noFiles&gt;
+
+  &lt;div class&#x3D;&quot;text-center&quot;&gt;
+    &lt;h1&gt;
+      &lt;i class&#x3D;&quot;fas fa-exclamation-circle&quot;&gt;&lt;/i&gt;
+    &lt;/h1&gt;
+    &lt;h6&gt;
+      Please upload all needed documents.
+    &lt;/h6&gt;
+    &lt;div class&#x3D;&quot;row no-gutters w-100  mt-3 &quot;&gt;
+      &lt;div class&#x3D;&quot;ml-auto pr-1 col-lg-3 col-6&quot;&gt;
+        &lt;button class&#x3D;&quot;btn w-100 text-center btn-secondary&quot; (click)&#x3D;&quot;ref.close()&quot;&gt;Exit&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;pl-1 col-lg-3 col-6&quot;&gt;
+        &lt;button class&#x3D;&quot;btn text-center btn-primary w-100&quot; (click)&#x3D;&quot;confirm()&quot;&gt;Confirm&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/ng-template&gt;
+
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -770,7 +825,10 @@ export class UploadDialogComponent implements OnInit {
                 <p class="comment">
                     <code>./upload-dialog.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">h1 {
+  font-size: 6rem;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -798,7 +856,7 @@ export class UploadDialogComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="p-5 h-100">  <div class="">    <h1 class="text-center">      <i class="fas fa-question-circle"></i>    </h1>    <h6>      {{ content.message }}    </h6>    <div *ngFor="let progressInfo of progressInfos" class="mb-2">      <span class="mx-2">{{ progressInfo.fileName }}</span>      <progress-bar [progress]="progressInfo.value" [color-degraded]="{\'0\': \'#008080\',  \'100\': \'#21B531\'}"></progress-bar>    </div>    <div *ngIf="message.length" class="alert alert-secondary my-3" role="alert">      <ul *ngFor="let msg of message; let i = index">        <li>{{ msg }}</li>      </ul>    </div>    <div class="row no-gutters w-100  mt-3 mx-2">      <div class="ml-auto pr-1 col-lg-3 col-6">        <button class="btn w-100 text-center btn-secondary" (click)="ref.close()">Exit</button>      </div>      <div class="pl-1 col-lg-3 col-6">        <button class="btn text-center btn-primary w-100" (click)="confirm()">Confirm</button>      </div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="p-5 h-100">  <div class="" *ngIf="uploadValidated; else noFiles">    <h1 class="text-center">      <i class="fas fa-information-circle"></i>    </h1>    <div *ngFor="let progressInfo of progressInfos" class="mb-2">      <span class="mx-2">{{ progressInfo.fileName }}</span>      <progress-bar [progress]="progressInfo.value" [color-degraded]="{\'0\': \'#008080\',  \'100\': \'#21B531\'}"></progress-bar>    </div>    <div *ngIf="message.length" class="alert alert-secondary my-3" role="alert">      <ul *ngFor="let msg of message; let i = index">        <li>{{ msg }}</li>      </ul>    </div>    <div class="row no-gutters w-100  mt-3 mx-2">      <div class="ml-auto pr-1 col-lg-3 col-6">        <button class="btn w-100 text-center btn-secondary" (click)="ref.close()">Exit</button>      </div>      <div class="pl-1 col-lg-3 col-6">        <button class="btn text-center btn-primary w-100" (click)="confirm()">Confirm</button>      </div>    </div>  </div>  <ng-template #noFiles>  <div class="text-center">    <h1>      <i class="fas fa-exclamation-circle"></i>    </h1>    <h6>      Please upload all needed documents.    </h6>    <div class="row no-gutters w-100  mt-3 ">      <div class="ml-auto pr-1 col-lg-3 col-6">        <button class="btn w-100 text-center btn-secondary" (click)="ref.close()">Exit</button>      </div>      <div class="pl-1 col-lg-3 col-6">        <button class="btn text-center btn-primary w-100" (click)="confirm()">Confirm</button>      </div>    </div>  </div>  </ng-template></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoryCardsComponent', 'selector': 'app-category-cards'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmDialogComponent', 'selector': 'app-confirm-dialog'},{'name': 'FacilitiesComponent', 'selector': 'app-facilities'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FbComponent', 'selector': 'app-fb'},{'name': 'FbDrinksComponent', 'selector': 'app-fb-drinks'},{'name': 'FbFoodComponent', 'selector': 'app-fb-food'},{'name': 'FbHomeComponent', 'selector': 'app-fb-home'},{'name': 'FbItemCardsComponent', 'selector': 'app-fb-item-cards'},{'name': 'FbNavHeaderComponent', 'selector': 'app-fb-nav-header'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HkAmenitiesComponent', 'selector': 'app-hk-amenities'},{'name': 'HkComponent', 'selector': 'app-hk'},{'name': 'HkHomeComponent', 'selector': 'app-hk-home'},{'name': 'HkNavHeaderComponent', 'selector': 'app-hk-nav-header'},{'name': 'HkServicesComponent', 'selector': 'app-hk-services'},{'name': 'ItemCardsComponent', 'selector': 'app-item-cards'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'MenuDialogComponent', 'selector': 'app-menu-dialog'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'NavHeaderComponent', 'selector': 'app-nav-header'},{'name': 'OptionsDialogComponent', 'selector': 'app-options-dialog'},{'name': 'OrderComponent', 'selector': 'app-order'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PreCheckComponent', 'selector': 'app-pre-check'},{'name': 'PublicHeaderComponent', 'selector': 'app-public-header'},{'name': 'ReviewOrdersComponent', 'selector': 'app-review-orders'},{'name': 'ServicesCardsComponent', 'selector': 'app-services-cards'},{'name': 'ServicesComponent', 'selector': 'app-services'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StepFiveComponent', 'selector': 'app-step-five'},{'name': 'StepFourComponent', 'selector': 'app-step-four'},{'name': 'StepOneComponent', 'selector': 'app-step-one'},{'name': 'StepperComponent', 'selector': 'app-stepper'},{'name': 'StepSixComponent', 'selector': 'app-step-six'},{'name': 'StepThreeComponent', 'selector': 'app-step-three'},{'name': 'StepTwoComponent', 'selector': 'app-step-two'},{'name': 'UploadDialogComponent', 'selector': 'app-upload-dialog'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UploadDialogComponent'};

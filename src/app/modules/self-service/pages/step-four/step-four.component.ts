@@ -32,7 +32,7 @@ export class StepFourComponent implements OnInit {
     private saveDocumentsService: SaveDocumentsService) {
     this.user = this.preCheckinService.userBooking;
     this.stepFourForm = this.fb.group({
-      validate: [Boolean, Validators.required],
+      validate: ['', Validators.required],
       orders: this.fb.array([])
     })
 
@@ -95,11 +95,10 @@ export class StepFourComponent implements OnInit {
     this.dialogRef.afterClosed$.subscribe(res => {
       if (res) {
         if (res.confirmed) {
-          this.stepFourForm.get('validate').setValue(true);
+          this.stepFourForm.get('validate').setValue('true');
           this.cdkStepperModule.next();
         }
       }
     });
    }
-
 }
