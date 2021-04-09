@@ -1,3 +1,4 @@
+import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,6 +15,13 @@ import { MainCategoryService } from 'src/app/shared/services/room-services-house
   styleUrls: ['./stepper.component.scss']
 })
 export class StepperComponent implements OnInit {
+  @ViewChild('stepOne') stepOne;
+  @ViewChild('stepTwo') stepTwo;
+  @ViewChild('stepThree') stepThree;
+  @ViewChild('stepFour') stepFour;
+  @ViewChild('stepFive') stepFive;
+  @ViewChild('stepSix') stepSix;
+
   /**
    * Check In Form
   * @type {FormGroup}
@@ -80,9 +88,56 @@ export class StepperComponent implements OnInit {
    */
   onStepChange(e: any): void {
     this.setStepperMessage(e.selectedIndex);
+    console.log(this.stepFive)
+    if (e===5 && this.stepFive) {
+      console.log('end')
+    }
   }
 
-
+  submitGuestInformation(): void {
+    const stepThreeData = this.stepThree.stepThreeForm.control.values;
+    console.log(stepThreeData)
+    const guestData = {
+      // confirmationNumber: data.confirmationNumber,
+      // Lastname: data.Lastname,
+      // FirstName: data.FirstName,
+      // CheckinDate: data.CheckinDate,
+      // CheckoutDate: data.CheckoutDate,
+      // TotalRoomNight: data.TotalRoomNight,
+      // roomTypeShortDescription: data.roomTypeShortDescription,
+      // NumberofAdult: data.NumberofAdult,
+      // NumberofChild: data.NumberofChild,
+      // RoomRate: data.RoomRate,
+      // PaymentMethod: data.PaymentMethod,
+      // GenderCode: data.GenderCode,
+      // DateOfBirth: data.DateOfBirth,
+      // DocumnetType: data.DocumnetType,
+      // DocumentNumber: data.DocumentNumber,
+      // NationalityCode: data.NationalityCode,
+      // BirthPlace: data.BirthPlace,
+      // IssueDate: data.IssueDate,
+      // ExpiryDate: data.ExpiryDate,
+      // Mobile: data.Mobile,
+      // Email: data.Email,
+      // ShareFirstName: data.ShareFirstName,
+      // ShareLastname: data.ShareLastname,
+      // ShareGenderCode: data.ShareGenderCode,
+      // ShareDateOfBirth: data.ShareDateOfBirth,
+      // ShareDocumnetType: data.ShareDocumnetType,
+      // ShareDocumentNumber: data.ShareDocumentNumber,
+      // ShareNationalityCode: data.ShareNationalityCode,
+      // ShareBirthPlace: data.ShareBirthPlace,
+      // ShareIssueDate: data.ShareIssueDate,
+      // ShareExpiryDate: data.ShareExpiryDate,
+      // ifPASSPORT: data.ifPASSPORT,
+      // ifPOS: data.ifPOS,
+      // ifFACE: data.ifFACE,
+      // status: data.status,
+      // imgId: data.imgId,
+      // faceimgId: data.faceimgId,
+      // ShareimgId: data.ShareimgId,
+    }
+  }
   /**
    * Set's the Stepper Label Message
    *

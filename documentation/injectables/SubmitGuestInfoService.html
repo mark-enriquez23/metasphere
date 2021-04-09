@@ -308,7 +308,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpParams } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
 
@@ -322,47 +322,45 @@ export class SubmitGuestInfoService {
   constructor(private httpClient: HttpClient) { }
 
   public saveDocuments(data: any) {
-    const userData &#x3D; {
-      confirmationNumber: data.confirmationNumber,
-      Lastname: data.Lastname,
-      FirstName: data.FirstName,
-      CheckinDate: data.CheckinDate,
-      CheckoutDate: data.CheckoutDate,
-      TotalRoomNight: data.TotalRoomNight,
-      roomTypeShortDescription: data.roomTypeShortDescription,
-      NumberofAdult: data.NumberofAdult,
-      NumberofChild: data.NumberofChild,
-      RoomRate: data.RoomRate,
-      PaymentMethod: data.PaymentMethod,
-      GenderCode: data.GenderCode,
-      DateOfBirth: data.DateOfBirth,
-      DocumnetType: data.DocumnetType,
-      DocumentNumber: data.DocumentNumber,
-      NationalityCode: data.NationalityCode,
-      BirthPlace: data.BirthPlace,
-      IssueDate: data.IssueDate,
-      ExpiryDate: data.ExpiryDate,
-      Mobile: data.Mobile,
-      Email: data.Email,
-      ShareFirstName: data.ShareFirstName,
-      ShareLastname: data.ShareLastname,
-      ShareGenderCode: data.ShareGenderCode,
-      ShareDateOfBirth: data.ShareDateOfBirth,
-      ShareDocumnetType: data.ShareDocumnetType,
-      ShareDocumentNumber: data.ShareDocumentNumber,
-      ShareNationalityCode: data.ShareNationalityCode,
-      ShareBirthPlace: data.ShareBirthPlace,
-      ShareIssueDate: data.ShareIssueDate,
-      ShareExpiryDate: data.ShareExpiryDate,
-      ifPASSPORT: data.ifPASSPORT,
-      ifPOS: data.ifPOS,
-      ifFACE: data.ifFACE,
-      status: data.status,
-      imgId: data.imgId,
-      faceimgId: data.faceimgId,
-      ShareimgId: data.ShareimgId,
-    }
-    return this.httpClient.post(this.env.api_path + this.api_type + &#x27;/insertGuestInfo&#x27;, userData).toPromise();
+    const params &#x3D; new HttpParams()
+    .set(&#x27;confirmationNumber&#x27;, data.confirmationNumber)
+    .set(&#x27;Lastname&#x27;, data.Lastname)
+    .set(&#x27;FirstName&#x27;, data.FirstName)
+    .set(&#x27;CheckinDate&#x27;, data.CheckinDate)
+    .set(&#x27;TotalRoomNight&#x27;, data.TotalRoomNight)
+    .set(&#x27;roomTypeShortDescription&#x27;, data.roomTypeShortDescription)
+    .set(&#x27;NumberofAdult&#x27;, data.NumberofAdult)
+    .set(&#x27;NumberofChild&#x27;, data.NumberofChild)
+    .set(&#x27;RoomRate&#x27;, data.RoomRate)
+    .set(&#x27;PaymentMethod&#x27;, data.PaymentMethod)
+    .set(&#x27;GenderCode&#x27;, data.GenderCode)
+    .set(&#x27;DateOfBirth&#x27;, data.DateOfBirth)
+    .set(&#x27;DocumnetType&#x27;, data.DocumnetType)
+    .set(&#x27;DocumentNumber&#x27;, data.DocumentNumber)
+    .set(&#x27;NationalityCode&#x27;, data.NationalityCode)
+    .set(&#x27;BirthPlace&#x27;, data.BirthPlace)
+    .set(&#x27;IssueDate&#x27;, data.IssueDate)
+    .set(&#x27;ExpiryDate&#x27;, data.ExpiryDate)
+    .set(&#x27;Mobile&#x27;, data.Mobile)
+    .set(&#x27;Email&#x27;, data.Email)
+    .set(&#x27;ShareFirstName&#x27;, data.ShareFirstName)
+    .set(&#x27;ShareLastname&#x27;, data.ShareLastname)
+    .set(&#x27;ShareGenderCode&#x27;, data.ShareGenderCode)
+    .set(&#x27;ShareDateOfBirth&#x27;, data.ShareDateOfBirth)
+    .set(&#x27;ShareDocumnetType&#x27;, data.ShareDocumnetType)
+    .set(&#x27;ShareDocumentNumber&#x27;, data.ShareDocumentNumber)
+    .set(&#x27;ShareNationalityCode&#x27;, data.ShareNationalityCode)
+    .set(&#x27;ShareBirthPlace&#x27;, data.ShareBirthPlace)
+    .set(&#x27;ShareIssueDate&#x27;, data.ShareIssueDate)
+    .set(&#x27;ShareExpiryDate&#x27;, data.ShareExpiryDate)
+    .set(&#x27;ifPASSPORT&#x27;, data.ifPASSPORT)
+    .set(&#x27;ifPOS&#x27;, data.ifPOS)
+    .set(&#x27;ifFACE&#x27;, data.ifFACE)
+    .set(&#x27;imgId&#x27;, data.imgId)
+    .set(&#x27;faceimgId&#x27;, data.faceimgId)
+    .set(&#x27;ShareimgId&#x27;, data.ShareimgId)
+    const userData &#x3D; params.toString()
+    return this.httpClient.post(this.env.api_path + this.api_type + &#x27;/insertGuestInfo?&#x27; + userData, {});
   }
 }
 </code></pre>

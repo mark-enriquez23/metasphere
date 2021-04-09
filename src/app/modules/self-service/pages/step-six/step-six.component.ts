@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DialogService } from '@ngneat/dialog';
@@ -13,6 +13,7 @@ export class StepSixComponent implements OnInit {
   public stepSixForm: FormGroup;
   public currentDate: any;
   public dialogRef: any;
+  @Output() submitGuestEvent = new EventEmitter<string>();
 
   constructor(private fb: FormBuilder,
     private dialog: DialogService,
@@ -48,5 +49,10 @@ export class StepSixComponent implements OnInit {
     this.dialogRef.afterClosed$.subscribe(res => {
       this.router.navigate(['landing']);
     });
+  }
+
+
+  submitGuestInformation (): void {
+    this.submitGuestEvent.emit();
   }
 }
