@@ -1,7 +1,53 @@
 
 [
   {
-      "title": "Landing Page",
-      "file": "landing/landing.md"
+      "title": "Pre check in Module",
+      "file": "pre-check-in.md",
+      "children": [
+          {
+              "title": "Self Service Login",
+              "file": "pre-check-in/pre-check-in-login.md"
+          },
+          {
+              "title": "Stepper",
+              "file": "pre-check-in/stepper.md",
+              "children": [
+                  {
+                      "title": "Self Service 1",
+                      "file": "pre-check-in/stepper/step-1.md"
+                  },
+                  {
+                      "title": "Self Service 2",
+                      "file": "pre-check-in/stepper/step-2.md"
+                  },
+                  {
+                      "title": "Self Service 3",
+                      "file": "pre-check-in/stepper/step-3.md"
+                  },
+                  {
+                      "title": "Self Service 4",
+                      "file": "pre-check-in/stepper/step-4.md"
+                  },
+                  {
+                      "title": "Self Service 5",
+                      "file": "pre-check-in/stepper/step-5.md"
+                  },
+                  {
+                      "title": "Self Service 6",
+                      "file": "pre-check-in/stepper/step-6.md"
+                  }
+              ]
+          }
+      ]
+  },
+  {
+      "title": "My Experience Module",
+      "file": "my-experience.md",
+      "children": [
+          {
+              "title": "My Experience Login",
+              "file": "my-experience/my-experience-login.md"
+          }
+      ]
   }
 ]

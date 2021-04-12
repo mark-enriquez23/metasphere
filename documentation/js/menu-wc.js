@@ -49,8 +49,54 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="additional-pages"' : 'id="xs-additional-pages"' }>
-                                    <li class="link ">
-                                        <a href="additional-documentation/landing-page.html" data-type="entity-link" data-context-id="additional">Landing Page</a>
+                                    <li class="chapter inner">
+                                        <a data-type="chapter-link" href="additional-documentation/pre-check-in-module.html" data-context-id="additional">
+                                            <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#additional-page-a0a09f4e5ed752b66589bc7ce27041ff"' : 'data-target="#xs-additional-page-a0a09f4e5ed752b66589bc7ce27041ff"' }>
+                                                <span class="link-name">Pre check in Module</span>
+                                                <span class="icon ion-ios-arrow-down"></span>
+                                            </div>
+                                        </a>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-a0a09f4e5ed752b66589bc7ce27041ff"' : 'id="xs-additional-page-a0a09f4e5ed752b66589bc7ce27041ff"' }>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/pre-check-in-module/self-service-login.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Self Service Login</a>
+                                            </li>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/pre-check-in-module/stepper.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Stepper</a>
+                                            </li>
+                                            <li class="link for-chapter3">
+                                                <a href="additional-documentation/pre-check-in-module/stepper/self-service-1.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Self Service 1</a>
+                                            </li>
+                                            <li class="link for-chapter3">
+                                                <a href="additional-documentation/pre-check-in-module/stepper/self-service-2.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Self Service 2</a>
+                                            </li>
+                                            <li class="link for-chapter3">
+                                                <a href="additional-documentation/pre-check-in-module/stepper/self-service-3.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Self Service 3</a>
+                                            </li>
+                                            <li class="link for-chapter3">
+                                                <a href="additional-documentation/pre-check-in-module/stepper/self-service-4.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Self Service 4</a>
+                                            </li>
+                                            <li class="link for-chapter3">
+                                                <a href="additional-documentation/pre-check-in-module/stepper/self-service-5.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Self Service 5</a>
+                                            </li>
+                                            <li class="link for-chapter3">
+                                                <a href="additional-documentation/pre-check-in-module/stepper/self-service-6.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Self Service 6</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="chapter inner">
+                                        <a data-type="chapter-link" href="additional-documentation/my-experience-module.html" data-context-id="additional">
+                                            <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#additional-page-7cc0fb87e8d1941877f4f09e0bdc7f26"' : 'data-target="#xs-additional-page-7cc0fb87e8d1941877f4f09e0bdc7f26"' }>
+                                                <span class="link-name">My Experience Module</span>
+                                                <span class="icon ion-ios-arrow-down"></span>
+                                            </div>
+                                        </a>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-7cc0fb87e8d1941877f4f09e0bdc7f26"' : 'id="xs-additional-page-7cc0fb87e8d1941877f4f09e0bdc7f26"' }>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/my-experience-module/my-experience-login.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">My Experience Login</a>
+                                            </li>
+                                        </ul>
                                     </li>
                         </ul>
                     </li>

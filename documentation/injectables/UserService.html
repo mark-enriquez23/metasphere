@@ -557,7 +557,7 @@ export class UserService {
     .set(&#x27;roomNo&#x27;, roomNumber)
     .set(&#x27;lastName&#x27;, lastName)
     const userData &#x3D; params.toString()
-    return this.httpClient.post(environment.api_path + this.api_type + &#x27;/FetchBooKingwithlastNameAndRoomno?&#x27; + userData , {}).toPromise();
+    return this.httpClient.get(environment.api_path + this.api_type + &#x27;/FetchBooKingwithlastNameAndRoomno&#x27;  , {params}).toPromise();
   }
 
   public isUserLoggedIn() {
